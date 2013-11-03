@@ -1,0 +1,87 @@
+---
+layout: framework
+title: Liztic. Your music - anywhere, anytime.
+comments: false
+---
+
+
+<article class="legal" id="privacypolicy">
+
+
+{% include headerspacing.html %}
+
+<div class="container">
+
+<div class="row" >
+
+h3. Liztic Privacy Policy
+
+This Privacy Policy describes how Liztic LLC (&#8220;*Liztic*&#8221;, &#8220;*we*&#8221;, or &#8220;*us*&#8221;) collects, uses, stores, shares and protects your information in connection with services offered by Liztic including, but not limited to, services provided at or using the domain Liztic.com (the &#8220;*Site*&#8221;); tools or applications including, but not limited to, desktop and other software applications related to the Site (the &#8220;*Applications*&#8221;); images, text, playlists, metadata, and other material available through the Service (the &#8220;*Content*&#8221;); and functionality for transferring sound recordings or embodied musical compositions stored on a device (&#8220;*Audio Files*&#8221;) to another device (collectively, the &#8220;*Service*&#8221;). This Privacy Policy applies when you access, visit or use any portion of the Service. This Privacy Policy is part of, and is governed by, the terms and conditions set forth in the Liztic Terms of Service located at "www.liztic.com/termsofservice.html":/termsofservice.html.
+
+By creating a Liztic Account (as defined in the Terms of Service), or by otherwise accessing, visiting or using the Service, you expressly consent to our collection, use, disclosure and retention of your information as described in this Privacy Policy and in the Liztic Terms of Service.
+
+We may amend this Privacy Policy from time to time. You may be required to accept the amended Privacy Policy upon logging in to your Liztic Account in order to keep using the Service. Alternatively, we may post any material changes to this Privacy Policy on the Site with a notice advising of the changes in advance of the effective date of the changes. We may also notify you of material changes to this Privacy Policy by sending an email to the email address associated with your Liztic Account before the effective date of the changes. We encourage you to keep the email address associated with your Liztic Account current, and to promptly notify us of any changes to your email address, so that you may receive any notices we send to you regarding material changes to this Privacy Policy. 
+
+If you do not agree to the new Privacy Policy, you may terminate your Liztic Account within the applicable thirty (30) day period and you will not be bound by the new terms. Otherwise, the new terms will take effect after thirty (30) days. 
+
+# *Information Collected by Liztic.*
+##(alpha) *Information You Provide to Us.*
+We may collect information that you provide to us in connection with your use of the Service when you (i) register as a user of the Service; (ii) make changes to your user profile information; or (iii) send e-mail messages, forms, or other information to us through the Service. When you register for a Liztic Account, you will be required to provide your email address and create a password. You may also choose to provide additional information in connection with your Liztic Account, including your full name and a referral code. If you elect to purchase a Paid Subscription (as defined in the Terms of Service), you may need to provide payment information, including a payment card number, and related security code, expiration date, and cardholder name and billing and shipping addresses. We do not store your payment card information. We process all payment transactions through a third party merchant services provider. We may collect information about your purchases and associate it with your Liztic Account. 
+##(alpha) *Information We Collect From Social Media Services.* 
+Users may post content to Social Media Services (as defined in the Terms of Service) through the Service and post content to the Service through Social Media Services. If you associate an account on a Social Media Service with your Liztic Account, you give Liztic permission to access, store and use any information that you permit the applicable Social Media Service to share with Liztic and that the applicable Social Media Service has made available to Liztic in accordance with your privacy settings with the applicable Social Media Service. This information (including without limitation, your name, photographs, geographic location, birthday and any content that you post to the Social Media Service) may be displayed on the Service while you are logged on to the Service. We encourage you to review, and if necessary, adjust, your privacy settings with the applicable Social Media Service before associating your Social Media Service account with your Liztic Account. Information that Liztic receives from Social Media Services is stored and used by Liztic in accordance with this Privacy Policy.
+# *Information Automatically Collected Through the Service.*
+Liztic, along with our third party service partners, vendors and business partners may automatically collect information about you when you use the Service. The information automatically collected about you may include, but is not limited to, device ID, device type, browser type and version, geo-location information, computer and connection information, statistics on page views, traffic to and from the Service, ad data, IP address, and standard web log information. Some of our third party service partners, vendors and business partners allow you to opt-out from the automatic collection of your information.
+# *Cookies, Web Beacons, and Stored Passwords.* 
+Liztic, along with our third party service partners, vendors and business partners may use cookies, locally stored objects and web beacons to automatically collect information about your use of the Service. Cookies are small bits of information that are transferred to and stored in separate files within your computer’s browser. The Service may store both &#8220;persistent cookies&#8221; which remain on your computer after you have closed your browser as well as &#8220;session cookies&#8221; which exist only during a visitor’s online session and disappear from your device when you close the Application or browser. Locally stored objects or &#8220;flash cookies&#8221; are data files that can be created on your computer or mobile device by the websites you visit and are a way for websites to store information for later use. Locally stored objects are different than cookies because they are stored in different parts of your device than cookies. Web beacons are small strings of code that provide a method for delivering a graphic image on a web page or in an email message for the purpose of transferring data. You may be able to set your browser to reject cookies or to notify you when you are sent a cookie. You may also be able to disable the storage of flash cookies. For additional information about managing and disabling flash cookies, please visit "http://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html":http://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html. However, if you reject cookies or disable flash cookies you may not be able to use all portions or all functionality of the Service. Applications provided by Liztic for accessing the Service may also store your password locally in encrypted form to facilitate ease of access to the Service. 
+# *Use of Information by Liztic.* 
+Liztic may use information that we collect about you through the Service to:
+** provide access to the Service and to provide you with requested services and customer support and to process and respond to your inquiries; 
+** personalize, customize, measure, and improve our services, content, and advertising and otherwise to enhance your experience of the Service; 
+** analyze the accuracy, effectiveness, usability, or popularity of the Service;
+** prevent, detect, and investigate potentially prohibited or illegal activities, and enforce the Liztic Terms of Service; 
+** generate and review reports and data about our user base and service usage patterns;
+** compile aggregate data for internal and external business purposes;
+** resolve disputes and troubleshoot problems;
+** contact you with information, including promotional, marketing and advertising information and recommendations that we believe may be of interest to you;
+** provide you with other services requested by you as described when we collect the information; and 
+** as otherwise stated in this Privacy Policy or the Liztic Terms of Service.
+# Liztic's Disclosure of Information to Third Parties. Liztic may disclose your information to the following third parties:
+##(alpha) *Our Service Providers:* 
+We may share your information with third party contractors or service providers who provide certain services to us or on our behalf, such as operating and supporting the Service, processing payments, fulfilling orders you place through the Service or otherwise responding to your customer service requests. These service providers will only have access to the information needed to perform these limited functions on our behalf and are required to provide your information with at least the same level of protection and security as we use for the Service. 
+##(alpha) *Companies that Acquire Our Business or Assets.* 
+If Liztic becomes involved in a merger, acquisition, sale of assets, securities offering, bankruptcy, reorganization, dissolution, or other transaction or if the ownership of all or substantially all of our business otherwise changes, Liztic may share or transfer your information to a third party or parties in connection with the applicable transaction.
+##(alpha) *Our Affiliates:* We may share some or all of your information with parent companies, subsidiaries and corporate affiliates, joint ventures, or other companies under common control with us. We will require these entities to comply with the terms of this Privacy Policy with regard to their use of your information. 
+##(alpha) *Payment Card Companies:* 
+If you purchase a Paid Subscription, the information you provide will be transmitted to your credit card company to verify and authorize your purchase. We will not store your credit card information.
+##(alpha) *Aggregate Information.* 
+Liztic may share information relating to visitors and users of the Service with affiliated or unaffiliated third parties on an aggregate basis. We note that, while this information will not identify you personally, in some instances these third parties may be able to combine this information with other data they have about you, or that they receive from third parties, in a manner that allows them to identify you personally. 
+##(alpha) *Law Enforcement Authorities.* 
+To the extent permitted by law, we may share your information with law enforcement, governmental agencies, or authorized third-parties, in response to a verified request relating to a criminal investigation or alleged illegal activity or any other activity that may expose us, you, or any other Liztic user to legal liability, or to protect our rights or property, or during emergencies when safety is at risk.
+# *No Spam, Spyware or Spoofing.* 
+Liztic and our users do not tolerate spam. To report Liztic-related spam or spoof emails to us, please forward the email to "support@liztic.com":support@liztic.com. You may not use our communication tools to send spam or otherwise send content that would violate the Liztic Terms of Service. 
+# *Security.* 
+Liztic takes reasonable measures to protect the information you provide to Liztic or submit through the Service against loss, theft and unauthorized use, disclosure, or modification. However, we cannot guarantee or warrant the security of any information you transmit to Liztic or submit through the Service and you do so at your own risk. No internet or email transmission is ever fully secure or error-free. Email sent to or through the Service may not be secure. You should use caution whenever submitting information online and take special care in deciding what information you send to us via email. 
+# *Accessing, Changing and Managing Your Information.* 
+You may change and update the information you provide through the Service, or change your preferences concerning how we use your information, as follows:
+##(alpha) *Changing or Updating Your Information.* 
+You may make changes to the user information you have provided in connection with your Liztic Account by logging in to your account and changing the applicable information or by contacting us at "support@liztic.com":support@liztic.com. If you choose to terminate your account, you may also request that we delete your information by contacting us at "support@liztic.com":support@liztic.com. Following receipt of a request from you, we will take reasonable steps to update, correct or delete your information.
+##(alpha) *Email Communications.* 
+You can make changes regarding receiving email communications from us within your Liztic Account. You can also choose not to receive email communications from us by following the &#8220;unsubscribe&#8221; instructions in any email communication you receive from us.
+##(alpha) *Third Parties.* 
+The Service may contain links to websites that are not owned or operated by Liztic. These third party websites and applications may place their own cookies or other files on your computer or mobile device, and may collect data or solicit personal information from you. Please be aware that we are not responsible for the privacy practices of these websites. If you visit these websites or provide any information directly to parties other than Liztic (even if those websites display the Liztic brand), different policies may apply to the collection and use of your information. We encourage you to investigate and ask questions before accessing third party websites or disclosing information to third parties. 
+##(alpha) *No Use by Children.* 
+Liztic is not intended for use by persons under the age of thirteen (13) without the supervision of a parent or guardian. We will never knowingly collect information directly from persons under the age of thirteen (13). If we become aware that a user is under the age of thirteen (13) and has used the Service without the supervision of a parent or guardian, we will terminate the user’s account and remove his or her information from our files. We encourage parents and guardians to spend time with their children online and to be familiar with the websites they visit and the applications they use. If you have reason to believe that we may have accidentally received personal information from a person under the age of thirteen (13), please contact us immediately at "support@liztic.com":support@liztic.com.
+##(alpha) *Use of Information Outside of Your Country of Residence.* 
+The Service is based in the United States. If you are located outside of the United States and choose to use the Service or provide your information to us, your information will be transferred, processed and stored in the United States. U.S. privacy laws may not be as protective as those in your jurisdiction. Your agreement to the terms of this Privacy Policy followed by your submission of information in connection with the Service represents your agreement to this practice. If you do not want your information transferred to or processed or stored in the United States, you should not use the Service. 
+##(alpha) *Retention of Your Information.* 
+We retain information for active Liztic Accounts as long as it is necessary and relevant for our operations. In addition, we may retain information from closed accounts to comply with the law, prevent fraud, collect any fees owed, resolve disputes, troubleshoot problems, assist with any investigation, enforce the Liztic Terms of Service and take other actions permitted by law. The information we retain about you will be handled in accordance with this Privacy Policy.
+##(alpha) *How to Contact Us.* 
+Please also feel free to contact us at "support@liztic.com":support@liztic.com if you have any questions about this Privacy Policy.
+##(alpha) *Your California Privacy Rights.* 
+Section 1798.83 of the California Civil Code permits California residents to request from a business, with whom the California resident has an established business relationship, certain information about the types of personal information the business has shared with third parties for those third parties’ direct marketing purposes and the names and addresses of the third parties with whom the business has shared such information during the immediately preceding calendar year. You may make one request each year by emailing us at "support@liztic.com":support@liztic.com or writing us at Liztic LLC, 227 Sandy Springs Place, Suite 520, Atlanta, GA 30328, USA.
+
+</div>
+
+</div>
+
+</article>

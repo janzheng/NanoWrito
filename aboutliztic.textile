@@ -1,0 +1,33 @@
+---
+layout: framework
+title: Liztic. Your music - anywhere, anytime.
+comments: false
+---
+
+
+<article>
+
+{% include headerspacing.html %}
+
+<div class="container">
+
+<div class="row" >
+
+h3. Contact Liztic
+
+For Customer Service, please email <a href="mailto:contact@liztic.com">info@liztic.com</a></span> call <a href="tel:+1-404-252-7010">+1-404-252-7010</a>, or write to:
+
+Liztic LLC, 227 Sandy Springs Place, Suite 520, Atlanta, GA 30328, USA
+
+</div>
+
+<div class="row" >
+
+h3. Refunds
+
+If your Subscription Period is annual and you cancel your Paid Subscription within thirty (30) days after the date that your payment method is charged the Subscription Fee, you will be issued a prorated refund of the Subscription Fee. No refunds will be issued more than thirty (30) days after your payment method has been charged the Subscription Fee. Unless required by law, no refunds of Subscription Fees will be issued if your Subscription Period is monthly.
+</div>
+
+</div>
+
+</article>

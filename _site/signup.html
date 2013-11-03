@@ -1,0 +1,706 @@
+<!doctype html>
+
+<html>
+<head>
+  <meta name="description" content="Liztic is a universally accessible music player that allows anyone to access their own, personal music library from any device.">
+  <title>Liztic. Your music - anywhere, anytime.</title>
+  <meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
+  <link rel="stylesheet" href="assets/main.css">
+
+  <link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+  <script src="/app/js/online.js"></script>
+  
+</head> 
+
+<body>
+
+  <!-- <a class="goto" id="top"></a> -->
+  <section id="header">
+    
+
+
+<div id="modal" style="display:none">
+   <div class="blanket" ></div>
+
+   <!-- css-only v-align div from http://emergentweb.com/test/valign.html# -->
+   <div class="modal-container">
+      <div class="modal-pad">
+
+         <div class="modal-item" id="modal-login" style="display:none">
+            <div class="container">
+               <div class="row" ><div class="modal-logo"></div></div><div class="row" >
+                  <div id="modal-header">
+                     Log in to Liztic
+                  </div>
+                  <form ng-submit="create()" name="createform" class="ng-pristine ng-invalid ng-invalid-required">
+                     <div class="row" ><input type="text" ng-model="userid" class="topcoat-text-input--large full ng-pristine ng-valid" placeholder="Email address"></div>
+                     <div class="row" ><input type="password" ng-model="password" name="passwordform" class="topcoat-text-input--large full ng-pristine ng-invalid ng-invalid-required" placeholder="Password" >
+                        <!-- <div class="modal-error">This is an inline error message.</div> -->
+                     </div>
+                     <div class="row" >
+                        <div class="modal-check">
+                           <input type="checkbox" id="stayLogged" checked="true" ng-model="persist" class="ng-pristine ng-valid">
+                           <label class="inline" for="stayLogged"><span class="box"><span class="check"></span></span><span class="inlineCheck">Stay logged in</span></label>
+                        </div>
+
+                     </div>
+                     <div class="row" ><button class="modal-btn topcoat-button--large--cta full" ng-click="create()" ng-disabled="disabled">Log in to Liztic</button></div>
+                  </form>
+               </div>
+               <div class="row">
+                  <div class="modal-footer">
+                     <div>Forgot your password? <a href="#">Click to Reset</a></div>
+                     <div>New to Liztic? <a href="#" class="switch-to-signup">Create a new account</a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="modal-item" id="modal-signup" style="display:none">
+            <div class="container">
+               <div class="row" ><div class="modal-logo"></div></div>
+               <div class="row" >
+                  <div id="modal-header">
+                     Get Started with Liztic
+                  </div>
+                  <form ng-submit="create()" name="createform" class="ng-pristine ng-invalid ng-invalid-required">
+                     <div class="row" ><input type="email" ng-model="email" name="emailform" class="topcoat-text-input--large full ng-pristine ng-invalid ng-invalid-required ng-valid-email" placeholder="Email address" ></div>
+                     <!-- <div class="row" ><input type="text" ng-model="first" name="firstform" class="topcoat-text-input--large full ng-pristine ng-invalid ng-invalid-required" placeholder="First name" ></div> -->
+                     <!-- <div class="row" ><input type="text" ng-model="last" name="lastform" class="topcoat-text-input--large full ng-pristine ng-invalid ng-invalid-required" placeholder="Last name" ></div> -->
+                     <div class="row" ><input type="password" ng-model="password" name="passwordform" class="modal-input-error topcoat-text-input--large full ng-pristine ng-invalid ng-invalid-required" placeholder="Password" >
+                        <!-- sample error note the modal-input-error class on the input for highlighting -->
+                        <div class="modal-error">This is an inline error message.</div></div>
+                     <div class="row" ><input type="password" ng-model="password2" name="password2form" class="topcoat-text-input--large full ng-pristine ng-invalid ng-invalid-required" placeholder="Re-enter password" ></div>
+                     <div class="row" ><input type="text" ng-model="referral" class="topcoat-text-input--large full ng-pristine ng-valid" placeholder="Referral Code or Email"></div>
+                     <div class="row">
+                     <div class="modal-footer modal-legal">
+                        <div>By clicking on "Create Account", you agree to our <a href="termsofserviceweb.html" target="_blank">Terms of Service</a> and <a href="privacypolicyweb.html" target="_blank">Privacy Policy</a></div>
+                     </div>
+                  </div>
+                     <div class="row" ><button class="modal-btn topcoat-button--large--cta full" ng-click="create()" ng-disabled="disabled">Create Account</button></div>
+                     <div class="row" ><div class="modal-error-general error ng-binding" ng-bind-html-unsafe="error">This is a sample error statement that's also kind of long</div></div>
+                  </form>
+               </div>
+               <div class="row">
+                  <div class="modal-footer">
+                     <div>Already a member? <a href="#" class="switch-to-login">Log in</a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+      </div> <!-- end modal pad-->
+   </div> <!-- end modal container -->
+
+
+
+
+</div>
+
+<div class="floater">
+   <div id="menu-bg"></div>
+   <div class="container">
+      <div class="row">
+
+         <div id="logo-wrapper">
+            <div id="logo"><a href="index.html"></a></div>
+            <div id="wordmark"><a href="index.html"></a></div>
+         </div>
+
+
+         <!-- the following links are on one line so Chrome doens't render \n as a space -->
+         <div id="menu">
+            <div id="main-menu">
+               <a  href="/" title="">Home</a><a  href="/features.html" title="">Features</a><a  href="/blog.html" title="">Blog</a><a  href="/support.html" title="">Support</a><a  href="/index.html#get-liztic" title="">Download</a>
+            </div>
+
+            <!-- the following are for login / signup buttons, and welcome message -->
+            <div id="account">
+               <div id="welcome" style="display:none">Hello, Steve. <a id="logout" href="#">Log Out</a></div>
+               <div id="account-menu"><a id="login" class="modal-login login-btn" >Log in</a><a id="signup" class="modal-signup signup-btn">Sign up</a></div>
+            </div>
+         </div>
+     </div>
+
+   </div>
+</div>
+
+<div class="clear"></div>
+
+
+  </section>
+
+  <article id="intro" class="goto">
+<div id="mobile-banner"></div>
+<section id="intro-slider">
+
+
+   
+</section>
+
+
+<section class="content" id="intro-section">
+
+h1(green). More Than Just a Gym
+
+p(section-intro orange). We're not just your neighborhood gym.
+<br/>
+We are the first step to helping you find and maintain your inner power and motivation, through strength and cardio conditioning, meal planning, and consultation. 
+
+<div class="section-trio reveal-btn-container" id="tri1"> 
+
+<notextile><!-- !http://placehold.it/80x80! --></notextile>
+
+h2. Conditioning
+
+
+<div class="reveal-content">
+p. We condition you so your heart pumps harder and your lungs breathe deeper, so you can do the things you move longer and faster without getting tired
+</div>
+</div>
+<div class="section-trio reveal-btn-container" id="tri2"> 
+
+<notextile><!-- !http://placehold.it/80x80! --></notextile>
+
+h2. Meal Tracking
+
+<div class="reveal-content">
+p. The say fitness is 70% nutrition and 30% gym. We watch what you eat, and ease you into healthy habits.
+</div>
+</div>
+<div class="section-trio mobile-open reveal-btn-container" id="tri3"> 
+
+<notextile><!-- !http://placehold.it/80x80! --></notextile>
+
+h2. Strength Training
+
+<div class="reveal-content">
+p. We build your core strength so you can do all the things you've always wanted to do.
+</div>
+</div>
+
+</section>
+</article>
+
+
+
+
+<article class="goto" id="training">
+<div class="container" >
+<section class="content" >
+
+h3. training
+
+h1(green). Take Control with Personal Training
+
+p(section-intro soft). Our personal training sessions include cardio, strength, and meal tracking. Each session combines both cardio and strength for a high interval workout.
+<br />
+Costs are listed per person, per session.
+</section>
+
+<section class="content" id="training-prices">
+
+table(training-table).
+|_\3(td-header).  One on One Training                       |
+|(td-cat).           |_(td-sub).60 min.  |_(td-sub).30 min. |
+|(td-cat).  1 Pack   |$65          |$45                     |
+|(td-cat). 10 Pack   |$55          |                        |
+|(td-cat). 20 Pack   |$45          |$35                     |
+|(td-cat). 30 Pack   |$35          |$25                     |
+|(td-cat). 40 Pack   |$25          |                        |
+
+table(training-table).
+|_\3(td-header).  u-Buddy Training                    |
+|(td-cat).           |_(td-sub).2 Person  |_(td-sub).3 Person  |
+|(td-cat).  1 Pack   |$32.50         |$22.50          |
+|(td-cat). 10 Pack   |$27.50         |$19.00          |
+|(td-cat). 20 Pack   |$22.50         |$15.00          |
+|(td-cat). 30 Pack   |$17.50         |$12.00          |
+|(td-cat). 40 Pack   |$12.50         |$9.50           |
+|\3(td-note). note: all u-buddy classes last one hour          |
+
+</section>
+
+<section class="content" >
+
+<div class="section-cta">
+
+h2. Assessments are always free. 
+
+p. Call us at "(phonelink) (901) 828-5678":tel:1-901-828-5678 to schedule a free appointment or "visit our gym":#footer
+</div>
+</section>
+
+
+</div>
+</article>
+
+
+<article class="goto" id="classes">
+<div class="container" >
+<section class="content" >
+
+h3. classes
+
+h1(green). Come Strong, Leave Empowered
+
+p(section-intro cloud). We also teach group cardio and conditioning classes. 
+<br/>
+Our classes are kept small so we can attend to each student's workout. We focus on strength and high interval training, while emphasizing form and control.
+
+
+
+<div class="section-trio classes-trio reveal-btn-container"> 
+
+<notextile><!-- !http://placehold.it/80x80! --></notextile>
+
+h2. U-Blast
+
+<div class="reveal-content">
+p(class-time). 50 minutes
+
+p(class-desc). Combining strength and cardio with interval training, you will spend 25 minutes inside the studio with strength training and 25 minutes of cardio in the park.
+
+<section class="content classes-prices" >
+table(classes-table).
+|(td-cat). 1 Pack   |$20  |
+|(td-cat). 5 Pack   |$15  |
+|(td-cat). 20 Pack  |$10  |
+</section>
+
+<div class="day-schedule">
+p(day). Tuesday
+
+p(time). 7am - 8am
+</div>
+
+<div class="day-schedule">
+p(day). Thursday
+
+p(time). 5:30pm - 6:30pm
+</div>
+
+<div class="day-schedule">
+p(day). Saturday
+
+p(time). 10am - 11am
+</div>
+
+</div>
+</div>
+<div class="section-trio classes-trio reveal-btn-container"> 
+
+<notextile><!-- !http://placehold.it/80x80! --></notextile>
+
+h2. U-Spin
+
+<div class="reveal-content">
+p(class-time). 45 minutes
+
+p(class-desc). Fun and energetic class of 45 minutes of spin cardio including sprints, heavy hill climbs, seated climbs and running jogs, to fun, energetic music.
+
+<section class="content classes-prices" >
+table(classes-table).
+|(td-cat). 1 Pack   |$20  |
+|(td-cat). 10 Pack  |$10  |
+|(td-cat). 15 Pack  |$10  |
+</section>
+
+<div class="day-schedule">
+p(day). Monday
+
+p(time). 6pm - 6:45pm
+</div>
+
+<div class="day-schedule">
+p(day). Friday
+
+p(time). 9am - 10am
+</div>
+
+</div>
+</div>
+<div class="section-trio classes-trio reveal-btn-container"> 
+
+<notextile><!-- !http://placehold.it/80x80! --></notextile>
+
+h2. U-Spin + Body
+
+<div class="reveal-content">
+
+p(class-time). 1 hour
+
+p(class-desc). The best of both worlds, this class combines both spin and strength training for a tough one-hour workout, challenging both  your strength, endurance and cardio.
+
+<section class="content classes-prices" >
+table(classes-table).
+|(td-cat). 1 Pack   |$20  |
+|(td-cat). 5 Pack  |$15  |
+|(td-cat). 10 Pack  |$10  |
+</section>
+
+
+
+
+
+<div class="day-schedule">
+p(day). Wednesday
+
+p(time). 7am - 8am
+</div>
+
+
+</div>
+
+</section>
+
+<section class="content" >
+
+<div class="section-cta">
+
+h2. Assessments are always free. 
+
+p. Call us at "(phonelink) (901) 828-5678":tel:1-901-828-5678 to schedule a free appointment or "visit our gym":#footer
+</div>
+</section>
+
+
+</div>
+</article>
+
+
+
+
+
+
+
+
+<article id="about" class="goto">
+<div class="container">
+<section class="content" id="about-1">
+
+h3. about
+
+h1(green). Humble Beginnings
+
+p(soft). For most people, losing weight is not easy. It takes dedication and permanent changes most people are unwilling to make. Diets, boot camps, and other solutions intended to "lose weight quickly" are neither sustainable nor realistic. 
+<br />
+In reality, eating a healthy diet and staying active requires a change in lifestyle that is neither drastic, nor hard to maintain. But it does take hard work and commitment.
+<br />
+upower fitness was founded on the idea that if you truly desire change in your life, we can make it happen. Because each individual's needs are unique, we work with each person to craft a unique plan - a plan that's right for their goals.
+</section>
+<section class="content" id="about-2">
+
+h1(light). Power to the Community
+
+p(section-intro ). upower fitness is not just about improving your own life, but also about improving lives of others and the life of the community itself. 
+<br />
+We partner with a number of local non-profit organizations around Atlanta, and once a month, the proceeds of a u-blast class will go towards a select charity.
+
+</section>
+<section class="content" id="biobabette">
+
+p(quote). &ldquo;What better way to live your life than by turning your life's passion into your life's profession?&rdquo;
+
+<notextile><img src="assets/images/trainer1.png" id="babetteimg" alt=""></notextile>
+
+p(trainer). Babette Lombardo
+%(qual)Founder and Head Trainer
+ISSA certified personal trainer, CPR/AED certified%
+
+p(trainer-para). Babette Lombardo, the founder and head trainer of upower Fitness has been able to accomplish this by turning her lifelong love of fitness, athletics and helping others into the movement that is upower fitness.
+<br />
+Babette grew up in a family that always encouraged her to follow her passion and work as hard as she could at everything she did. Her passion for tennis won her an full athletic scholarship at Jacksonville State University, where she earned her Bachelor of Arts degree. Moving to Atlanta in 2008 after graduation, she worked several years in sports marketing. While her love of athletics never waned and her desire to help others in some meaningful way continued to grow stronger, Babette began to realize her true calling. As her charitable work increased with Kate's Club and her fitness and cycle class instruction took off, Babette searched for ways to combine her desire to help with her passion for healthy living. 
+<br />
+After some time and a lot of discussion with family and friends, the concept of upower Fitness was born. Babette is eager to share her wealth of information about living a healthy, balanced life while simultaneously giving back to the community.
+
+</div>
+</section>
+
+
+<section class="content" id="bionoel">
+
+p(quote). &ldquo;Noel traded stilettos for sneakers to kick-start her dream of motivating others&rdquo;
+
+<notextile><img src="assets/images/trainer21.jpg" id="noelimg" alt=""></notextile>
+
+p(trainer2). Noel Milanese
+%(qual)NASM Certified%
+
+p(trainer-para). Upon joining upower fitness, Noel traded stilettos for sneakers to kick-start her dream of motivating others to live fit and healthy lifestyles.
+<br />
+Noel was first inspired by a fitness class at a local gym and was instantly drawn to the world of fitness. As a child who struggled with eating disorders and health issues, Noel realized that the importance of a healthy life starts at a young age. Her goals are to teach people how to eat a clean, healthy diet and how to exercise so that people develop healthy habits. Noel is certified through NASM and has published an e-book cookbook. 
+<br />
+upower is the perfect place for Noel to teach others that they have the power to make those positive changes in their lives. Noel is motivated to helping clients such as busy moms, dads, kids and everyone in between realize that small steps lead changes in lifestyle habits.
+
+</div>
+</section>
+
+</div>
+</article>
+
+<div>
+<!-- end index-container -->
+
+  <!-- <a class="goto" id="contact"></a> -->
+  <section id="footer">
+    <div class="container">
+  <div class="row" id="row-mailchimp">
+    <div id="mailchimp">
+      <div id="cta">Sign up for our newsletter</div>
+      
+<div id="mc_embed_signup">
+  <form action="http://liztic.us7.list-manage2.com/subscribe/post?u=d7e9e72f57617bab3ad6a19b3&amp;id=6dd0229079" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+    <div class="mc-field-group">
+      <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="e-mail *">
+      <input type="text" value="" name="FNAME" class="" id="mce-FNAME" placeholder="first name ">
+      <input type="text" value="" name="LNAME" class="" id="mce-LNAME" placeholder="last name ">
+      <span class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></span>
+    </div>
+    <div id="mce-responses" class="clear">
+      <div class="response" id="mce-error-response" style="display:none"></div>
+      <div class="response" id="mce-success-response" style="display:none"></div>
+    </div> 
+  </form>
+</div>
+        
+<script type="text/javascript">
+var fnames = new Array();var ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';
+try {
+    var jqueryLoaded=jQuery;
+    jqueryLoaded=true;
+} catch(err) {
+    var jqueryLoaded=false;
+}
+var head= document.getElementsByTagName('head')[0];
+if (!jqueryLoaded) {
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = '//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js';
+    head.appendChild(script);
+    if (script.readyState && script.onload!==null){
+        script.onreadystatechange= function () {
+              if (this.readyState == 'complete') mce_preload_check();
+        }    
+    }
+}
+var err_style = '';
+try{
+    err_style = mc_custom_error_style;
+} catch(e){
+    err_style = '';
+}
+var head= document.getElementsByTagName('head')[0];
+var style= document.createElement('style');
+style.type= 'text/css';
+if (style.styleSheet) {
+  style.styleSheet.cssText = err_style;
+} else {
+  style.appendChild(document.createTextNode(err_style));
+}
+head.appendChild(style);
+setTimeout('mce_preload_check();', 250);
+var mce_preload_checks = 0;
+function mce_preload_check(){
+    if (mce_preload_checks>40) return;
+    mce_preload_checks++;
+    try {
+        var jqueryLoaded=jQuery;
+    } catch(err) {
+        setTimeout('mce_preload_check();', 250);
+        return;
+    }
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'http://downloads.mailchimp.com/js/jquery.form-n-validate.js';
+    head.appendChild(script);
+    try {
+        var validatorLoaded=jQuery("#fake-form").validate({});
+    } catch(err) {
+        setTimeout('mce_preload_check();', 250);
+        return;
+    }
+    mce_init_form();
+}
+function mce_init_form(){
+    jQuery(document).ready( function($) {
+      var options = { errorClass: 'mce_inline_error', errorElement: 'div', onkeyup: function(){}, onfocusout:function(){}, onblur:function(){}  };
+      var mce_validator = $("#mc-embedded-subscribe-form").validate(options);
+      $("#mc-embedded-subscribe-form").unbind('submit');//remove the validator so we can get into beforeSubmit on the ajaxform, which then calls the validator
+      options = { url: 'http://liztic.us7.list-manage.com/subscribe/post-json?u=d7e9e72f57617bab3ad6a19b3&id=6dd0229079&c=?', type: 'GET', dataType: 'json', contentType: "application/json; charset=utf-8",
+                    beforeSubmit: function(){
+                        $('#mce_tmp_error_msg').remove();
+                        $('.datefield','#mc_embed_signup').each(
+                            function(){
+                                var txt = 'filled';
+                                var fields = new Array();
+                                var i = 0;
+                                $(':text', this).each(
+                                    function(){
+                                        fields[i] = this;
+                                        i++;
+                                    });
+                                $(':hidden', this).each(
+                                    function(){
+                                        var bday = false;
+                                        if (fields.length == 2){
+                                            bday = true;
+                                            fields[2] = {'value':1970};//trick birthdays into having years
+                                        }
+                                     if ( fields[0].value=='MM' && fields[1].value=='DD' && (fields[2].value=='YYYY' || (bday && fields[2].value==1970) ) ){
+                                      this.value = '';
+             } else if ( fields[0].value=='' && fields[1].value=='' && (fields[2].value=='' || (bday && fields[2].value==1970) ) ){
+                                      this.value = '';
+             } else {
+                 if (/\[day\]/.test(fields[0].name)){
+                                             this.value = fields[1].value+'/'+fields[0].value+'/'+fields[2].value;                 
+                 } else {
+                                             this.value = fields[0].value+'/'+fields[1].value+'/'+fields[2].value;
+                                         }
+                                     }
+                                    });
+                            });
+                        $('.phonefield-us','#mc_embed_signup').each(
+                            function(){
+                                var fields = new Array();
+                                var i = 0;
+                                $(':text', this).each(
+                                    function(){
+                                        fields[i] = this;
+                                        i++;
+                                    });
+                                $(':hidden', this).each(
+                                    function(){
+                                        if ( fields[0].value.length != 3 || fields[1].value.length!=3 || fields[2].value.length!=4 ){
+                                      this.value = '';
+             } else {
+                 this.value = 'filled';
+                                     }
+                                    });
+                            });
+                        return mce_validator.form();
+                    }, 
+                    success: mce_success_cb
+                };
+      $('#mc-embedded-subscribe-form').ajaxForm(options);
+      
+      
+    });
+}
+function mce_success_cb(resp){
+    $('#mce-success-response').hide();
+    $('#mce-error-response').hide();
+    if (resp.result=="success"){
+        $('#mce-'+resp.result+'-response').show();
+        $('#mce-'+resp.result+'-response').html(resp.msg);
+        $('#mc-embedded-subscribe-form').each(function(){
+            this.reset();
+     });
+    } else {
+        var index = -1;
+        var msg;
+        try {
+            var parts = resp.msg.split(' - ',2);
+            if (parts[1]==undefined){
+                msg = resp.msg;
+            } else {
+                i = parseInt(parts[0]);
+                if (i.toString() == parts[0]){
+                    index = parts[0];
+                    msg = parts[1];
+                } else {
+                    index = -1;
+                    msg = resp.msg;
+                }
+            }
+        } catch(e){
+            index = -1;
+            msg = resp.msg;
+        }
+        try{
+            if (index== -1){
+                $('#mce-'+resp.result+'-response').show();
+                $('#mce-'+resp.result+'-response').html(msg);            
+            } else {
+                err_id = 'mce_tmp_error_msg';
+                html = '<div id="'+err_id+'" style="'+err_style+'"> '+msg+'</div>';
+                
+                var input_id = '#mc_embed_signup';
+                var f = $(input_id);
+                if (ftypes[index]=='address'){
+                    input_id = '#mce-'+fnames[index]+'-addr1';
+                    f = $(input_id).parent().parent().get(0);
+                } else if (ftypes[index]=='date'){
+                    input_id = '#mce-'+fnames[index]+'-month';
+                    f = $(input_id).parent().parent().get(0);
+                } else {
+                    input_id = '#mce-'+fnames[index];
+                    f = $().parent(input_id).get(0);
+                }
+                if (f){
+                    $(f).append(html);
+                    $(input_id).focus();
+                } else {
+                    $('#mce-'+resp.result+'-response').show();
+                    $('#mce-'+resp.result+'-response').html(msg);
+                }
+            }
+        } catch(e){
+            $('#mce-'+resp.result+'-response').show();
+            $('#mce-'+resp.result+'-response').html(msg);
+        }
+    }
+}
+</script>
+    </div>
+  </div>
+  <div class="row">
+    <div id="basic">
+      <span id="copyright"><a href="index.html">&copy; Liztic LLC</a></span>
+      <span class="separator">|</span>
+      <span id="contact"><a href="aboutliztic.html">Contact</a></span>
+      <!-- <span class="separator">|</span>
+      <span id="contact"><a href="mailto:contact@liztic.com">info@liztic.com</a></span> -->
+      
+      <span class="separator-long"></span>
+
+      <span id="privacy"><a href="termsofserviceweb.html">Terms of Service</a></span>
+      <span class="separator">|</span>
+      <span id="terms"><a href="privacypolicyweb.html">Privacy Policy</a></span>
+    </div>
+    <div id="social">
+      <!-- <span>Made with Love in Atlanta, Georgia</span> -->
+      <a href="http://www.facebook.com/lizticmusicplayer" class="facebook"></a>
+      <a href="http://www.twitter.com/LizticMusic" class="twitter"></a>
+      <a href="http://www.youtube.com/LizticMusic" class="youtube"></a>
+      <a href="http://www.pinterest.com/lizticmusicplayer" class="pinterest"></a>
+      <a href="http://www.instagram.com/liztic" class="instagram"></a>
+      <a href="https://plus.google.com/109321792061988163686" class="googleplus"></a>
+    </div>
+  </div>
+
+</div>
+
+    
+  </section>
+
+ 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.0.6-development-only.js"></script>
+  <script src="assets/script.js"></script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+   
+    ga('create', 'UA-45287704-1', 'liztic.com');
+    ga('send', 'pageview');
+  </script>
+
+</body>
+</html>

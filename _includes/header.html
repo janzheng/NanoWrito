@@ -1,0 +1,110 @@
+{% assign url = page.url|remove:'index.html' %}
+
+
+<div id="modal" style="display:none">
+   <div class="blanket" ></div>
+
+   <!-- css-only v-align div from http://emergentweb.com/test/valign.html# -->
+   <div class="modal-container">
+      <div class="modal-pad">
+
+         <div class="modal-item" id="modal-login" style="display:none">
+            <div class="container">
+               <div class="row" ><div class="modal-logo"></div></div><div class="row" >
+                  <div id="modal-header">
+                     Log in to Liztic
+                  </div>
+                  <form ng-submit="create()" name="createform" class="ng-pristine ng-invalid ng-invalid-required">
+                     <div class="row" ><input type="text" ng-model="userid" class="topcoat-text-input--large full ng-pristine ng-valid" placeholder="Email address"></div>
+                     <div class="row" ><input type="password" ng-model="password" name="passwordform" class="topcoat-text-input--large full ng-pristine ng-invalid ng-invalid-required" placeholder="Password" >
+                        <!-- <div class="modal-error">This is an inline error message.</div> -->
+                     </div>
+                     <div class="row" >
+                        <div class="modal-check">
+                           <input type="checkbox" id="stayLogged" checked="true" ng-model="persist" class="ng-pristine ng-valid">
+                           <label class="inline" for="stayLogged"><span class="box"><span class="check"></span></span><span class="inlineCheck">Stay logged in</span></label>
+                        </div>
+
+                     </div>
+                     <div class="row" ><button class="modal-btn topcoat-button--large--cta full" ng-click="create()" ng-disabled="disabled">Log in to Liztic</button></div>
+                  </form>
+               </div>
+               <div class="row">
+                  <div class="modal-footer">
+                     <div>Forgot your password? <a href="#">Click to Reset</a></div>
+                     <div>New to Liztic? <a href="#" class="switch-to-signup">Create a new account</a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="modal-item" id="modal-signup" style="display:none">
+            <div class="container">
+               <div class="row" ><div class="modal-logo"></div></div>
+               <div class="row" >
+                  <div id="modal-header">
+                     Get Started with Liztic
+                  </div>
+                  <form ng-submit="create()" name="createform" class="ng-pristine ng-invalid ng-invalid-required">
+                     <div class="row" ><input type="email" ng-model="email" name="emailform" class="topcoat-text-input--large full ng-pristine ng-invalid ng-invalid-required ng-valid-email" placeholder="Email address" ></div>
+                     <!-- <div class="row" ><input type="text" ng-model="first" name="firstform" class="topcoat-text-input--large full ng-pristine ng-invalid ng-invalid-required" placeholder="First name" ></div> -->
+                     <!-- <div class="row" ><input type="text" ng-model="last" name="lastform" class="topcoat-text-input--large full ng-pristine ng-invalid ng-invalid-required" placeholder="Last name" ></div> -->
+                     <div class="row" ><input type="password" ng-model="password" name="passwordform" class="modal-input-error topcoat-text-input--large full ng-pristine ng-invalid ng-invalid-required" placeholder="Password" >
+                        <!-- sample error note the modal-input-error class on the input for highlighting -->
+                        <div class="modal-error">This is an inline error message.</div></div>
+                     <div class="row" ><input type="password" ng-model="password2" name="password2form" class="topcoat-text-input--large full ng-pristine ng-invalid ng-invalid-required" placeholder="Re-enter password" ></div>
+                     <div class="row" ><input type="text" ng-model="referral" class="topcoat-text-input--large full ng-pristine ng-valid" placeholder="Referral Code or Email"></div>
+                     <div class="row">
+                     <div class="modal-footer modal-legal">
+                        <div>By clicking on "Create Account", you agree to our <a href="termsofserviceweb.html" target="_blank">Terms of Service</a> and <a href="privacypolicyweb.html" target="_blank">Privacy Policy</a></div>
+                     </div>
+                  </div>
+                     <div class="row" ><button class="modal-btn topcoat-button--large--cta full" ng-click="create()" ng-disabled="disabled">Create Account</button></div>
+                     <div class="row" ><div class="modal-error-general error ng-binding" ng-bind-html-unsafe="error">This is a sample error statement that's also kind of long</div></div>
+                  </form>
+               </div>
+               <div class="row">
+                  <div class="modal-footer">
+                     <div>Already a member? <a href="#" class="switch-to-login">Log in</a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+      </div> <!-- end modal pad-->
+   </div> <!-- end modal container -->
+
+
+
+
+</div>
+
+<div class="floater">
+   <div id="menu-bg"></div>
+   <div class="container">
+      <div class="row">
+
+         <div id="logo-wrapper">
+            <div id="logo"><a href="index.html"></a></div>
+            <div id="wordmark"><a href="index.html"></a></div>
+         </div>
+
+
+         <!-- the following links are on one line so Chrome doens't render \n as a space -->
+         <div id="menu">
+            <div id="main-menu">
+               {% for link in site.navigation %}<a {% if url == link.url %}class="active"{% endif %} href="{{link.url}}" title="{{link.title}}">{{link.text}}</a>{% endfor %}
+            </div>
+
+            <!-- the following are for login / signup buttons, and welcome message -->
+            <div id="account">
+               <div id="welcome" style="display:none">Hello, Steve. <a id="logout" href="#">Log Out</a></div>
+               <div id="account-menu"><a id="login" class="modal-login login-btn" >Log in</a><a id="signup" class="modal-signup signup-btn">Sign up</a></div>
+            </div>
+         </div>
+     </div>
+
+   </div>
+</div>
+
+<div class="clear"></div>
+

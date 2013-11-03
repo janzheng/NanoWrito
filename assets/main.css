@@ -1,0 +1,1903 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:200,400,500,600,700,800,900);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,600,700);
+@import url(http://fonts.googleapis.com/css?family=Cabin:400,500,600,700);
+@import url(http://fonts.googleapis.com/css?family=Baumans);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
+@import url(http://fonts.googleapis.com/css?family=Quicksand:300,400,700);
+/* line 2, ../_liztic-sass/neat/grid/_grid.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*  HTML5 ✰ Boilerplate  */
+/* line 16, ../_liztic-sass/____reset.scss */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, .legal li strong:first-child, .legal .alpha strong:first-child, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 26, ../_liztic-sass/____reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 30, ../_liztic-sass/____reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 32, ../_liztic-sass/____reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 33, ../_liztic-sass/____reset.scss */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* line 34, ../_liztic-sass/____reset.scss */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* line 35, ../_liztic-sass/____reset.scss */
+del {
+  text-decoration: line-through;
+}
+
+/* line 36, ../_liztic-sass/____reset.scss */
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+/* line 37, ../_liztic-sass/____reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 38, ../_liztic-sass/____reset.scss */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/* line 39, ../_liztic-sass/____reset.scss */
+input, select {
+  vertical-align: middle;
+}
+
+/* line 42, ../_liztic-sass/____reset.scss */
+body {
+  font: 16px sans-serif;
+  *font-size: small;
+}
+
+/* line 43, ../_liztic-sass/____reset.scss */
+select, input, textarea, button {
+  font: 99% sans-serif;
+}
+
+/* line 44, ../_liztic-sass/____reset.scss */
+pre, code, kbd, samp {
+  font-family: monospace, sans-serif;
+}
+
+/* line 46, ../_liztic-sass/____reset.scss */
+html {
+  overflow-y: scroll;
+}
+
+/* line 47, ../_liztic-sass/____reset.scss */
+a:hover, a:active {
+  outline: none;
+}
+
+/* line 50, ../_liztic-sass/____reset.scss */
+ul, ol {
+  margin-left: 0em;
+}
+
+/* line 51, ../_liztic-sass/____reset.scss */
+ul {
+  list-style-type: circle;
+  list-style-position: inside;
+}
+
+/* line 52, ../_liztic-sass/____reset.scss */
+ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+/* line 54, ../_liztic-sass/____reset.scss */
+nav ul, nav li {
+  margin: 0;
+  list-style: none;
+  list-style-image: none;
+}
+
+/* line 55, ../_liztic-sass/____reset.scss */
+small {
+  font-size: 85%;
+}
+
+/* line 56, ../_liztic-sass/____reset.scss */
+strong, th {
+  font-weight: bold;
+}
+
+/* line 57, ../_liztic-sass/____reset.scss */
+td {
+  vertical-align: top;
+}
+
+/* line 59, ../_liztic-sass/____reset.scss */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+
+/* line 60, ../_liztic-sass/____reset.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 61, ../_liztic-sass/____reset.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 63, ../_liztic-sass/____reset.scss */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 15px;
+}
+
+/* line 64, ../_liztic-sass/____reset.scss */
+textarea {
+  overflow: auto;
+}
+
+/* line 65, ../_liztic-sass/____reset.scss */
+.ie6 legend, .ie7 legend {
+  margin-left: -7px;
+}
+
+/* line 66, ../_liztic-sass/____reset.scss */
+input[type="radio"] {
+  vertical-align: text-bottom;
+}
+
+/* line 67, ../_liztic-sass/____reset.scss */
+input[type="checkbox"] {
+  vertical-align: bottom;
+}
+
+/* line 68, ../_liztic-sass/____reset.scss */
+.ie7 input[type="checkbox"] {
+  vertical-align: baseline;
+}
+
+/* line 69, ../_liztic-sass/____reset.scss */
+.ie6 input {
+  vertical-align: text-bottom;
+}
+
+/* line 70, ../_liztic-sass/____reset.scss */
+label, input[type="button"], input[type="submit"], input[type="image"], button {
+  cursor: pointer;
+}
+
+/* line 71, ../_liztic-sass/____reset.scss */
+button, input, select, textarea {
+  margin: 0;
+}
+
+/* line 73, ../_liztic-sass/____reset.scss */
+input:invalid, textarea:invalid {
+  border-radius: 1px;
+  -moz-box-shadow: 0px 0px 5px red;
+  -webkit-box-shadow: 0px 0px 5px red;
+  box-shadow: 0px 0px 5px red;
+}
+
+/* line 74, ../_liztic-sass/____reset.scss */
+.no-boxshadow input:invalid, .no-boxshadow textarea:invalid {
+  background-color: #f0dddd;
+}
+
+/* line 77, ../_liztic-sass/____reset.scss */
+button {
+  width: auto;
+  overflow: visible;
+}
+
+/* line 78, ../_liztic-sass/____reset.scss */
+.ie7 img {
+  -ms-interpolation-mode: bicubic;
+}
+
+/* line 80, ../_liztic-sass/____reset.scss */
+body, select, input, textarea {
+  color: #444;
+}
+
+/* line 85, ../_liztic-sass/____reset.scss */
+.ir {
+  display: block;
+  text-indent: -999em;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  text-align: left;
+  direction: ltr;
+}
+
+/* line 86, ../_liztic-sass/____reset.scss */
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+/* line 87, ../_liztic-sass/____reset.scss */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* line 89, ../_liztic-sass/____reset.scss */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/* line 90, ../_liztic-sass/____reset.scss */
+.invisible {
+  visibility: hidden;
+}
+
+/* line 91, ../_liztic-sass/____reset.scss */
+.clearfix:before, .clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+/* line 92, ../_liztic-sass/____reset.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 93, ../_liztic-sass/____reset.scss */
+.clearfix {
+  zoom: 1;
+}
+
+/* line 60, ../_liztic-sass/____framework.scss */
+.show-small {
+  display: none !important;
+}
+@media screen and (min-width: 0px) {
+  /* line 60, ../_liztic-sass/____framework.scss */
+  .show-small {
+    display: block !important;
+  }
+}
+
+/* line 61, ../_liztic-sass/____framework.scss */
+.show-small-only {
+  display: none !important;
+}
+@media screen and (max-width: 480px) {
+  /* line 61, ../_liztic-sass/____framework.scss */
+  .show-small-only {
+    display: block !important;
+  }
+}
+
+/* line 66, ../_liztic-sass/____framework.scss */
+.show-medium {
+  display: none !important;
+}
+@media screen and (min-width: 481px) {
+  /* line 66, ../_liztic-sass/____framework.scss */
+  .show-medium {
+    display: block !important;
+  }
+}
+
+/* line 67, ../_liztic-sass/____framework.scss */
+.show-medium-only {
+  display: none !important;
+}
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  /* line 67, ../_liztic-sass/____framework.scss */
+  .show-medium-only {
+    display: block !important;
+  }
+}
+
+/* line 68, ../_liztic-sass/____framework.scss */
+.show-medium-max {
+  display: none !important;
+}
+@media screen and (max-width: 767px) {
+  /* line 68, ../_liztic-sass/____framework.scss */
+  .show-medium-max {
+    display: block !important;
+  }
+}
+
+/* line 73, ../_liztic-sass/____framework.scss */
+.show-larger {
+  display: none !important;
+}
+@media screen and (min-width: 768px) {
+  /* line 73, ../_liztic-sass/____framework.scss */
+  .show-larger {
+    display: block !important;
+  }
+}
+
+/* line 74, ../_liztic-sass/____framework.scss */
+.show-larger-only {
+  display: none !important;
+}
+@media screen and (min-width: 768) and (max-width: 979) {
+  /* line 74, ../_liztic-sass/____framework.scss */
+  .show-larger-only {
+    display: block !important;
+  }
+}
+
+/* line 75, ../_liztic-sass/____framework.scss */
+.show-larger-max {
+  display: none !important;
+}
+@media screen and (max-width: 979px) {
+  /* line 75, ../_liztic-sass/____framework.scss */
+  .show-larger-max {
+    display: block !important;
+  }
+}
+
+/* line 78, ../_liztic-sass/____framework.scss */
+.show-largest {
+  display: none !important;
+}
+@media screen and (min-width: 980px) {
+  /* line 78, ../_liztic-sass/____framework.scss */
+  .show-largest {
+    display: block !important;
+  }
+}
+
+/* line 104, ../_liztic-sass/____framework.scss */
+.container {
+  *zoom: 1;
+  max-width: 60em;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 18, ../_liztic-sass/bourbon/addons/_clearfix.scss */
+.container:before, .container:after {
+  content: " ";
+  display: table;
+}
+/* line 23, ../_liztic-sass/bourbon/addons/_clearfix.scss */
+.container:after {
+  clear: both;
+}
+
+@media screen and (min-width: 0px) {
+  /* line 105, ../_liztic-sass/____framework.scss */
+  .row {
+    display: block;
+    float: left;
+    margin-right: 4.82916%;
+    width: 100%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  .row:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 481px) {
+  /* line 105, ../_liztic-sass/____framework.scss */
+  .row {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 100%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  .row:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 105, ../_liztic-sass/____framework.scss */
+  .row {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 100%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  .row:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 980px) {
+  /* line 105, ../_liztic-sass/____framework.scss */
+  .row {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 100%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  .row:last-child {
+    margin-right: 0;
+  }
+}
+
+/* line 120, ../_liztic-sass/_design.scss */
+.white {
+  color: black;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* line 121, ../_liztic-sass/_design.scss */
+.orange {
+  background-color: rgba(255, 195, 40, 0.7);
+}
+
+/* line 122, ../_liztic-sass/_design.scss */
+.green {
+  color: white;
+  background-color: rgba(109, 152, 71, 0.84);
+}
+
+/* line 123, ../_liztic-sass/_design.scss */
+.dark {
+  color: #cccccc;
+  background-color: rgba(70, 70, 70, 0.8);
+}
+
+/* line 124, ../_liztic-sass/_design.scss */
+.lighter {
+  color: #333333;
+  background-color: rgba(255, 255, 255, 0.88);
+}
+
+/* line 125, ../_liztic-sass/_design.scss */
+.light {
+  color: #333333;
+  background-color: rgba(250, 250, 250, 0.86);
+}
+
+/* line 126, ../_liztic-sass/_design.scss */
+.soft {
+  color: #333333;
+  background-color: rgba(255, 255, 255, 0.56);
+}
+
+/* line 127, ../_liztic-sass/_design.scss */
+.cloud {
+  background-color: rgba(100, 100, 100, 0.06);
+}
+
+/* line 128, ../_liztic-sass/_design.scss */
+.glass {
+  background-color: rgba(80, 80, 80, 0.46);
+}
+
+/* line 129, ../_liztic-sass/_design.scss */
+.glassdark {
+  background-color: rgba(20, 20, 20, 0.59);
+}
+
+/* line 130, ../_liztic-sass/_design.scss */
+.txtsilver {
+  color: #f2f2f2;
+}
+
+/* line 139, ../_liztic-sass/_design.scss */
+.reveal-btn:before, .reveal-btn-container:before {
+  font-family: 'Raleway', sans-serif;
+}
+
+/* line 142, ../_liztic-sass/_design.scss */
+body h1, body h2, body h3, body h4, body h5, body .legal li strong:first-child, .legal li body strong:first-child, body .legal .alpha strong:first-child, .legal .alpha body strong:first-child, #header, #footer {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* line 158, ../_liztic-sass/_design.scss */
+body p, .legal p, .legal li, .legal .alpha {
+  font-family: Georgia, serif;
+}
+
+/* line 184, ../_liztic-sass/_design.scss */
+#header #menu #main-menu .active, #header #menu #account #login:hover, #header #menu #account #logout:hover, #header #menu #account #signup:hover, #mailchimp #mc_embed_signup input[type="submit"]:hover, #modal .modal-item button:hover {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 255, 255, 0.1);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* line 189, ../_liztic-sass/_design.scss */
+#modal .modal-item {
+  box-shadow: 0 5px 23px rgba(0, 0, 0, 0.4), 0 1px 0 white;
+}
+
+/* line 193, ../_liztic-sass/_design.scss */
+input, button {
+  -moz-box-shadow: rgba(0, 0, 0, 0.05) 0 1px 3px inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.05) 0 1px 3px inset;
+  box-shadow: rgba(0, 0, 0, 0.05) 0 1px 3px inset;
+}
+
+/* line 199, ../_liztic-sass/_design.scss */
+#header #menu-bg {
+  -moz-box-shadow: 0 0 5px 5px #888;
+  -webkit-box-shadow: 0 0 5px 5px#888;
+  box-shadow: 0 0 3px 0px #888;
+}
+
+/* line 207, ../_liztic-sass/_design.scss */
+#header #logo-wrapper #logo:before {
+  content: "";
+  position: absolute;
+  z-index: -10;
+  top: 0;
+  bottom: 0;
+  height: 30px;
+  width: 90px;
+  box-shadow: 0 52px 3px 0 #888;
+}
+
+/* line 10, ../_liztic-sass/_function.scss */
+.floater {
+  position: fixed;
+  z-index: 99999;
+}
+@media screen and (min-width: 0px) {
+  /* line 10, ../_liztic-sass/_function.scss */
+  .floater {
+    display: block;
+    float: left;
+    margin-right: 4.82916%;
+    width: 100%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  .floater:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 481px) {
+  /* line 10, ../_liztic-sass/_function.scss */
+  .floater {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 100%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  .floater:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 10, ../_liztic-sass/_function.scss */
+  .floater {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 100%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  .floater:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 980px) {
+  /* line 10, ../_liztic-sass/_function.scss */
+  .floater {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 100%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  .floater:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* line 23, ../_liztic-sass/_function.scss */
+  .reveal-btn, .reveal-btn-container {
+    cursor: hand;
+    cursor: pointer;
+  }
+  /* line 26, ../_liztic-sass/_function.scss */
+  .reveal-btn:hover, .reveal-btn-container:hover {
+    background: rgba(180, 180, 180, 0.4) !important;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+  }
+}
+
+/* line 30, ../_liztic-sass/_function.scss */
+.reveal-btn:before, .reveal-btn-container:before {
+  font-size: 1.9rem;
+  font-weight: 100;
+  content: '>';
+  position: absolute;
+  right: 25px;
+  line-height: 26px;
+  display: block;
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  /* IE 9 */
+  -webkit-transform: rotate(90deg);
+  /* Safari and Chrome */
+}
+@media screen and (min-width: 481px) {
+  /* line 30, ../_liztic-sass/_function.scss */
+  .reveal-btn:before, .reveal-btn-container:before {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* line 44, ../_liztic-sass/_function.scss */
+  .reveal-content {
+    display: none;
+  }
+}
+
+/*********************************************************
+   CONTENT LAYOUT MAP
+
+   <body
+      <section #section-name          // main sections of body
+         <article #article-name       // different parts of the section
+            <div .container           // neat.bourbon container wrapper for columns
+               <section 
+
+      #header
+      #main
+      #footer
+
+*********************************************************/
+/* line 65, ../_liztic-sass/main.scss */
+body {
+  background-color: #f2f2f2;
+}
+/* line 66, ../_liztic-sass/main.scss */
+body h1, body h2 {
+  font-weight: 700;
+  color: black;
+}
+/* line 67, ../_liztic-sass/main.scss */
+body h3, body h4, body h5, body .legal li strong:first-child, .legal li body strong:first-child, body .legal .alpha strong:first-child, .legal .alpha body strong:first-child {
+  font-weight: 700;
+  color: black;
+}
+/* line 68, ../_liztic-sass/main.scss */
+body h1 {
+  font-size: 5rem;
+}
+/* line 69, ../_liztic-sass/main.scss */
+body h2 {
+  font-size: 3rem;
+}
+/* line 70, ../_liztic-sass/main.scss */
+body h3 {
+  font-size: 1.3rem;
+  padding: 0.75rem 0;
+}
+/* line 71, ../_liztic-sass/main.scss */
+body h5, body .legal li strong:first-child, .legal li body strong:first-child, body .legal .alpha strong:first-child, .legal .alpha body strong:first-child {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.75rem 0;
+}
+/* line 72, ../_liztic-sass/main.scss */
+body p {
+  font-size: 0.9rem;
+  font-weight: normal;
+  line-height: 1.3rem;
+  color: #333333;
+  padding: 0.5rem 0;
+}
+/* line 74, ../_liztic-sass/main.scss */
+body a, body a:active, body a:visited {
+  color: #093275;
+  text-decoration: none;
+}
+/* line 75, ../_liztic-sass/main.scss */
+body a:hover {
+  color: #6699cc;
+  text-decoration: underline;
+}
+/* line 78, ../_liztic-sass/main.scss */
+body article {
+  background-color: white;
+}
+
+/* line 81, ../_liztic-sass/main.scss */
+.row {
+  padding: 1rem;
+}
+
+/* line 82, ../_liztic-sass/main.scss */
+.separator {
+  padding: 0 0.125rem;
+}
+
+/* line 83, ../_liztic-sass/main.scss */
+.separator-long {
+  padding: 0 1rem;
+}
+
+/* line 85, ../_liztic-sass/main.scss */
+input, button {
+  padding: 0.5rem 1rem;
+  -webkit-transition: all 0.15s ease-out 0;
+  -moz-transition: all 0.15s ease-out 0;
+  -ms-transition: all 0.15s ease-out 0;
+  -o-transition: all 0.15s ease-out 0;
+  transition: all 0.15s ease-out 0;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.8);
+  border: #74a2d0 1px solid;
+  outline: 0;
+  -webkit-border-radius: 4px 4px;
+  -moz-border-radius: 4px / 4px;
+  border-radius: 4px / 4px;
+  color: #3e3e3e;
+}
+/* line 94, ../_liztic-sass/main.scss */
+input:focus, button:focus {
+  border: 1px solid #f2941b;
+  -webkit-transition: all 0.25s ease-out 0;
+  -moz-transition: all 0.25s ease-out 0;
+  -ms-transition: all 0.25s ease-out 0;
+  -o-transition: all 0.25s ease-out 0;
+  transition: all 0.25s ease-out 0;
+}
+
+/* line 106, ../_liztic-sass/main.scss */
+#header {
+  font-weight: 400;
+  color: #3366cc;
+}
+/* line 107, ../_liztic-sass/main.scss */
+#header .row {
+  padding: 0;
+}
+/* line 114, ../_liztic-sass/main.scss */
+#header #menu-bg {
+  z-index: 10000;
+  padding: 1.5rem 0;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background: white;
+}
+@media screen and (min-width: 0px) {
+  /* line 124, ../_liztic-sass/main.scss */
+  #header #logo-wrapper {
+    display: block;
+    float: left;
+    margin-right: 4.82916%;
+    width: 100%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #header #logo-wrapper:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 481px) {
+  /* line 124, ../_liztic-sass/main.scss */
+  #header #logo-wrapper {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 14.70196%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #header #logo-wrapper:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 124, ../_liztic-sass/main.scss */
+  #header #logo-wrapper {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 14.70196%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #header #logo-wrapper:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 980px) {
+  /* line 124, ../_liztic-sass/main.scss */
+  #header #logo-wrapper {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 14.70196%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #header #logo-wrapper:last-child {
+    margin-right: 0;
+  }
+}
+/* line 127, ../_liztic-sass/main.scss */
+#header #logo-wrapper #logo {
+  max-width: 90px;
+  z-index: 10010;
+  position: relative;
+  display: block;
+  padding: 0.75rem 0;
+}
+/* line 135, ../_liztic-sass/main.scss */
+#header #logo-wrapper #logo a {
+  display: inline-block;
+  height: 70px;
+  width: 90px;
+  background: url(images/liztic.png) no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: white;
+}
+/* line 143, ../_liztic-sass/main.scss */
+#header #logo-wrapper #wordmark {
+  max-width: 76px;
+  z-index: 10012;
+  position: absolute;
+  display: block;
+  padding-left: 5rem;
+  top: 10px;
+}
+/* line 147, ../_liztic-sass/main.scss */
+#header #logo-wrapper #wordmark a {
+  display: inline-block;
+  height: 30px;
+  width: 76px;
+  background: url(images/wordmark.png) no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+/* line 156, ../_liztic-sass/main.scss */
+#header #menu {
+  z-index: 10005;
+  position: relative;
+  font-size: 0.9rem;
+  text-align: right;
+  padding-top: 1rem;
+}
+@media screen and (min-width: 0px) {
+  /* line 156, ../_liztic-sass/main.scss */
+  #header #menu {
+    display: block;
+    float: left;
+    margin-right: 4.82916%;
+    width: 100%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #header #menu:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 481px) {
+  /* line 156, ../_liztic-sass/main.scss */
+  #header #menu {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 82.94039%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #header #menu:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 156, ../_liztic-sass/main.scss */
+  #header #menu {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 82.94039%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #header #menu:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 980px) {
+  /* line 156, ../_liztic-sass/main.scss */
+  #header #menu {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 82.94039%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #header #menu:last-child {
+    margin-right: 0;
+  }
+}
+/* line 158, ../_liztic-sass/main.scss */
+#header #menu a {
+  padding: 0;
+  margin: 0;
+}
+/* line 165, ../_liztic-sass/main.scss */
+#header #menu #main-menu {
+  display: inline-block;
+  padding-right: 1rem;
+}
+/* line 168, ../_liztic-sass/main.scss */
+#header #menu #main-menu a {
+  padding: 1rem;
+}
+/* line 170, ../_liztic-sass/main.scss */
+#header #menu #main-menu a:hover {
+  color: #f9f9f9;
+  text-decoration: none;
+  background: #3e3e3e;
+  -webkit-transition: all 0.15s ease-out 0;
+  -moz-transition: all 0.15s ease-out 0;
+  -ms-transition: all 0.15s ease-out 0;
+  -o-transition: all 0.15s ease-out 0;
+  transition: all 0.15s ease-out 0;
+}
+/* line 177, ../_liztic-sass/main.scss */
+#header #menu #main-menu .active {
+  background: #6699cc;
+  color: white;
+}
+/* line 185, ../_liztic-sass/main.scss */
+#header #menu #account {
+  display: inline-block;
+}
+/* line 189, ../_liztic-sass/main.scss */
+#header #menu #account #welcome {
+  margin-left: 2rem;
+  padding-right: 2rem;
+}
+/* line 193, ../_liztic-sass/main.scss */
+#header #menu #account #login, #header #menu #account #logout {
+  padding: 0.45rem 1.25rem;
+  margin-right: 1rem;
+  -webkit-border-radius: 3px 3px;
+  -moz-border-radius: 3px / 3px;
+  border-radius: 3px / 3px;
+  color: #f9f9f9;
+  background: rgba(242, 148, 27, 0.9);
+  cursor: pointer;
+}
+/* line 199, ../_liztic-sass/main.scss */
+#header #menu #account #login:hover, #header #menu #account #logout:hover {
+  background: #ee810f;
+  text-decoration: none;
+  -webkit-transition: all 0.15s ease-out 0;
+  -moz-transition: all 0.15s ease-out 0;
+  -ms-transition: all 0.15s ease-out 0;
+  -o-transition: all 0.15s ease-out 0;
+  transition: all 0.15s ease-out 0;
+}
+/* line 207, ../_liztic-sass/main.scss */
+#header #menu #account #logout {
+  margin: 0 0 0 1rem;
+}
+/* line 208, ../_liztic-sass/main.scss */
+#header #menu #account #signup {
+  padding: 1rem 1.25rem 0.45rem 1.25rem;
+  background: rgba(102, 153, 204, 0.9);
+  color: #f9f9f9;
+  border-radius: 0 0 4px 4px;
+  cursor: pointer;
+}
+/* line 215, ../_liztic-sass/main.scss */
+#header #menu #account #signup:hover {
+  background: #3366cc;
+  text-decoration: none;
+  -webkit-transition: all 0.15s ease-out 0;
+  -moz-transition: all 0.15s ease-out 0;
+  -ms-transition: all 0.15s ease-out 0;
+  -o-transition: all 0.15s ease-out 0;
+  transition: all 0.15s ease-out 0;
+}
+
+/* line 228, ../_liztic-sass/main.scss */
+.header-spacing {
+  padding: 1rem 0;
+}
+
+/* line 240, ../_liztic-sass/main.scss */
+#intro #hero .row {
+  display: block;
+  float: left;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  margin-left: 25.58941%;
+  /*- See more at: http://avexdesigns.com/responsive-youtube-embed/#sthash.RQDSwqMy.dpuf*/
+}
+/* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+#intro #hero .row:last-child {
+  margin-right: 0;
+}
+/* line 243, ../_liztic-sass/main.scss */
+#intro #hero .row .youtube {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+/* line 247, ../_liztic-sass/main.scss */
+#intro #hero .row .youtube iframe, #intro #hero .row .youtube object, #intro #hero .row .youtube embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* line 254, ../_liztic-sass/main.scss */
+#intro #newsletter {
+  background: #f2f2f2;
+}
+
+@media screen and (min-width: 0px) {
+  /* line 262, ../_liztic-sass/main.scss */
+  #get-liztic #download .row {
+    display: block;
+    float: left;
+    margin-right: 4.82916%;
+    width: 100%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #get-liztic #download .row:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 481px) {
+  /* line 262, ../_liztic-sass/main.scss */
+  #get-liztic #download .row {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 100%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #get-liztic #download .row:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 262, ../_liztic-sass/main.scss */
+  #get-liztic #download .row {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 100%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #get-liztic #download .row:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 980px) {
+  /* line 262, ../_liztic-sass/main.scss */
+  #get-liztic #download .row {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 100%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #get-liztic #download .row:last-child {
+    margin-right: 0;
+  }
+}
+/* line 264, ../_liztic-sass/main.scss */
+#get-liztic #download .row a {
+  display: inline-block;
+  height: 40px;
+  width: 120px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+/* line 270, ../_liztic-sass/main.scss */
+#get-liztic #download .row a.win {
+  width: 60px;
+  background-image: url(images/windows8-sm.png);
+}
+/* line 271, ../_liztic-sass/main.scss */
+#get-liztic #download .row a.mac {
+  width: 60px;
+  background-image: url(images/apple-sm.png);
+}
+/* line 272, ../_liztic-sass/main.scss */
+#get-liztic #download .row a.appstore {
+  background-image: url(images/appstore.png);
+}
+/* line 273, ../_liztic-sass/main.scss */
+#get-liztic #download .row a.googleplay {
+  background-image: url(images/googleplay.png);
+}
+/* line 274, ../_liztic-sass/main.scss */
+#get-liztic #download .row a.kindle {
+  background-image: url(images/kindle.png);
+}
+
+/* line 289, ../_liztic-sass/main.scss */
+#footer {
+  background: #f2f2f2;
+  box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.5);
+  text-shadow: none;
+}
+/* line 297, ../_liztic-sass/main.scss */
+#footer .separator {
+  color: #093275;
+}
+/* line 299, ../_liztic-sass/main.scss */
+#footer #basic {
+  margin-top: 7px;
+  font-size: 0.9rem;
+}
+@media screen and (min-width: 0px) {
+  /* line 299, ../_liztic-sass/main.scss */
+  #footer #basic {
+    display: block;
+    float: left;
+    margin-right: 4.82916%;
+    width: 100%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #footer #basic:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 481px) {
+  /* line 299, ../_liztic-sass/main.scss */
+  #footer #basic {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 57.35098%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #footer #basic:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 299, ../_liztic-sass/main.scss */
+  #footer #basic {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 57.35098%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #footer #basic:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 980px) {
+  /* line 299, ../_liztic-sass/main.scss */
+  #footer #basic {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 57.35098%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #footer #basic:last-child {
+    margin-right: 0;
+  }
+}
+/* line 304, ../_liztic-sass/main.scss */
+#footer #basic a, #footer #basic a:active, #footer #basic a:visited {
+  color: #6699cc;
+  text-decoration: none;
+  -webkit-transition: all 0.15s ease-out 0;
+  -moz-transition: all 0.15s ease-out 0;
+  -ms-transition: all 0.15s ease-out 0;
+  -o-transition: all 0.15s ease-out 0;
+  transition: all 0.15s ease-out 0;
+}
+/* line 305, ../_liztic-sass/main.scss */
+#footer #basic a:hover {
+  color: #304378;
+  text-decoration: none;
+}
+/* line 306, ../_liztic-sass/main.scss */
+#footer #basic #copyright {
+  padding-left: 0;
+}
+/* line 309, ../_liztic-sass/main.scss */
+#footer #social {
+  font-size: 0.9rem;
+  text-align: right;
+}
+@media screen and (min-width: 0px) {
+  /* line 309, ../_liztic-sass/main.scss */
+  #footer #social {
+    display: block;
+    float: left;
+    margin-right: 4.82916%;
+    width: 100%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #footer #social:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 481px) {
+  /* line 309, ../_liztic-sass/main.scss */
+  #footer #social {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 40.29137%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #footer #social:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 309, ../_liztic-sass/main.scss */
+  #footer #social {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 40.29137%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #footer #social:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 980px) {
+  /* line 309, ../_liztic-sass/main.scss */
+  #footer #social {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 40.29137%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #footer #social:last-child {
+    margin-right: 0;
+  }
+}
+/* line 314, ../_liztic-sass/main.scss */
+#footer #social span {
+  display: inline-block;
+  padding-right: 12px;
+  position: relative;
+  bottom: 12px;
+}
+/* line 319, ../_liztic-sass/main.scss */
+#footer #social a {
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+  background-size: 32px 32px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-indent: 1000rem;
+  background-color: #cccccc;
+  -webkit-transition: all 0.15s ease;
+  -moz-transition: all 0.15s ease;
+  -ms-transition: all 0.15s ease;
+  -o-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+/* line 325, ../_liztic-sass/main.scss */
+#footer #social a.facebook {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABiElEQVR42u3avUoDQRSG4UBIDNpIllhZWAiWRgshRSBgaaOtguAPBkQvQE3nNeQqxFpbawsRRUQs7TaEFUUthPUrtooe3YGdODvnC7xsE+YMT0J2AluI41h1BCAAAQhAAAIQgAAEIIBZRVRFgSNVUXFYAE10hULUc6QQXaOWbYAyukOuvh7QiE2AAD07DPCCJmwD9B0GiFCNAJ4BvKPX5PqpBeAC7aIFNIUmk+sMmkf7vgJEaDXFPuZ8BHhDzZT7aPgIcIgKWgFCNG6wj7pvACd//O9ooGW0knTgF4D89R9D5xrOAdvCvCUtB6ENYd6OFoBNAigHaAvz9nwE6KLOQLO/HHk7P3SWZ4Bpg3lSx3kGqGcAcKod4FIzwCh60vwbEKCPvN8FjgaS7wLf39vlOYAnQQIQgAAEIAABCEAAAhDgPwAidwHsPyJTRvcWALaEeW3DdR5RxRpAUgvdoH6GrQmz1g3WuEWLw3pQsoRqmSV/ahWDNUp8VJYABCAAAQhAAAIQgAAESN0XsDffMaRkAuwAAAAASUVORK5CYII=);
+}
+/* line 327, ../_liztic-sass/main.scss */
+#footer #social a.facebook:hover {
+  background-color: #3b5998;
+}
+/* line 328, ../_liztic-sass/main.scss */
+#footer #social a.twitter {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACaklEQVR42u3aTUhUURjGcSemhhJNMKiMgkKwFKyBUsHIQkxs0yI30aamZqe0CRRqoTRgtOgDpIVuRQqhEqyNbUQKhAhCB6E20XebMgtxmnT6uxuoaZq5Z857br4P/GA2c+A+zJ17OO8tSqVSq5oWoAVoAVqAFqAFaAFagBagBWgBWoAWoAW4owS1OIwGbFstBVThFl4jPfMYx4kM3yvDMQRtFnAUuw1efBTzyJYRlKEI1biId7hk8xewBtOYxSYDF9+JXBLHUySxkhmEbBZQiZ9YyRS2erj4eiwh38SxGQHUIGijgDakZxb78lzrEfLNK3SgF9OIIGCjgPbU7/mKszmuswfLyDc/0j5ft3kLNCNT7qHmH9eJwESu2n4MVmABmbKAflRnWacXXpJAp9Q+YAzZsoj7OImKP6zRDS95I7kRakQumcMEruEcWhAzUMAGyZ1gDyTzAkGJAlpxHjtwA0lI5InULdCetkd/hkVIZFiqgJ1IQjpdkn+C45BOk2QBhyCZTyiVPg+4DKkMuXIg0geJtLp0InQQDzAHG4ljrSsF7McZRPEQSyh0Ii6dCdbCZmYQcu1QtE/23pcvYB3GUOgMuHwsvh4DKFSeo8QPc4FmjOA9vhnc9FT5bTBSjCsGngqf0eC3ydBe3MGygQOPOr/MBkvRhttIwGsmscu14WgAB3AapxBFDKN4CxNJIIaQq9PhLejBF5jOXYT9Mh4vRwem4CUfMYh6P78fEMYFjOIlvv9lkvMBj3ETx1H+v70gEcJ2hNGEFhxBHSqxUd8Q0QK0AC1AC9ACtAAtQAvQArQALUAL0AK0AFG/ADVE276ItLozAAAAAElFTkSuQmCC);
+}
+/* line 330, ../_liztic-sass/main.scss */
+#footer #social a.twitter:hover {
+  background-color: #00aced;
+}
+/* line 331, ../_liztic-sass/main.scss */
+#footer #social a.youtube {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAELUlEQVR42u2ab0hWVxzHl3/2GDMnTxoaK91qRbWg9f/FCApjf4wGe2EvpEYbrmDgKGouMoVWtLI/SFuxYMSYKLSKaIOKXvRig01Yutgiak38E8xVVqbbnsS6fV98XhwOs1TU89zHc+BD93t+9zx6P93n3nPu9ZkgCEY1XoAX4AV4AV6AF+AFeAFegBcwdKSKbDFejDH60+kbl+gCssWf4rZ4i75k8YPoEKsTWgB8JwK1z8kvi4A2bTQIWMXB/k5eQ64fLRfBqLgrHokccQQBlcY+s8XbYp41dqZYIJ4TydTnipTQCIBaDnq9aGR7PrUK5AS0g8YFs4G+BVwwH4h/RFbYBLzDgVwRPaKJ/9FX6O8S1eImeSnjLloCYqI7jALG8zUIaIfoLyHXkKvI5eRfyPMR8B+ywiUAzgQ045a4kfwFeRt5dyIK2CICTvNM+jbQd5hcSf4sEQW8z8H8Rh51AkqM+cAYLwAB1iyx3BJwkTxPRMS/iSZgDX2nyUfImy0Bc8Ri5gv3wipgHQdz1RCQL2L0/yQesv0q9XpjzB22u0V2GAUUi7/EBWtpXCRaOLh2sd66c8Sor2UidU1EwyggmTl9GtkkIvKo27VJ1HmOIEL6RChFRIyHIRNYHOWyHeXUzoUc8jiRjpyksKwG3xT7xDFO+QZO3VZO89tMjTvF/T7oZJ8OxrTxGY185rdivyiMJwGp4msx0q1WROJBwCfCVatwLSAimsVDpruXbLiKP6l1il9FyyAEtImxLgVMEwG3ulS7DpNFr+irnTAeow2mzXIp4HV+ib/FDJFn3PIyyEv6KaBokAJWuBSwVgS0GBRaE5oH1IdLwDqXAjYJu600V3nGvP8rprY94qioo3aS/d/lfcIOpJjtmtgjPhU/W7UtLgVUPkFAhdE3m75GcZftDGqnyFOtt0Y/GuuFTHN2iTyapDgUsLOfAhbRd4mV3bNioiUgX3wjFpN3US8kl4lqtqcb15XdLgXsGkIBxeQ91nOCqSyk7pNzGd9OrkoUAavIey0B+awHzjK9zmGN0ZqoAqosAVPINi3xIGDnCAh4ia/ARrGderXoiodrQOXwC+AroHHkZnFd9MbDXWDTAAVcEbGnXAT3k7eSX+QMuEXOQkgrucylgPcGKOB745SdZAlYKP4QReTt1F8j1zInSBHpxmu3EpcC3hB2K6BWZvQtN8a8wL+Z1I6TI9bK7gT1WrLJh+YrN5cCpotHloADYrU1nT0vlolSvr8fiFJqDez/pTjGfh+JHmN8HbKXiB1WbYbr5wFNwlVrEWnOBMDHDgWwEHIrIIWV3ki3oyLVpQCbAmaGNeKcqBeX+YrcEO3cyjrEnT7oYJ92xjTxGfV8Zg0/oyAs7wWSjPcCz4so9/Hs/4NalH3TGZvk/1TWC/ACvAAvwAvwArwAL8AL8AKGnMfdjXUWWBWaKAAAAABJRU5ErkJggg==);
+}
+/* line 332, ../_liztic-sass/main.scss */
+#footer #social a.youtube:hover {
+  background-color: #cd332d;
+}
+/* line 333, ../_liztic-sass/main.scss */
+#footer #social a.pinterest {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAADG0lEQVR42u3aTUgUYRzH8W1dU1tRzAoj1zDDaHu1FD30AkUJXYIougQhBUpQIogdCkrCrCiiIjpFIHawCEowumWEkVBSJCpWUqZCW2L5FmW6fS/B8OfZYUyIZ5znC5+LDbP0c13X2fFFo1FPMwOYAcwAZgAzgBnADGAGMAOYAf4/P5IxH2lImu0DpKAYNWjCG/ThCyL4gFbcQgmyZssAubiEXkynYdQj360DBFGDEcykCVxG0E0DhPECdo1hAL2IYAJ2PcdSNwxQiM9Q1Ykz2IYQUhBEGnKxF3UYhapuhHQeYAUikA3gMBKncZ57UNWKJB0HSEIbZE9n8NS9CFW1Og5QDVkLUmZ43vuQ/USuTgOEFD+3EZuf10xkODz3MoxBdlWnAaohK4VPKMITjGII9Q6fIQ2Q9SGowwDx6IS1HsUL3kaM/ON38iBUFekwwGrIzotj4vAMqj6JsVQKoeqQDgPsh2ynOKYAsRpCOnw2VkLVCR0GqIS1CeSIY8oRq/eY6/BZJjulwwAnYe0bFopjLiBWDxy9u1R3XIcBKmBtGIvEMbWI1TEHj7Fb59eAfbA2hVXimDKomkTYwWNUQdUOHQYIYwrWjohj8jAJ2Sv4HTzGXch+IVuHAQJoh7UOJIpj3kF21uF1hX7IOhDQ5Z1gBWRXMAc+LMYwZFsdnHsXVF3X6a1wMrpg7SPibf4TEaQ6OPdDqNqizwDABnzF3+5Y/q0Gsg4H59wOVS8Rp8MA0ho0I0ollq8/huy7+HUpLcBbqNqj+zXB9UiAD2kYhKprNn8ut0BVk9sui2+GXfXYhCysRSX6oaofIbcNUAUnjcOuQRS68YORRsjqMA6ntSPPjZ8MzUMfrE0iE8XodfBdP4dUt340lgdZFwKWV/pyPEI3etCGBpRiids/GyyD7KbNpbWE2fbp8G3IDnjl/oAAOlVXi7wyQAZGYO01/F4ZIAzZaS/dIpMPaz+Q7aUBCmDthtduklonrhRnem2AHPxGlI568Ta5dEyhGX4vDpCARiz38o2SAXOnqBnADGAGMAOYAcwAZgAzgBnADKClP92qs9JOF+dcAAAAAElFTkSuQmCC);
+}
+/* line 334, ../_liztic-sass/main.scss */
+#footer #social a.pinterest:hover {
+  background-color: #cb2027;
+}
+/* line 335, ../_liztic-sass/main.scss */
+#footer #social a.instagram {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACfklEQVR42u3aS2sTYRSH8bfJtDZx1TahSqWC4E7ECyoo1E8gaBX0c2hrGpV+D7WWZOFWEZWmpvGCtLQKxeAV68plbatBI2gi8VlkMRzSkguTeSc9f/itziLwLIYhialUKtuaBtAAGkADaAANoAE0gAbQAM3pQh8GfNKHkB8BepDAG6xizSeryCOJHe0K0ItHsG0ZRNoR4Cps3XWvAzj4AFv3Gd1eBujHBtq5PNJICYuQKyDmZYCBNgf4hJ0wkMJYgHs/EO+kAA9gtnCz0wM8hNnClAbQAPoM6OgAX9APAymC10EM8A9ZXMOlqiRmqze5FdzHPeEtWLACPMcJmE0cQw5NzP4A6TpfUx3c6bQAL+HA1CmMZ0EJUMRXl7K4l3EEpkEHUZLPD/FZRRsC3EW0ah9+insOpkkZyNj7Ea1K2RAg5bofh9xECwGuQO6k637bhgBp1/0M5C62EGAUcufEm+C2CzBqc4BTkEu0EOAy5E7bHGAIv8U920KAGbj3B8M2B+jCkriXcAimQQfwF+4tI2RvAGAMci8QbvAHlxzkkjC2BxjEd8hN1/k2GMItyBWw2/YA8uElN4ejMJs4jFnUWgImKAEcPEGtlTGDcVzAeYzhMUqotafotj2AFMcyWl0egzBBCSAjZNDsstgFE6QAUhjj+IZ6t4YJODBBDSANIYFF/IJcEa+QxB4YIdABpGGM4GzVCPbCCIEIMA3jHfu/Fl9CGKbNQpivFcCPn8cXMNVm85AreB3AwUfYuhX0eBcASMLWTcJ4HSCCDGzbHKJeBZB6cQPvsI4Nn6zjPSYR8eOPkmHEEPdJDI7+VVYDaAANoAE0gAbQABpAA2iAhv0H4IYNl6ZZ29YAAAAASUVORK5CYII=);
+}
+/* line 336, ../_liztic-sass/main.scss */
+#footer #social a.instagram:hover {
+  background-color: #3f729b;
+}
+/* line 337, ../_liztic-sass/main.scss */
+#footer #social a.googleplus {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAADEklEQVR42u3aS0hUURzHcV9RM5lZWApJi6Cg1KK016JUigrajItA6LlxV5JKUYYm9qCFQpCLMKI20qKwF2FtBMEcN2ESKSgRWU6WmpWFpaZ9L9zFn4tX74wi98ycH3xW95xzuT/0zvGMUZOTkxFNF6AL0AXoAnQBugBdgC5AF6AL0AXoAnQBc2wBvA4sRWKQa8a4tYD1qIQfAfShBx+EXgyYBvEK2Q7XL0QPtrmtgGTUwkg/6vEAPbDmKxrhx2NkBHGfChAKc1EBmXgHI7eQIK55UYS/ooBBFIR4rzIY2eWWAtbhC4w0TzPOh3HI5KleQCyagnigSsh0w6NyAQfEw4wgdYbx8fgEmT1B3vO8OW+7Gwq4aXmxJTiYUw2ZC1OM8SDDRo0574TN9Q2Im68CXogH+Y4kB3MOQqZmijFZCDXjWDlfBTyFzGYHczIgUzXFmFRct+E35923uX4V8fNVQBVkShxulGTyg7znGXPeFje8A3Ih89bB71+OGN+HRNU/Bl9C5vQMcy6LscfDYSO0ET/FQ/3BPpuxKeg3x11TfSco5aLXsic4hXjLjrHFvF6EKNULsErFDXwWRfTjEZ5jGEYOz/I+l2Akx00FSMuRjWMoxpgopGEO1k9DPlaocCCSjglRwL1IOxHKg8wv7IikAtZgFDIBZEbSoWg5rBlCfrgVEIudKMVDtMCPVtjlSjgUEIsCtMPIGJ6gGD7shw8VNueDF1UuYK3lRKgaq6YZn4I6WLNVxQLSxOnOKA4FMfck/okC7qpWwBJ0iAc4F8IahWJ+F+JUKuCsZbubEMIaMegSnwpJqhQQg9eigNZZ3LweRoaRokoBy/BNFNCJ6FkeqX2ER5UCvAhYDiE3hfjF6XsYqVPtJXgHMs9CWOOoOXcCmaoVsBq9kKkN4sd4L36ITxAlN0LpaINMG44g2ebdkY3bYnyp6lthL0rQCZkRvEETmtGB3+J6I3aH0x9Di5CDctSjHQEMYQDdaEAZsiLlPGAhFsODaP1PUroAXYAuQBegC9AF6AJ0AboAXYAuQBegC3CX/5p0BWI/RowIAAAAAElFTkSuQmCC);
+}
+/* line 339, ../_liztic-sass/main.scss */
+#footer #social a.googleplus:hover {
+  background-color: #d14836;
+}
+
+/* line 350, ../_liztic-sass/main.scss */
+#row-mailchimp {
+  padding-bottom: 0;
+}
+
+/* line 351, ../_liztic-sass/main.scss */
+#mailchimp {
+  background: rgba(116, 162, 208, 0.8);
+  -webkit-transition: all 0.15s ease;
+  -moz-transition: all 0.15s ease;
+  -ms-transition: all 0.15s ease;
+  -o-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+  padding: 1rem 2rem;
+  color: #f9f9f9;
+  overflow: hidden;
+  *zoom: 1;
+  max-width: 60em;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 354, ../_liztic-sass/main.scss */
+#mailchimp:hover {
+  background: #74a2d0;
+}
+/* line 356, ../_liztic-sass/main.scss */
+#mailchimp:hover #mc_embed_signup {
+  border-color: #3366cc;
+}
+/* line 362, ../_liztic-sass/main.scss */
+#mailchimp #cta {
+  font-size: 0.9rem;
+  line-height: 34px;
+}
+@media screen and (min-width: 0px) {
+  /* line 362, ../_liztic-sass/main.scss */
+  #mailchimp #cta {
+    display: block;
+    float: left;
+    margin-right: 4.82916%;
+    width: 100%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #mailchimp #cta:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 481px) {
+  /* line 362, ../_liztic-sass/main.scss */
+  #mailchimp #cta {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #mailchimp #cta:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 362, ../_liztic-sass/main.scss */
+  #mailchimp #cta {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #mailchimp #cta:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 980px) {
+  /* line 362, ../_liztic-sass/main.scss */
+  #mailchimp #cta {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #mailchimp #cta:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 0px) {
+  /* line 369, ../_liztic-sass/main.scss */
+  #mailchimp #mc_embed_signup input {
+    display: block;
+    float: left;
+    margin-right: 4.82916%;
+    width: 100%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #mailchimp #mc_embed_signup input:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 481px) {
+  /* line 369, ../_liztic-sass/main.scss */
+  #mailchimp #mc_embed_signup input {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 14.70196%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #mailchimp #mc_embed_signup input:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 369, ../_liztic-sass/main.scss */
+  #mailchimp #mc_embed_signup input {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 14.70196%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #mailchimp #mc_embed_signup input:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 980px) {
+  /* line 369, ../_liztic-sass/main.scss */
+  #mailchimp #mc_embed_signup input {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 14.70196%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #mailchimp #mc_embed_signup input:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 0px) {
+  /* line 373, ../_liztic-sass/main.scss */
+  #mailchimp #mc_embed_signup input[type="email"] {
+    display: block;
+    float: left;
+    margin-right: 4.82916%;
+    width: 100%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #mailchimp #mc_embed_signup input[type="email"]:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 481px) {
+  /* line 373, ../_liztic-sass/main.scss */
+  #mailchimp #mc_embed_signup input[type="email"] {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #mailchimp #mc_embed_signup input[type="email"]:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 373, ../_liztic-sass/main.scss */
+  #mailchimp #mc_embed_signup input[type="email"] {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #mailchimp #mc_embed_signup input[type="email"]:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 980px) {
+  /* line 373, ../_liztic-sass/main.scss */
+  #mailchimp #mc_embed_signup input[type="email"] {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+  }
+  /* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+  #mailchimp #mc_embed_signup input[type="email"]:last-child {
+    margin-right: 0;
+  }
+}
+/* line 376, ../_liztic-sass/main.scss */
+#mailchimp #mc_embed_signup input[type="submit"] {
+  background: #275d84;
+  color: #f9f9f9;
+}
+/* line 380, ../_liztic-sass/main.scss */
+#mailchimp #mc_embed_signup input[type="submit"]:hover {
+  color: #f9f9f9;
+  -webkit-transition: all 0.15s ease;
+  -moz-transition: all 0.15s ease;
+  -ms-transition: all 0.15s ease;
+  -o-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+  background: #3366cc;
+}
+/* line 387, ../_liztic-sass/main.scss */
+#mailchimp #mc_embed_signup input.mce_inline_error {
+  border-color: #c71414;
+  color: #c71414;
+  font-weight: bold;
+}
+/* line 391, ../_liztic-sass/main.scss */
+#mailchimp #mc_embed_signup div.mce_inline_error {
+  position: relative;
+  display: none !important;
+  top: 2rem;
+  font-weight: bold;
+  z-index: 1;
+  color: #fff;
+}
+/* line 395, ../_liztic-sass/main.scss */
+#mailchimp #mc_embed_signup .response {
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  text-align: right;
+}
+/* line 398, ../_liztic-sass/main.scss */
+#mailchimp #mc_embed_signup input.mce_inline_error::-webkit-input-placeholder {
+  color: #c71414;
+}
+/* line 399, ../_liztic-sass/main.scss */
+#mailchimp #mc_embed_signup input.mce_inline_error::-moz-placeholder {
+  color: #c71414;
+}
+/* line 400, ../_liztic-sass/main.scss */
+#mailchimp #mc_embed_signup input.mce_inline_error:-moz-placeholder {
+  color: #c71414;
+}
+/* line 401, ../_liztic-sass/main.scss */
+#mailchimp #mc_embed_signup input.mce_inline_error::-ms-input-placeholder {
+  color: #c71414;
+}
+
+/* line 416, ../_liztic-sass/main.scss */
+.legal ol, .legal ul {
+  padding-left: 2rem;
+}
+/* line 418, ../_liztic-sass/main.scss */
+.legal li {
+  text-indent: -2rem;
+}
+/* line 420, ../_liztic-sass/main.scss */
+.legal .alpha {
+  list-style-type: upper-alpha;
+}
+/* line 421, ../_liztic-sass/main.scss */
+.legal ol ol, .legal ol ul {
+  padding-left: 2rem;
+}
+/* line 422, ../_liztic-sass/main.scss */
+.legal ol ul li {
+  padding-bottom: 0;
+}
+/* line 424, ../_liztic-sass/main.scss */
+.legal p, .legal li, .legal .alpha {
+  font-size: 0.8rem;
+  font-weight: normal;
+  line-height: 1.3rem;
+  color: #333333;
+  padding: 0.5rem 0;
+}
+
+/* line 437, ../_liztic-sass/main.scss */
+#modal {
+  z-index: 500050;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+/* line 442, ../_liztic-sass/main.scss */
+#modal .blanket {
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 500000;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+/* line 450, ../_liztic-sass/main.scss */
+#modal .modal-container {
+  display: table;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+/* line 451, ../_liztic-sass/main.scss */
+#modal .modal-pad {
+  display: table-cell;
+  vertical-align: middle;
+}
+/* line 453, ../_liztic-sass/main.scss */
+#modal .modal-item {
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  z-index: 500100;
+  background-color: #f9f9f9;
+  -webkit-border-radius: 6px 6px;
+  -moz-border-radius: 6px / 6px;
+  border-radius: 6px / 6px;
+  position: relative;
+}
+/* line 462, ../_liztic-sass/main.scss */
+#modal .modal-item .modal-btn {
+  background: #275d84;
+  color: #f9f9f9;
+  margin-top: 0;
+}
+/* line 467, ../_liztic-sass/main.scss */
+#modal .modal-item #modal-header {
+  color: #3e3e3e;
+  padding: 0.5rem 0;
+  font-weight: 700;
+  margin-left: 8.5298%;
+  display: block;
+  float: left;
+  margin-right: 2.35765%;
+  width: 82.94039%;
+}
+/* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+#modal .modal-item #modal-header:last-child {
+  margin-right: 0;
+}
+/* line 472, ../_liztic-sass/main.scss */
+#modal .modal-item .modal-input-error {
+  border-color: #f2941b;
+}
+/* line 473, ../_liztic-sass/main.scss */
+#modal .modal-item .modal-error, #modal .modal-item .modal-error-general {
+  font-size: 0.75rem;
+  padding: 0.25rem 1rem 0.5rem 1rem;
+  margin-left: 8.5298%;
+  display: block;
+  float: left;
+  margin-right: 2.35765%;
+  width: 82.94039%;
+  color: #3e3e3e;
+  background-color: rgba(245, 174, 37, 0.7);
+}
+/* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+#modal .modal-item .modal-error:last-child, #modal .modal-item .modal-error-general:last-child {
+  margin-right: 0;
+}
+/* line 478, ../_liztic-sass/main.scss */
+#modal .modal-item .modal-error-general {
+  margin-top: 1rem;
+}
+/* line 480, ../_liztic-sass/main.scss */
+#modal .modal-item .modal-footer {
+  font-size: 0.75rem;
+  padding: 1rem 0;
+  margin-left: 8.5298%;
+  display: block;
+  float: left;
+  margin-right: 2.35765%;
+  width: 82.94039%;
+  color: #3e3e3e;
+}
+/* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+#modal .modal-item .modal-footer:last-child {
+  margin-right: 0;
+}
+/* line 484, ../_liztic-sass/main.scss */
+#modal .modal-item .modal-footer div {
+  padding: 0.25rem 0;
+}
+/* line 485, ../_liztic-sass/main.scss */
+#modal .modal-item .modal-legal {
+  padding-bottom: 0.5rem;
+}
+/* line 486, ../_liztic-sass/main.scss */
+#modal .modal-item input, #modal .modal-item button {
+  margin-left: 8.5298%;
+  display: block;
+  float: left;
+  margin-right: 2.35765%;
+  width: 82.94039%;
+  margin-top: 0.5rem;
+  -webkit-border-radius: 0px 0px;
+  -moz-border-radius: 0px / 0px;
+  border-radius: 0px / 0px;
+  border-color: #cccccc;
+  -webkit-transition: all 0.25s ease-out 0;
+  -moz-transition: all 0.25s ease-out 0;
+  -ms-transition: all 0.25s ease-out 0;
+  -o-transition: all 0.25s ease-out 0;
+  transition: all 0.25s ease-out 0;
+}
+/* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+#modal .modal-item input:last-child, #modal .modal-item button:last-child {
+  margin-right: 0;
+}
+/* line 490, ../_liztic-sass/main.scss */
+#modal .modal-item input:focus, #modal .modal-item button:focus {
+  border-color: #f2941b;
+}
+/* line 494, ../_liztic-sass/main.scss */
+#modal .modal-item .modal-check {
+  margin-left: 8.5298%;
+  display: block;
+  float: left;
+  margin-right: 2.35765%;
+  width: 82.94039%;
+}
+/* line 54, ../_liztic-sass/neat/grid/_span-columns.scss */
+#modal .modal-item .modal-check:last-child {
+  margin-right: 0;
+}
+/* line 497, ../_liztic-sass/main.scss */
+#modal .modal-item .modal-check .inlineCheck {
+  display: block;
+  text-indent: 0em;
+  margin-left: 2rem;
+  font-size: 0.9rem;
+}
+/* line 499, ../_liztic-sass/main.scss */
+#modal .modal-item .modal-check input[type=radio], #modal .modal-item .modal-check input[type=checkbox] {
+  display: none;
+  *overflow: hidden;
+}
+/* line 503, ../_liztic-sass/main.scss */
+#modal .modal-item .modal-check input[type=radio] + .inline, #modal .modal-item .modal-check input[type=checkbox] + .inline {
+  color: #333;
+  display: block;
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  position: relative;
+  margin: 1rem 0;
+}
+/* line 507, ../_liztic-sass/main.scss */
+#modal .modal-item .modal-check input[type=radio] + .inline .check, #modal .modal-item .modal-check input[type=checkbox] + .inline .check {
+  display: inline-block;
+  position: absolute;
+  border: 1px solid #cccccc;
+  background: #fff;
+  width: 20px;
+  height: 20px;
+}
+/* line 516, ../_liztic-sass/main.scss */
+#modal .modal-item .modal-check input[type=radio]:checked + .inline .box .check:after, #modal .modal-item .modal-check input[type=checkbox]:checked + .inline .box .check:after {
+  content: ' ';
+  position: absolute;
+  background: transparent;
+  width: 14px;
+  height: 8px;
+  top: -2px;
+  left: 3px;
+  border: 4px solid #777777;
+  border-top: none;
+  border-right: none;
+  -webkit-transform: rotate(-52deg);
+  -moz-transform: rotate(-52deg);
+  -o-transform: rotate(-52deg);
+  -ms-transform: rotate(-52deg);
+  transform: rotate(-52deg);
+}
+/* line 528, ../_liztic-sass/main.scss */
+#modal .modal-item button {
+  -webkit-border-radius: 6px 6px;
+  -moz-border-radius: 6px / 6px;
+  border-radius: 6px / 6px;
+  border: 0;
+  padding: 1rem 0;
+}
+/* line 529, ../_liztic-sass/main.scss */
+#modal .modal-item button:hover {
+  background: #3366cc;
+  text-decoration: none;
+  -webkit-transition: all 0.15s ease-out 0;
+  -moz-transition: all 0.15s ease-out 0;
+  -ms-transition: all 0.15s ease-out 0;
+  -o-transition: all 0.15s ease-out 0;
+  transition: all 0.15s ease-out 0;
+}
+/* line 536, ../_liztic-sass/main.scss */
+#modal .modal-item .modal-logo {
+  margin-top: 2rem;
+  display: inline-block;
+  height: 50px;
+  width: 100%;
+  background: url(images/logo.png) no-repeat;
+  background-position: center;
+  background-size: contain;
+}

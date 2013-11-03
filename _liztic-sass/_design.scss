@@ -1,0 +1,217 @@
+
+
+// *********************************************************
+// DESIGN FILE
+// - this file specifies variables and design components
+// - don't directly affect IDs and classes from this file
+// *********************************************************
+
+
+
+// *********************************************************
+// DESIGN MIXINS
+// *********************************************************
+
+@mixin background-opacity($color, $opacity: 0.3) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}
+
+@mixin ease($speed){
+    -webkit-transition: all $speed ease;
+    -moz-transition: all $speed ease;
+    -ms-transition: all $speed ease;
+    -o-transition: all $speed ease;
+    transition: all $speed ease;
+}
+
+@mixin ease-out($speed){
+    -webkit-transition: all $speed ease-out 0;
+    -moz-transition: all $speed ease-out 0;
+    -ms-transition: all $speed ease-out 0;
+    -o-transition: all $speed ease-out 0;
+    transition: all $speed ease-out 0;
+}
+
+// @mixin placeholder-style($selector){
+//     $selector::-webkit-input-placeholder { /* WebKit browsers */
+//         @content;
+//     }
+//     $selector::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+//         @content;
+//     }
+//     $selector::-moz-placeholder { /* Mozilla Firefox 19+ */
+//         @content;
+//     }
+//     $selector::-ms-input-placeholder { /* Internet Explorer 10+ */
+//         @content;
+//     }
+// }
+
+
+
+// *********************************************************
+// VARIABLES
+// *********************************************************
+
+// basic sizes
+$base: 1rem;
+$margin: $base;
+
+
+// color
+
+// blue colors, light to dark
+$color1-0: #cdebf2;
+$color1-1: #5badc2;
+$color1-2: #6699cc;
+$color1-2-1: #74a2d0; 
+$color1-3: #3366cc;
+$color1-4: #304378;
+$color1-5: #093275; // original liztic dark blue
+$color1-5-1: #275d84; // original liztic tinted
+
+// orange colors, light to dark
+$color2-1: #ffcc00;
+$color2-2: #ff9d36;
+$color2-3: #f5ae25;
+$color2-4: #f2941b;
+$color2-4-1: #f29d30;
+$color2-5: #ee810f;
+
+
+$white: #fff;
+$black: #000;
+$red: #972020;
+$light-red: #a00;
+$dark-red: #c71414;
+$light-gray: #ccc;
+$gray: #777;
+$deep-gray: #0f0f0f;
+$dark-gray: #333;
+$slate: #3e3e3e;
+$medium-gray: #555;
+$silver: #f2f2f2;
+$silvercloud: #f9f9f9;
+$silverline: #f8f8f8;
+$pink: #f44a56;
+$matte-blue: #3e4b5d;
+$green: #97b537;
+$blue: #275d84;
+
+$color-bg: #222;
+$color-highlight: #ccc;
+$highlight: #D95F43;
+$highlight-text: #FFFBDB;
+
+$color-text: #ddd;
+$color-text-para: #333;
+$color-text-link: #eee;
+$color-text-link-hover: #aaa;
+$color-btn: #333;
+$color-btn-dark: #333;
+$color-btn-hvr: #777;
+
+$color-menu: rgb(40, 40, 40);
+$color-menu-hover: $gray;
+$color-menu-selected: $silver;
+
+
+.white {color: black; background-color: rgba(255,255,255, 0.95);}
+.orange{background-color: rgba(255,195,40,0.7);}
+.green {color: white; background-color: rgba(109, 152, 71, 0.84)}
+.dark {color: $light-gray; background-color: rgba(70,70,70, 0.8);}
+.lighter {color: $dark-gray; background-color: rgba(255,255,255, 0.88);}
+.light {color: $dark-gray; background-color: rgba(250,250,250, 0.86);}
+.soft {color: $dark-gray; background-color: rgba(255,255,255, 0.56);}
+.cloud{background-color: rgba(100,100,100,0.06);}
+.glass{background-color: rgba(80,80,80,0.46);}
+.glassdark{background-color: rgba(20,20,20,0.59);}
+.txtsilver{color: $silver;}
+
+
+// *********************************************************
+// FONTS
+// *********************************************************
+
+// FONT STACKS
+@import url(http://fonts.googleapis.com/css?family=Raleway:200,400,500,600,700,800,900);
+%raleway {font-family: 'Raleway', sans-serif;}
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,600,700);
+%open-sans {font-family: 'Open Sans', sans-serif;}
+
+@import url(http://fonts.googleapis.com/css?family=Cabin:400,500,600,700);
+%cabin {font-family: 'Cabin', sans-serif;}
+
+@import url(http://fonts.googleapis.com/css?family=Baumans);
+%baumans {font-family: 'Baumans', sans-serif;}
+
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
+%quicksand {font-family: 'Quicksand', serif;}
+
+@import url(http://fonts.googleapis.com/css?family=Quicksand:300,400,700);
+%sourcesans {font-family: 'Source Sans Pro', sans-serif;}
+
+
+%sans-serif {@extend %open-sans}
+%serif {font-family: Georgia, serif;}
+%cursive {@extend %baumans;}
+%display {@extend %raleway}
+
+
+// *********************************************************
+// DESIGN CLASSES
+// *********************************************************
+
+%shadow-internal-light {box-shadow: 0 0px 50px rgba(20, 20, 20, 0.07), 0 0 70px rgba(0, 0, 0, 0.08) inset;}
+%shadow-internal-dark {box-shadow: 0 0px 50px rgba(20, 20, 20, 0.22), 0 0 80px rgba(0, 0, 0, 0.42) inset;}
+%shadow-gray {box-shadow:1px 1px 4px rgba(120,120,120,0.4),inset 1px 0 1px rgba(255,255,255,0.6);}
+
+
+
+
+%gradient-logo {
+   // background: -moz-linear-gradient(top,  rgba(163,163,163,1) 0%, rgba(98,98,98,1) 100%);
+   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(98,98,98,0.92)));
+   // background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(98,98,98,1) 100%);
+   // background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(98,98,98,1) 100%);
+   // background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(98,98,98,1) 100%);
+   // background: linear-gradient(to bottom,  rgba(163,163,163,0.8) 0%,rgba(98,98,98,0.9) 100%);
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#b3e5e5e5',GradientType=0 );
+}
+
+%shadow-inset {
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.5), 0 1px 0 rgba(255,255,255,.1);
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+%shadow-drop {
+  box-shadow: 0 5px 23px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,1);
+}
+
+%box-shade-light {
+  -moz-box-shadow: rgba(0,0,0,0.05) 0 1px 3px inset;
+  -webkit-box-shadow: rgba(0,0,0,0.05) 0 1px 3px inset;
+  box-shadow: rgba(0,0,0,0.05) 0 1px 3px inset;
+}
+
+%box-shadow-under {
+  -moz-box-shadow: 0 0 5px 5px #888;
+  -webkit-box-shadow: 0 0 5px 5px#888;
+  box-shadow: 0 0 3px 0px #888;
+}
+
+%box-shadow-logo {
+  &:before
+  {
+    content:"";
+      position:absolute; 
+      z-index:-10;
+      top:0;
+      bottom:0;
+      height: 30px;
+      width: 90px;
+      box-shadow: 0 52px 3px 0 #888;
+  } 
+}

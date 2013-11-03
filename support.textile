@@ -1,0 +1,117 @@
+---
+layout: framework
+title: Liztic. Your music - anywhere, anytime.
+comments: false
+---
+
+
+
+<article class="faq">
+
+{% include headerspacing.html %}
+
+<div class="container">
+
+<div class="row" >
+h3. Support &amp; FAQ
+</div>
+
+<div class="row" >
+h4(que). How can I get Liztic for my smartphone , tablet and desktop computer?
+
+p(ans). To get Liztic for your mobile devices (smartphone, tablet, Kindle), you simply download the Liztic app from the respective app store (iTunes App Store, Google Play App Store, Kindle App Store etc.) To get Liztic fo your desktop computer, you can download the software from www.liztic.com. You will have the option between the Windows and the MacOS version.
+</div>
+
+
+<div class="row" >
+h4(que). How do I create a new user account?
+
+p(ans). You can create your Liztic user account from any device. 
+
+From your desktop computer: 
+Simply go to www.liztic.com and click 'new account' in the top right hand corner.
+
+From your mobile device:
+After you've downloaded the respective app for your device, you can create your user account when entering the app for the first time.
+</div>
+
+
+
+<div class="row" >
+h4(que). What different account options do I have?
+
+p(ans). Basic account (250 songs, 3 devices) - free
+Premium (2,500 songs, 5 devices)
+Studio (unlimited songs, 10 devices)
+</div>
+
+
+
+<div class="row" >
+h4(que). How do I register my device(s) with my Liztic account?
+
+p(ans). All devices must be registered to your Liztic account. Each device will automatically be registered when logged in to the Liztic account for the first time.
+</div>
+
+
+
+<div class="row" >
+h4(que). How can I remove or change one or more devices within my Liztic account?
+
+p(ans). If you no longer want to use a device to import, download, or play music from Liztic, you can remove the device from 'Your Registered Devices' (??) list. Devices can be removed from the 'My Liztic' page.
+</div>
+
+
+
+<div class="row" >
+h4(que). How do I play music within Liztic
+
+p(ans). Browse or search by playlists, artists, albums, songs, or genres. Select out of the playlists, artists, albums, songs or genres and tap the Play button.
+</div>
+
+
+<div class="row" >
+h4(que). How do I create a playlist?
+
+p(ans). From your mobile device:
+To create a new playlist you start with any song that you want to add to this new playlist. Tap and hold the song, click 'Add to Playlist'.
+Click 'New Playlist from the drop-down list to create a new playlist.
+Proceed with the other songs that you would like to add to this playlist with the same steps, selecting the playlist to add the song to it.
+</div>
+
+
+<div class="row" >
+h4(que). How can I edit song information (incl. artwork)?
+
+p(ans). From your mobile device:
+You can edit the song information of each song by tapping and holding the song, then tap 'Get Info”. In the next window, you'll be able to edit any information that you like. You can even change the album artwork by uploading any image you like.
+
+</div>
+
+
+<div class="row" >
+h4(que). How can I share what I am _liztening_ to?
+
+p(ans). You can easily share with your friends what you are liztening to while playing your music from Liztic. While liztening to a certain song, simply click the '...' Button in the upper right hand corner. You will then have the option to share your tunes on Facebook and Twitter and also via text message and email.
+</div>
+
+
+<div class="row" >
+h4(que). How can I filter the songs in my Liztic library and change the view of what is being displayed?
+
+p(ans). 
+Select / deselect Genre 
+Artist / album / all songs / playlist view
+</div>
+
+
+
+
+<!-- container -->
+</div>
+
+</article>
+
+
+
+<div class="clear"></div>
