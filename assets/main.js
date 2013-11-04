@@ -2,16 +2,21 @@
 
 
 
+var hasFlash = (swfobject.hasFlashPlayerVersion('1') && true);
+
 // copy functionality. Check for swf availability first
-// var clip = new ZeroClipboard( document.getElementById("copy-btn"), {
-//   moviePath: "assets/ZeroClipboard.swf"
-// } );
+if(hasFlash) {
+	var clip = new ZeroClipboard( document.getElementById("copy-btn"), {
+	  moviePath: "assets/ZeroClipboard.swf"
+	} );
 
-// //this event happens upon initiating the copy 
-// clip.on( 'dataRequested', function ( client, args ) {
-//     clip.setText( $('.entry-list').text());
-// } );
-
+	//this event happens upon initiating the copy 
+	clip.on( 'dataRequested', function ( client, args ) {
+	    clip.setText( $('.entry-list').text());
+	} );
+} else {
+	$('.copy').hide(); //no need for click to copy button
+}
 
 
 var nanoApp = angular.module('nanoApp', ['ui.utils']);
@@ -74,13 +79,13 @@ function mainCtrl($scope) {
 		console.log('zen state: ' + $scope.nano.zen)
 	}
 
-
-	//this event happens upon the copy finishing
-	// clip.on( 'complete', function(client, args) {
-	// 	$scope.nano.copy = "Text copied.";
-	// 	clip = new ZeroClipboard( document.getElementById("copy-btn"), { moviePath: "assets/ZeroClipboard.swf"} );
-	// } );
-
+	if(hasFlash) {
+		//this event happens upon the copy finishing
+		clip.on( 'complete', function(client, args) {
+			$scope.nano.copy = "Text copied.";
+			clip = new ZeroClipboard( document.getElementById("copy-btn"), { moviePath: "assets/ZeroClipboard.swf"} );
+		} );
+	}
 
 
     var ctrlDown = false;
