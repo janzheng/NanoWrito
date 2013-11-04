@@ -76,10 +76,10 @@ function mainCtrl($scope) {
 
 
 	//this event happens upon the copy finishing
-	clip.on( 'complete', function(client, args) {
-		$scope.nano.copy = "Text copied.";
-		clip = new ZeroClipboard( document.getElementById("copy-btn"), { moviePath: "assets/ZeroClipboard.swf"} );
-	} );
+	// clip.on( 'complete', function(client, args) {
+	// 	$scope.nano.copy = "Text copied.";
+	// 	clip = new ZeroClipboard( document.getElementById("copy-btn"), { moviePath: "assets/ZeroClipboard.swf"} );
+	// } );
 
 
 
