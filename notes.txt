@@ -1,0 +1,37 @@
+
+Nanowrito Notes
+
+
+-------
+
+
+Countable:
+http://sachaschmid.ch/Countable/
+
+
+
+Angular Notes.
+
+Main tutorial:
+http://www.thinkster.io/pick/GtaQ0oMGIl/
+
+
+
+
+
+Good references:
+
+http://jsfiddle.net/pkozlowski_opensource/7Ha3L/1/
+
+http://docs.angularjs.org/misc/faq 
+ng-repeat, ng-class, and ng-show sections very useful
+
+http://docs.angularjs.org/guide/expression
+
+http://docs.angularjs.org/guide/concepts
+- go down to "directives" where the div is content-editable
+
+
+
+Examples built on Angular
+http://thiagofelix.github.io/hackynote/app/#/

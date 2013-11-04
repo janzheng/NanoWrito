@@ -1,13 +1,9 @@
----
-layout: none
----
-
 <!doctype html>
 
 <html>
 <head>
   <meta name="description" content="Liztic is a universally accessible music player that allows anyone to access their own, personal music library from any device.">
-  <title>{{ page.title }}</title>
+  <title>Nanowrito. Something to help you reach your nano goal.</title>
   <meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1" />
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
   <link rel="stylesheet" href="assets/main.css">
@@ -20,14 +16,44 @@ layout: none
 
   <!-- <a class="goto" id="top"></a> -->
   <section id="header">
-    {% include header.html %}
+    
+<article>
+   <section>
+      <div class="container">
+         <div class="row" >
+            Nanowrito, an experimental tool to help you reach your <a href="http://nanowrimo.org">NanoWrimo</a> word count.
+         </div>
+         <div class="row" >
+            You may start typing.
+         </div>
+         <div class="row" >
+            Hit Ctrl + Space to enter Zen mode. Hit ESC to exit. Don't forget to copy your work to your word processor when you're done.
+         </div>
+      </div>
+   </section>
+</article>
   </section>
 
-  {{ content }}
+  <!-- for jekyll to escape angular -->
+
+<div ng-app="testApp">
+   <textarea id="main-area" type="text" autofocus="" placeholder="Start entering some text here" ng-model="message"></textarea>
+    <h1>{{message}}</h1>
+
+  <div ng-controller="mainCtrl">
+    <input type="text" ng-model="nano.entry">
+    <h1>{{nano.entry}}</h1>
+  </div>
+</div>
+
+
+<div class="clear"></div>
+
+
 
   <!-- <a class="goto" id="contact"></a> -->
   <section id="footer">
-    {% include footer.html %}
+    
   </section>
 
  

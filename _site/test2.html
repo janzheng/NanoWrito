@@ -1,13 +1,9 @@
----
-layout: none
----
-
 <!doctype html>
 
 <html>
 <head>
   <meta name="description" content="Liztic is a universally accessible music player that allows anyone to access their own, personal music library from any device.">
-  <title>{{ page.title }}</title>
+  <title>Nanowrito. Something to help you reach your nano goal.</title>
   <meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1" />
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
   <link rel="stylesheet" href="assets/main.css">
@@ -20,22 +16,35 @@ layout: none
 
   <!-- <a class="goto" id="top"></a> -->
   <section id="header">
-    {% include header.html %}
+    
   </section>
 
-  {{ content }}
+  <!-- for jekyll to escape angular -->
+
+<div ng-app="nanoApp">
+   <textarea id="main-area" type="text" autofocus="" placeholder="Start entering some text here" ng-model="message"></textarea>
+    <h1>{{message}}</h1>
+
+  <div ng-controller="mainCtrl">
+    <input type="text" ng-model="nano.entry">
+    <h1>{{nano.entry}}</h1>
+  </div>
+</div>
+
+
+<div class="clear"></div>
+
+
 
   <!-- <a class="goto" id="contact"></a> -->
   <section id="footer">
-    {% include footer.html %}
+    
+    
   </section>
 
  
   <script type="text/javascript" src="assets/angular.min.js"></script>
-  <script type="text/javascript" src="assets/angular-ui-utils.min.js"></script>
-  <script type="text/javascript" src="assets/ZeroClipboard.min.js"></script>
-
-
+  <script type="text/javascript" src="assets/countable.js"></script>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="//ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.0.6-development-only.js"></script>

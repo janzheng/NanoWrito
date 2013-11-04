@@ -3,17 +3,13 @@
 <html>
 <head>
   <meta name="description" content="Liztic is a universally accessible music player that allows anyone to access their own, personal music library from any device.">
-  <title>Liztic. Your music - anywhere, anytime.</title>
+  <title>Nanowrito. Something to help you reach your nano goal.</title>
   <meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1" />
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
   <link rel="stylesheet" href="assets/main.css">
 
   <link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-  <script src="/app/js/online.js"></script>
-  
 </head> 
 
 <body>
@@ -21,444 +17,86 @@
   <!-- <a class="goto" id="top"></a> -->
   <section id="header">
     
-
-
-<div id="modal" style="display:none">
-   <div class="blanket" ></div>
-
-   <!-- css-only v-align div from http://emergentweb.com/test/valign.html# -->
-   <div class="modal-container">
-      <div class="modal-pad">
-
-         <div class="modal-item" id="modal-login" style="display:none">
-            <div class="container">
-               <div class="row" ><div class="modal-logo"></div></div><div class="row" >
-                  <div id="modal-header">
-                     Log in to Liztic
-                  </div>
-                  <form ng-submit="create()" name="createform" class="ng-pristine ng-invalid ng-invalid-required">
-                     <div class="row" ><input type="text" ng-model="userid" class="topcoat-text-input--large full ng-pristine ng-valid" placeholder="Email address"></div>
-                     <div class="row" ><input type="password" ng-model="password" name="passwordform" class="topcoat-text-input--large full ng-pristine ng-invalid ng-invalid-required" placeholder="Password" >
-                        <!-- <div class="modal-error">This is an inline error message.</div> -->
-                     </div>
-                     <div class="row" >
-                        <div class="modal-check">
-                           <input type="checkbox" id="stayLogged" checked="true" ng-model="persist" class="ng-pristine ng-valid">
-                           <label class="inline" for="stayLogged"><span class="box"><span class="check"></span></span><span class="inlineCheck">Stay logged in</span></label>
-                        </div>
-
-                     </div>
-                     <div class="row" ><button class="modal-btn topcoat-button--large--cta full" ng-click="create()" ng-disabled="disabled">Log in to Liztic</button></div>
-                  </form>
-               </div>
-               <div class="row">
-                  <div class="modal-footer">
-                     <div>Forgot your password? <a href="#">Click to Reset</a></div>
-                     <div>New to Liztic? <a href="#" class="switch-to-signup">Create a new account</a></div>
-                  </div>
-               </div>
-            </div>
+<article>
+   <section>
+      <div class="container">
+         <div class="row" >
+            Nanowrito, an experimental tool to help you reach your <a href="http://nanowrimo.org">NanoWrimo</a> word count.
          </div>
-         <div class="modal-item" id="modal-signup" style="display:none">
-            <div class="container">
-               <div class="row" ><div class="modal-logo"></div></div>
-               <div class="row" >
-                  <div id="modal-header">
-                     Get Started with Liztic
-                  </div>
-                  <form ng-submit="create()" name="createform" class="ng-pristine ng-invalid ng-invalid-required">
-                     <div class="row" ><input type="email" ng-model="email" name="emailform" class="topcoat-text-input--large full ng-pristine ng-invalid ng-invalid-required ng-valid-email" placeholder="Email address" ></div>
-                     <!-- <div class="row" ><input type="text" ng-model="first" name="firstform" class="topcoat-text-input--large full ng-pristine ng-invalid ng-invalid-required" placeholder="First name" ></div> -->
-                     <!-- <div class="row" ><input type="text" ng-model="last" name="lastform" class="topcoat-text-input--large full ng-pristine ng-invalid ng-invalid-required" placeholder="Last name" ></div> -->
-                     <div class="row" ><input type="password" ng-model="password" name="passwordform" class="modal-input-error topcoat-text-input--large full ng-pristine ng-invalid ng-invalid-required" placeholder="Password" >
-                        <!-- sample error note the modal-input-error class on the input for highlighting -->
-                        <div class="modal-error">This is an inline error message.</div></div>
-                     <div class="row" ><input type="password" ng-model="password2" name="password2form" class="topcoat-text-input--large full ng-pristine ng-invalid ng-invalid-required" placeholder="Re-enter password" ></div>
-                     <div class="row" ><input type="text" ng-model="referral" class="topcoat-text-input--large full ng-pristine ng-valid" placeholder="Referral Code or Email"></div>
-                     <div class="row">
-                     <div class="modal-footer modal-legal">
-                        <div>By clicking on "Create Account", you agree to our <a href="termsofserviceweb.html" target="_blank">Terms of Service</a> and <a href="privacypolicyweb.html" target="_blank">Privacy Policy</a></div>
-                     </div>
-                  </div>
-                     <div class="row" ><button class="modal-btn topcoat-button--large--cta full" ng-click="create()" ng-disabled="disabled">Create Account</button></div>
-                     <div class="row" ><div class="modal-error-general error ng-binding" ng-bind-html-unsafe="error">This is a sample error statement that's also kind of long</div></div>
-                  </form>
-               </div>
-               <div class="row">
-                  <div class="modal-footer">
-                     <div>Already a member? <a href="#" class="switch-to-login">Log in</a></div>
-                  </div>
-               </div>
-            </div>
+         <div class="row" >
+            You may start typing.
          </div>
-
-      </div> <!-- end modal pad-->
-   </div> <!-- end modal container -->
-
-
-
-
-</div>
-
-<div class="floater">
-   <div id="menu-bg"></div>
-   <div class="container">
-      <div class="row">
-
-         <div id="logo-wrapper">
-            <div id="logo"><a href="index.html"></a></div>
-            <div id="wordmark"><a href="index.html"></a></div>
+         <div class="row" >
+            Hit Ctrl + Space to enter Zen mode. Hit ESC to exit. Don't forget to copy your work to your word processor when you're done.
          </div>
-
-
-         <!-- the following links are on one line so Chrome doens't render \n as a space -->
-         <div id="menu">
-            <div id="main-menu">
-               <a class="active" href="/" title="">Home</a><a  href="/features.html" title="">Features</a><a  href="/blog.html" title="">Blog</a><a  href="/support.html" title="">Support</a><a  href="/index.html#get-liztic" title="">Download</a>
-            </div>
-
-            <!-- the following are for login / signup buttons, and welcome message -->
-            <div id="account">
-               <div id="welcome" style="display:none">Hello, Steve. <a id="logout" href="#">Log Out</a></div>
-               <div id="account-menu"><a id="login" class="modal-login login-btn" >Log in</a><a id="signup" class="modal-signup signup-btn">Sign up</a></div>
-            </div>
-         </div>
-     </div>
-
-   </div>
-</div>
-
-<div class="clear"></div>
-
-
+      </div>
+   </section>
+</article>
   </section>
 
-  <article id="intro">
+  <!-- for jekyll to escape angular -->
 
-   
-<!-- this makes room for the header float nav -->
-<div class="header-spacing"></div>
 
-   <section id="spotlight">
-      <div class="container">
-         <div class="row" >
-            Big Logo Here
+<article ng-app="nanoApp">
+   <div ng-controller="mainCtrl">
+
+      <section id="entries">
+         <div class="container">
+            <div class="row entry-list">
+               <p ng-repeat="entry in nano.entries">
+                  {{entry}}
+               </p>
+            </div>
          </div>
-         <div class="row" >
-            Liztic is a game-changing platform for your personal music library with a music player that runs on all your devices
+      </section>
+      <!-- <input type="text" ng-model="nano.entries"> -->
+
+      <section class="wordcount">
+         <div class="container">
+            <div class="row" >
+               <h1>{{nano.totalCount }}</h1>
+               <!-- <h3>{{nano.typeCount }}</h3> -->
+            </div>
          </div>
-      </div>
-   </section>
+      </section>
 
-   <!-- hero spot or carousel for videos, etc. -->
-   <section id="hero">
-      <div class="container">
-         <div class="row">
-            <div class="youtube"><iframe src="//www.youtube.com/embed/LgPk9SBInoo" frameborder="0" allowfullscreen></iframe></div>
+      <section class="input">
+         <div class="container">
+            <div class="row" >
+               <!-- <input id="input-area" type="text" autofocus placeholder="Type something" ng-model="nano.typed" ng-enter="onEnter()" ng-change="onUpdate()"> -->
+
+               <input id="input-area" type="text" autofocus placeholder="Start typing..." ng-model="nano.typed" ui-keydown="{'enter':'onEnter($event)','esc':'stopZen($event)','ctrl-space':'startZen($event)'}" ng-change="onUpdate()">
+
+            </div>
          </div>
-      </div>
-   </section>
-
-
-
-   <section id="intro1">
-      <div class="container">
-         <div class="row" >
-            <ul>
-
-            <li>sync your music between any of your devices, across any operating system</li>
-
-            <li>works on all the major operating systems (iOS, Android, Windows, Mac)</li>
-
-            <li>all your music in one library and import of all your existing music files</li>
-
-            <li>integrate your existing cloud storage (Dropbox, Google Drive) within Liztic</li>
-
-            <li>works with High Quality audio files (uncompressed)</li>
-
-            Liztic is free with a Basic account (up to 250 songs in your library and 3 personal devices) ; upgrades to Premium (2,500 songs, 5 devices) and Studio account (unlimited songs, 10 devices) available
-
-            </ul>
-         </div>
-      </div>
-   </section>
-
+      </section>
+   </div>
 </article>
 
-<article id="get-liztic">
-
-   <section id="download">
-      <div class="container">
-         <div class="row" >
-            <div>Get the App</div>
-            <div>
-               <span>Soon available for Windows, Mac, iPad, iPhone, Android &amp; Kindle Fire</span>
-            </div>
-            <div id="stores">
-               <a href="#" class="win"></a>
-               <a href="#" class="mac"></a>
-               <a href="#" class="appstore"></a>
-               <a href="#" class="googleplay"></a>
-               <a href="#" class="kindle"></a>
-            </div>
-
-         </div>
-      </div>
-   </section>
-
-</article>
-
-
+<div id="bottom"></div>
 
 <div class="clear"></div>
+
+
+
 
 
   <!-- <a class="goto" id="contact"></a> -->
   <section id="footer">
-    <div class="container">
-  <div class="row" id="row-mailchimp">
-    <div id="mailchimp">
-      <div id="cta">Sign up for our newsletter</div>
-      
-<div id="mc_embed_signup">
-  <form action="http://liztic.us7.list-manage2.com/subscribe/post?u=d7e9e72f57617bab3ad6a19b3&amp;id=6dd0229079" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
-    <div class="mc-field-group">
-      <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="e-mail *">
-      <input type="text" value="" name="FNAME" class="" id="mce-FNAME" placeholder="first name ">
-      <input type="text" value="" name="LNAME" class="" id="mce-LNAME" placeholder="last name ">
-      <span class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></span>
-    </div>
-    <div id="mce-responses" class="clear">
-      <div class="response" id="mce-error-response" style="display:none"></div>
-      <div class="response" id="mce-success-response" style="display:none"></div>
-    </div> 
-  </form>
-</div>
-        
-<script type="text/javascript">
-var fnames = new Array();var ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';
-try {
-    var jqueryLoaded=jQuery;
-    jqueryLoaded=true;
-} catch(err) {
-    var jqueryLoaded=false;
-}
-var head= document.getElementsByTagName('head')[0];
-if (!jqueryLoaded) {
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = '//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js';
-    head.appendChild(script);
-    if (script.readyState && script.onload!==null){
-        script.onreadystatechange= function () {
-              if (this.readyState == 'complete') mce_preload_check();
-        }    
-    }
-}
-var err_style = '';
-try{
-    err_style = mc_custom_error_style;
-} catch(e){
-    err_style = '';
-}
-var head= document.getElementsByTagName('head')[0];
-var style= document.createElement('style');
-style.type= 'text/css';
-if (style.styleSheet) {
-  style.styleSheet.cssText = err_style;
-} else {
-  style.appendChild(document.createTextNode(err_style));
-}
-head.appendChild(style);
-setTimeout('mce_preload_check();', 250);
-var mce_preload_checks = 0;
-function mce_preload_check(){
-    if (mce_preload_checks>40) return;
-    mce_preload_checks++;
-    try {
-        var jqueryLoaded=jQuery;
-    } catch(err) {
-        setTimeout('mce_preload_check();', 250);
-        return;
-    }
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = 'http://downloads.mailchimp.com/js/jquery.form-n-validate.js';
-    head.appendChild(script);
-    try {
-        var validatorLoaded=jQuery("#fake-form").validate({});
-    } catch(err) {
-        setTimeout('mce_preload_check();', 250);
-        return;
-    }
-    mce_init_form();
-}
-function mce_init_form(){
-    jQuery(document).ready( function($) {
-      var options = { errorClass: 'mce_inline_error', errorElement: 'div', onkeyup: function(){}, onfocusout:function(){}, onblur:function(){}  };
-      var mce_validator = $("#mc-embedded-subscribe-form").validate(options);
-      $("#mc-embedded-subscribe-form").unbind('submit');//remove the validator so we can get into beforeSubmit on the ajaxform, which then calls the validator
-      options = { url: 'http://liztic.us7.list-manage.com/subscribe/post-json?u=d7e9e72f57617bab3ad6a19b3&id=6dd0229079&c=?', type: 'GET', dataType: 'json', contentType: "application/json; charset=utf-8",
-                    beforeSubmit: function(){
-                        $('#mce_tmp_error_msg').remove();
-                        $('.datefield','#mc_embed_signup').each(
-                            function(){
-                                var txt = 'filled';
-                                var fields = new Array();
-                                var i = 0;
-                                $(':text', this).each(
-                                    function(){
-                                        fields[i] = this;
-                                        i++;
-                                    });
-                                $(':hidden', this).each(
-                                    function(){
-                                        var bday = false;
-                                        if (fields.length == 2){
-                                            bday = true;
-                                            fields[2] = {'value':1970};//trick birthdays into having years
-                                        }
-                                     if ( fields[0].value=='MM' && fields[1].value=='DD' && (fields[2].value=='YYYY' || (bday && fields[2].value==1970) ) ){
-                                      this.value = '';
-             } else if ( fields[0].value=='' && fields[1].value=='' && (fields[2].value=='' || (bday && fields[2].value==1970) ) ){
-                                      this.value = '';
-             } else {
-                 if (/\[day\]/.test(fields[0].name)){
-                                             this.value = fields[1].value+'/'+fields[0].value+'/'+fields[2].value;                 
-                 } else {
-                                             this.value = fields[0].value+'/'+fields[1].value+'/'+fields[2].value;
-                                         }
-                                     }
-                                    });
-                            });
-                        $('.phonefield-us','#mc_embed_signup').each(
-                            function(){
-                                var fields = new Array();
-                                var i = 0;
-                                $(':text', this).each(
-                                    function(){
-                                        fields[i] = this;
-                                        i++;
-                                    });
-                                $(':hidden', this).each(
-                                    function(){
-                                        if ( fields[0].value.length != 3 || fields[1].value.length!=3 || fields[2].value.length!=4 ){
-                                      this.value = '';
-             } else {
-                 this.value = 'filled';
-                                     }
-                                    });
-                            });
-                        return mce_validator.form();
-                    }, 
-                    success: mce_success_cb
-                };
-      $('#mc-embedded-subscribe-form').ajaxForm(options);
-      
-      
-    });
-}
-function mce_success_cb(resp){
-    $('#mce-success-response').hide();
-    $('#mce-error-response').hide();
-    if (resp.result=="success"){
-        $('#mce-'+resp.result+'-response').show();
-        $('#mce-'+resp.result+'-response').html(resp.msg);
-        $('#mc-embedded-subscribe-form').each(function(){
-            this.reset();
-     });
-    } else {
-        var index = -1;
-        var msg;
-        try {
-            var parts = resp.msg.split(' - ',2);
-            if (parts[1]==undefined){
-                msg = resp.msg;
-            } else {
-                i = parseInt(parts[0]);
-                if (i.toString() == parts[0]){
-                    index = parts[0];
-                    msg = parts[1];
-                } else {
-                    index = -1;
-                    msg = resp.msg;
-                }
-            }
-        } catch(e){
-            index = -1;
-            msg = resp.msg;
-        }
-        try{
-            if (index== -1){
-                $('#mce-'+resp.result+'-response').show();
-                $('#mce-'+resp.result+'-response').html(msg);            
-            } else {
-                err_id = 'mce_tmp_error_msg';
-                html = '<div id="'+err_id+'" style="'+err_style+'"> '+msg+'</div>';
-                
-                var input_id = '#mc_embed_signup';
-                var f = $(input_id);
-                if (ftypes[index]=='address'){
-                    input_id = '#mce-'+fnames[index]+'-addr1';
-                    f = $(input_id).parent().parent().get(0);
-                } else if (ftypes[index]=='date'){
-                    input_id = '#mce-'+fnames[index]+'-month';
-                    f = $(input_id).parent().parent().get(0);
-                } else {
-                    input_id = '#mce-'+fnames[index];
-                    f = $().parent(input_id).get(0);
-                }
-                if (f){
-                    $(f).append(html);
-                    $(input_id).focus();
-                } else {
-                    $('#mce-'+resp.result+'-response').show();
-                    $('#mce-'+resp.result+'-response').html(msg);
-                }
-            }
-        } catch(e){
-            $('#mce-'+resp.result+'-response').show();
-            $('#mce-'+resp.result+'-response').html(msg);
-        }
-    }
-}
-</script>
-    </div>
-  </div>
-  <div class="row">
-    <div id="basic">
-      <span id="copyright"><a href="index.html">&copy; Liztic LLC</a></span>
-      <span class="separator">|</span>
-      <span id="contact"><a href="aboutliztic.html">Contact</a></span>
-      <!-- <span class="separator">|</span>
-      <span id="contact"><a href="mailto:contact@liztic.com">info@liztic.com</a></span> -->
-      
-      <span class="separator-long"></span>
-
-      <span id="privacy"><a href="termsofserviceweb.html">Terms of Service</a></span>
-      <span class="separator">|</span>
-      <span id="terms"><a href="privacypolicyweb.html">Privacy Policy</a></span>
-    </div>
-    <div id="social">
-      <!-- <span>Made with Love in Atlanta, Georgia</span> -->
-      <a href="http://www.facebook.com/lizticmusicplayer" class="facebook"></a>
-      <a href="http://www.twitter.com/LizticMusic" class="twitter"></a>
-      <a href="http://www.youtube.com/LizticMusic" class="youtube"></a>
-      <a href="http://www.pinterest.com/lizticmusicplayer" class="pinterest"></a>
-      <a href="http://www.instagram.com/liztic" class="instagram"></a>
-      <a href="https://plus.google.com/109321792061988163686" class="googleplus"></a>
-    </div>
-  </div>
-
-</div>
-
     
   </section>
 
  
+  <script type="text/javascript" src="assets/angular.min.js"></script>
+  <script type="text/javascript" src="assets/angular-ui-utils.min.js"></script>
+  <script type="text/javascript" src="assets/ZeroClipboard.min.js"></script>
+
+
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="//ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.0.6-development-only.js"></script>
-  <script src="assets/script.js"></script>
+  <script src="assets/main.js"></script>
+
 
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

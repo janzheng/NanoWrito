@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>NanoWrito</title>
+   <!-- <link rel="stylesheet" href="vendor/foundation.min.css"> -->
+ </head>
+ <body>
+ <!-- 
+   <div ng-app="">
+ 	
+   <textarea id="main-area" type="text" autofocus="" placeholder="Start entering some text here" ng-model="message"></textarea>
+   	<h1>{{message}}</h1>
+   </div>
+
+   <div class="{{message}}"></div> -->
+ <div ng-app="nanoApp">
+  <div ng-controller="FirstCtrl">
+    <input type="text" ng-model="data.message">
+    <h1>{{ data.message }}</h1>
+  </div>
+  <div ng-controller="SecondCtrl">
+    <input type="text" ng-model="data.message">
+    <h1>{{ reversedMessage(data.message) }}</h1>
+    <h2>{{ data.message | reverse }}</h2>
+  </div>
+</div>
+
+
+  <script type="text/javascript" src="assets/countable.js"></script>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.0.6-development-only.js"></script>
+  <script type="text/javascript" src="assets/main.js"></script>
+
+
+   <script>
+   		var area = document.getElementById('main-area')
+
+		Countable.live(area, function (counter) {
+		  console.log(counter)
+		})
+   </script>
+ </body>
+</html>

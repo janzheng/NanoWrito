@@ -1,83 +1,50 @@
 ---
 layout: framework
-title: Liztic. Your music - anywhere, anytime.
+title: Nanowrito. Something to help you reach your nano goal.
 comments: false
 ---
+<!-- for jekyll to escape angular -->
+{% raw %}
 
+<article ng-app="nanoApp">
+   <div ng-controller="mainCtrl">
 
-<article id="intro">
-
-   {% include headerspacing.html %}
-
-   <section id="spotlight">
-      <div class="container">
-         <div class="row" >
-            Big Logo Here
+      <section id="entries">
+         <div class="container">
+            <div class="row entry-list">
+               <p ng-repeat="entry in nano.entries">
+                  {{entry}}
+               </p>
+            </div>
          </div>
-         <div class="row" >
-            Liztic is a game-changing platform for your personal music library with a music player that runs on all your devices
+      </section>
+      <!-- <input type="text" ng-model="nano.entries"> -->
+
+      <section class="wordcount">
+         <div class="container">
+            <div class="row" >
+               <h1>{{nano.totalCount }}</h1>
+               <!-- <h3>{{nano.typeCount }}</h3> -->
+            </div>
          </div>
-      </div>
-   </section>
+      </section>
 
-   <!-- hero spot or carousel for videos, etc. -->
-   <section id="hero">
-      <div class="container">
-         <div class="row">
-            <div class="youtube"><iframe src="//www.youtube.com/embed/LgPk9SBInoo" frameborder="0" allowfullscreen></iframe></div>
+      <section class="input">
+         <div class="container">
+            <div class="row" >
+               <!-- <input id="input-area" type="text" autofocus placeholder="Type something" ng-model="nano.typed" ng-enter="onEnter()" ng-change="onUpdate()"> -->
+
+               <input id="input-area" type="text" autofocus placeholder="Start typing..." ng-model="nano.typed" ui-keydown="{'enter':'onEnter($event)','esc':'stopZen($event)','ctrl-space':'startZen($event)'}" ng-change="onUpdate()">
+
+            </div>
          </div>
-      </div>
-   </section>
-
-
-
-   <section id="intro1">
-      <div class="container">
-         <div class="row" >
-            <ul>
-
-            <li>sync your music between any of your devices, across any operating system</li>
-
-            <li>works on all the major operating systems (iOS, Android, Windows, Mac)</li>
-
-            <li>all your music in one library and import of all your existing music files</li>
-
-            <li>integrate your existing cloud storage (Dropbox, Google Drive) within Liztic</li>
-
-            <li>works with High Quality audio files (uncompressed)</li>
-
-            Liztic is free with a Basic account (up to 250 songs in your library and 3 personal devices) ; upgrades to Premium (2,500 songs, 5 devices) and Studio account (unlimited songs, 10 devices) available
-
-            </ul>
-         </div>
-      </div>
-   </section>
-
+      </section>
+   </div>
 </article>
 
-<article id="get-liztic">
-
-   <section id="download">
-      <div class="container">
-         <div class="row" >
-            <div>Get the App</div>
-            <div>
-               <span>Soon available for Windows, Mac, iPad, iPhone, Android &amp; Kindle Fire</span>
-            </div>
-            <div id="stores">
-               <a href="#" class="win"></a>
-               <a href="#" class="mac"></a>
-               <a href="#" class="appstore"></a>
-               <a href="#" class="googleplay"></a>
-               <a href="#" class="kindle"></a>
-            </div>
-
-         </div>
-      </div>
-   </section>
-
-</article>
-
-
+<div id="bottom"></div>
 
 <div class="clear"></div>
+
+{% endraw %}
+

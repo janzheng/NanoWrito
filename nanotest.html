@@ -1,0 +1,21 @@
+---
+layout: framework
+title: Nanowrito. Something to help you reach your nano goal.
+comments: false
+---
+<!-- for jekyll to escape angular -->
+{% raw %}
+<div ng-app="testApp">
+   <textarea id="main-area" type="text" autofocus="" placeholder="Start entering some text here" ng-model="message"></textarea>
+    <h1>{{message}}</h1>
+
+  <div ng-controller="mainCtrl">
+    <input type="text" ng-model="nano.entry">
+    <h1>{{nano.entry}}</h1>
+  </div>
+</div>
+
+
+<div class="clear"></div>
+
+{% endraw %}
