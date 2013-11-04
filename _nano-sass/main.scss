@@ -53,494 +53,157 @@
 $size-menu: $base*0.9;
 $size-footer: $base * 0.9;
 $size-form: $base*0.9; $height-form: $base*2;
+$size-copy: $base*0.9;
 
 $size-h1: $base*5;
-$size-h2: $base*3;
-$size-h3: $base*1.3;
+$size-h2: $base*1;
+$size-h3: $base*1;
 $size-h4: $base*1.3;
 $size-h5: $base*1;
+$size-h6: $base*4;
 $size-p: $base*0.9; $height-p: $base*1.3;
-// $size-legal: $base*0.85;
+
 
 body {
-   h1, h2,     { @extend %open-sans; font-weight: 700; color: black;}
-   h3, h4, h5  { @extend %open-sans; font-weight: 700; color: black;}
+
+   @include ease(0.15s);
+
+   h1 { @extend %display; color: black;
+      text-align: center; background-color: rgba($color1-3,1);
+      -webkit-background-clip: text; -moz-background-clip: text;
+      background-clip: text; color: transparent; text-shadow: rgba($color2-5,0.5) 0px 3px 3px;
+   }
+   h2 { 
+      text-align: center;
+      @extend %serif;
+      color: rgba($color2-3,0.4);
+   }
    h1 {font-size: $size-h1;}
    h2 {font-size: $size-h2;}
    h3 {font-size: $size-h3; padding: $base*0.75 0;}
    h5 {font-size: $size-h5; font-weight: 500; padding: $base*0.75 0;}
    p {@extend %serif; font-size: $size-p; font-weight: normal; line-height: $height-p; color: $dark-gray; padding: $base/2 0;}
 
-   a, a:active, a:visited {color: $color1-5; text-decoration: none;}
-   a:hover {color: $color1-2; text-decoration: underline;}
+   a, a:active, a:visited {color: $color1-2; text-decoration: none; @include ease(0.15s);}
+   a:hover {color: $color2-3; text-decoration: underline; @include ease(0.15s);}
 
-   background-color: $silver;
+   background-image: url('cover.jpg');
    article { background-color: white; }
 }
 
 .row { padding: $base}
-.separator {padding: 0 $base/8;}
-.separator-long {padding: 0 $base;} 
 
-input, button {
+input {
    padding: $base/2 $base; 
    @include ease-out(0.15s);
    font-size: $size-form; @extend %box-shade-light;
 
-   background: rgba(#fff, 0.8); border: $color1-2-1 1px solid; outline: 0;
+   background: rgba(#fff, 0.8); 
+   border: $color1-2 1px solid; outline: 0;
    @include border-radius(4px, 4px);
    color: $slate;
    
    &:focus {
-      border: 1px solid $color2-4;
+      border: 1px solid $color1-3;
       @include ease-out(0.25s);
    }
    
 }
 
+
+button {
+   padding: $base/3 $base/2; 
+   @extend %serif;
+   @include ease-out(0.15s);
+   font-size: $size-copy; @extend %box-shade-light;
+
+   background: rgba($color2-1, 0.7); 
+   border: $color1-2 1px dashed; outline: 0; border-radius: 3px;
+   @include border-radius(4px, 4px);
+   color: $silver;
+   
+   &:hover {
+      border: 1px solid $color1-3;
+      @include ease-out(0.25s);
+   }
+   
+}
 // *********************************************************
 // HEADER
 // *********************************************************
 
-// highest z: 10(5)
-#header {
-   .row {padding: 0} //override
-   @extend %open-sans;
-   // @extend %serif;
-   font-weight: 400;
-   // text-transform: uppercase;
-   color: $color1-3;
 
-   #menu-bg {
-      z-index: 10000;
-      padding: $base*1.5 0; width: 100%;
-      position: absolute; top: 0;
-      // border-bottom: solid 1px $light-gray;
-      // background: rgba($silvercloud, 0.9);
-      background: white;
-      @extend %box-shadow-under;
-   }
-
-   #logo-wrapper {
-      @include span-all(6, 2, 2, 2);
-      
-      #logo {
-         max-width: 90px; z-index: 10010; position: relative; display: block; 
-         // background-color: $silverline; //non-transparent version of $silvercloud a0.9
-         // background: rgba($silvercloud, 0.9);
-         // background: rgba(white, 0.7);
-      @extend %box-shadow-logo;
-         padding: $base*0.75 0;
-
-         a {
-            display: inline-block;
-            height: 70px; width: 90px;
-            background: url(images/liztic.png) no-repeat; &:hover {};
-            background-position: center; background-size: contain;
-            background-color: white;
-         }
-      }
-      #wordmark {
-         max-width: 76px; z-index: 10012; position: absolute;
-         display: block; padding-left: $base*5; top: 10px;
-
-         a {
-            display: inline-block;
-            height: 30px; width: 76px;
-            background: url(images/wordmark.png) no-repeat; &:hover {};
-            background-position: center; background-size: contain;
-         }
-      }
-   }
-
-   #menu {
-      @include span-all(6, 10, 10, 10);
-      a {
-         padding: 0; margin: 0; 
-      }
-      z-index: 10005; position: relative;
-      font-size: $size-menu; 
-      text-align: right; padding-top: $base;
-
-      #main-menu {
-         display: inline-block; 
-         padding-right: $base;
-         a {
-            padding: $base;
-            &:hover {
-               color: $silvercloud; text-decoration: none;
-               // background: rgba(0, 0, 0, 0.75);
-               background: #3e3e3e;
-               @include ease-out(0.15s);
-            }
-         }
-         .active {
-            // background: $gray;
-            background: $color1-2;
-            color: white;
-            @extend %shadow-inset;
-         }
-      }
-
-      #account {
-         display: inline-block;
-   
-
-         #welcome {
-            margin-left: $base*2;
-            padding-right: $base*2;
-         }
-         #login {
-            padding: $base*0.45 $base*1.25; margin-right: $base; 
-            @include border-radius(3px, 3px);
-            color: $silvercloud; background: rgba($color2-4, 0.9);
-            cursor: pointer;
-
-            &:hover {
-               // padding: $base*0.65 $base*1.25; //slide effect
-               background: rgba($color2-5, 1);
-               text-decoration: none;
-               @include ease-out(0.15s);
-               @extend %shadow-inset;
-            }
-         }
-         #logout{ @extend #login; margin: 0 0 0 $base}
-         #signup {
-            padding: $base $base*1.25 $base*0.45 $base*1.25; 
-            background: rgba($color1-2, 0.9);
-            color: $silvercloud; 
-            border-radius: 0 0 4px 4px;
-            cursor: pointer;
-   
-            &:hover {
-               // padding: $base $base*1.25 $base*0.65 $base*1.25;  //slide effect
-               background: rgba($color1-3, 1);
-               text-decoration: none;
-               @include ease-out(0.15s);
-               @extend %shadow-inset;
-            }
-
-         }
-      }
-   }
-
+#header section {
+   background-image: url('cover.jpg');
 }
-.header-spacing {
-   padding: $base 0;
-}
+.desc {padding: 0 0 $base*2 0}
 
 
 // *********************************************************
 // MAIN
 // *********************************************************
 
-#intro {
-   #hero {
 
-      .row{
-         @include span-columns(6); @include shift(3);
-         
-         .youtube {
-            position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;
-         }
-
-         .youtube iframe, .youtube object, .youtube embed {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-         }
-         /*- See more at: http://avexdesigns.com/responsive-youtube-embed/#sthash.RQDSwqMy.dpuf*/
-      }
-   }
-
-   #newsletter {
-      background: $silver;
-   }
+.main-app {
+   position: relative;
 }
 
-#get-liztic {
-
-   #download {
-      .row {
-         @include span-all(6, 12, 12, 12);
-         a {
-            display: inline-block;
-            height: 40px; width: 120px;
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: contain;
-            &.win {width: 60px; background-image: url(images/windows8-sm.png); &:hover {}}
-            &.mac {width: 60px; background-image: url(images/apple-sm.png); &:hover {}}
-            &.appstore {background-image: url(images/appstore.png); &:hover {}}
-            &.googleplay {background-image: url(images/googleplay.png); &:hover {}}
-            &.kindle {background-image: url(images/kindle.png); &:hover {}}
-         }
-      }
-   }
+.copy {
+    position: fixed;
+    right: $base; top: $base;
 }
 
 
+#entries {
+   cursor: text; 
+}
+
+.wordcount h6 {
+   display: inline-block;
+   @include span-all(6, 12, 12, 12); text-align: center;
+   font-size: $size-h6;
+   @extend %sans-serif;
+}
+
+#input-area {
+   @include span-all(6, 12, 12, 12);
+}
+
+.zen *{
+
+}
 
 
+.zen {
+   &.blanket {
+      display: block; width: 100%; height: 100%;
+      z-index: 500000;
+      background-color: rgba(black, 0.9);
+      position: fixed; top: 0; left: 0;
+   }
 
+
+}
+
+.zen.blanket-add, .zen.blanket-remove {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+}
+ 
+.zen.blanket,
+.zen.blanket-add.zen.blanket-add-active {
+  color: red;
+  font-size:3em;
+}
+ 
+.zen.blanket-remove.zen.blanket-remove-active {
+  font-size:1.0em;
+  color:black;
+}
 
 // *********************************************************
 // FOOTER
 // *********************************************************
 
-#footer {
-   // background: $color1-3;
-   background: $silver;
-   box-shadow: inset 0 3px 3px -3px rgba(0,0,0,.5);
-   text-shadow: none;
-   @extend %open-sans; 
-   
-
-   .separator { color: $color1-5;}
-
-   #basic {
-      @include span-all(6, 7, 7, 7);
-      margin-top: 7px;
-      font-size: $size-footer; 
-
-      a, a:active, a:visited {color: $color1-2; text-decoration: none; @include ease-out(0.15s);}
-      a:hover {color: $color1-4; text-decoration: none; }
-      #copyright { padding-left: 0;}
-   }
-
-   #social {
-      font-size: $size-footer; 
-      @include span-all(6, 5, 5, 5); 
-      text-align: right;
-
-      span {
-         display: inline-block; padding-right: 12px;
-         position: relative; bottom: 12px;
-      }
-
-      a {
-         display: inline-block;
-         height: 32px; width: 32px; background-size: 32px 32px;
-         background-position: center center; background-repeat: no-repeat;
-         text-indent: $base*1000; background-color: $light-gray;
-         @include ease(0.15s);
-         &.facebook {
-            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABiElEQVR42u3avUoDQRSG4UBIDNpIllhZWAiWRgshRSBgaaOtguAPBkQvQE3nNeQqxFpbawsRRUQs7TaEFUUthPUrtooe3YGdODvnC7xsE+YMT0J2AluI41h1BCAAAQhAAAIQgAAEIIBZRVRFgSNVUXFYAE10hULUc6QQXaOWbYAyukOuvh7QiE2AAD07DPCCJmwD9B0GiFCNAJ4BvKPX5PqpBeAC7aIFNIUmk+sMmkf7vgJEaDXFPuZ8BHhDzZT7aPgIcIgKWgFCNG6wj7pvACd//O9ooGW0knTgF4D89R9D5xrOAdvCvCUtB6ENYd6OFoBNAigHaAvz9nwE6KLOQLO/HHk7P3SWZ4Bpg3lSx3kGqGcAcKod4FIzwCh60vwbEKCPvN8FjgaS7wLf39vlOYAnQQIQgAAEIAABCEAAAhDgPwAidwHsPyJTRvcWALaEeW3DdR5RxRpAUgvdoH6GrQmz1g3WuEWLw3pQsoRqmSV/ahWDNUp8VJYABCAAAQhAAAIQgAAESN0XsDffMaRkAuwAAAAASUVORK5CYII=); 
-            &:hover {background-color: #3b5998;} }
-         &.twitter {
-            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACaklEQVR42u3aTUhUURjGcSemhhJNMKiMgkKwFKyBUsHIQkxs0yI30aamZqe0CRRqoTRgtOgDpIVuRQqhEqyNbUQKhAhCB6E20XebMgtxmnT6uxuoaZq5Z857br4P/GA2c+A+zJ17OO8tSqVSq5oWoAVoAVqAFqAFaAFagBagBWgBWoAWoAW4owS1OIwGbFstBVThFl4jPfMYx4kM3yvDMQRtFnAUuw1efBTzyJYRlKEI1biId7hk8xewBtOYxSYDF9+JXBLHUySxkhmEbBZQiZ9YyRS2erj4eiwh38SxGQHUIGijgDakZxb78lzrEfLNK3SgF9OIIGCjgPbU7/mKszmuswfLyDc/0j5ft3kLNCNT7qHmH9eJwESu2n4MVmABmbKAflRnWacXXpJAp9Q+YAzZsoj7OImKP6zRDS95I7kRakQumcMEruEcWhAzUMAGyZ1gDyTzAkGJAlpxHjtwA0lI5InULdCetkd/hkVIZFiqgJ1IQjpdkn+C45BOk2QBhyCZTyiVPg+4DKkMuXIg0geJtLp0InQQDzAHG4ljrSsF7McZRPEQSyh0Ii6dCdbCZmYQcu1QtE/23pcvYB3GUOgMuHwsvh4DKFSeo8QPc4FmjOA9vhnc9FT5bTBSjCsGngqf0eC3ydBe3MGygQOPOr/MBkvRhttIwGsmscu14WgAB3AapxBFDKN4CxNJIIaQq9PhLejBF5jOXYT9Mh4vRwem4CUfMYh6P78fEMYFjOIlvv9lkvMBj3ETx1H+v70gEcJ2hNGEFhxBHSqxUd8Q0QK0AC1AC9ACtAAtQAvQArQALUAL0AK0AFG/ADVE276ItLozAAAAAElFTkSuQmCC); 
-            &:hover {background-color: #00aced} }
-         &.youtube {background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAELUlEQVR42u2ab0hWVxzHl3/2GDMnTxoaK91qRbWg9f/FCApjf4wGe2EvpEYbrmDgKGouMoVWtLI/SFuxYMSYKLSKaIOKXvRig01Yutgiak38E8xVVqbbnsS6fV98XhwOs1TU89zHc+BD93t+9zx6P93n3nPu9ZkgCEY1XoAX4AV4AV6AF+AFeAFegBcwdKSKbDFejDH60+kbl+gCssWf4rZ4i75k8YPoEKsTWgB8JwK1z8kvi4A2bTQIWMXB/k5eQ64fLRfBqLgrHokccQQBlcY+s8XbYp41dqZYIJ4TydTnipTQCIBaDnq9aGR7PrUK5AS0g8YFs4G+BVwwH4h/RFbYBLzDgVwRPaKJ/9FX6O8S1eImeSnjLloCYqI7jALG8zUIaIfoLyHXkKvI5eRfyPMR8B+ywiUAzgQ045a4kfwFeRt5dyIK2CICTvNM+jbQd5hcSf4sEQW8z8H8Rh51AkqM+cAYLwAB1iyx3BJwkTxPRMS/iSZgDX2nyUfImy0Bc8Ri5gv3wipgHQdz1RCQL2L0/yQesv0q9XpjzB22u0V2GAUUi7/EBWtpXCRaOLh2sd66c8Sor2UidU1EwyggmTl9GtkkIvKo27VJ1HmOIEL6RChFRIyHIRNYHOWyHeXUzoUc8jiRjpyksKwG3xT7xDFO+QZO3VZO89tMjTvF/T7oZJ8OxrTxGY185rdivyiMJwGp4msx0q1WROJBwCfCVatwLSAimsVDpruXbLiKP6l1il9FyyAEtImxLgVMEwG3ulS7DpNFr+irnTAeow2mzXIp4HV+ib/FDJFn3PIyyEv6KaBokAJWuBSwVgS0GBRaE5oH1IdLwDqXAjYJu600V3nGvP8rprY94qioo3aS/d/lfcIOpJjtmtgjPhU/W7UtLgVUPkFAhdE3m75GcZftDGqnyFOtt0Y/GuuFTHN2iTyapDgUsLOfAhbRd4mV3bNioiUgX3wjFpN3US8kl4lqtqcb15XdLgXsGkIBxeQ91nOCqSyk7pNzGd9OrkoUAavIey0B+awHzjK9zmGN0ZqoAqosAVPINi3xIGDnCAh4ia/ARrGderXoiodrQOXwC+AroHHkZnFd9MbDXWDTAAVcEbGnXAT3k7eSX+QMuEXOQkgrucylgPcGKOB745SdZAlYKP4QReTt1F8j1zInSBHpxmu3EpcC3hB2K6BWZvQtN8a8wL+Z1I6TI9bK7gT1WrLJh+YrN5cCpotHloADYrU1nT0vlolSvr8fiFJqDez/pTjGfh+JHmN8HbKXiB1WbYbr5wFNwlVrEWnOBMDHDgWwEHIrIIWV3ki3oyLVpQCbAmaGNeKcqBeX+YrcEO3cyjrEnT7oYJ92xjTxGfV8Zg0/oyAs7wWSjPcCz4so9/Hs/4NalH3TGZvk/1TWC/ACvAAvwAvwArwAL8AL8AKGnMfdjXUWWBWaKAAAAABJRU5ErkJggg==); 
-            &:hover {background-color: #cd332d}}
-         &.pinterest {background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAADG0lEQVR42u3aTUgUYRzH8W1dU1tRzAoj1zDDaHu1FD30AkUJXYIougQhBUpQIogdCkrCrCiiIjpFIHawCEowumWEkVBSJCpWUqZCW2L5FmW6fS/B8OfZYUyIZ5znC5+LDbP0c13X2fFFo1FPMwOYAcwAZgAzgBnADGAGMAOYAf4/P5IxH2lImu0DpKAYNWjCG/ThCyL4gFbcQgmyZssAubiEXkynYdQj360DBFGDEcykCVxG0E0DhPECdo1hAL2IYAJ2PcdSNwxQiM9Q1Ykz2IYQUhBEGnKxF3UYhapuhHQeYAUikA3gMBKncZ57UNWKJB0HSEIbZE9n8NS9CFW1Og5QDVkLUmZ43vuQ/USuTgOEFD+3EZuf10xkODz3MoxBdlWnAaohK4VPKMITjGII9Q6fIQ2Q9SGowwDx6IS1HsUL3kaM/ON38iBUFekwwGrIzotj4vAMqj6JsVQKoeqQDgPsh2ynOKYAsRpCOnw2VkLVCR0GqIS1CeSIY8oRq/eY6/BZJjulwwAnYe0bFopjLiBWDxy9u1R3XIcBKmBtGIvEMbWI1TEHj7Fb59eAfbA2hVXimDKomkTYwWNUQdUOHQYIYwrWjohj8jAJ2Sv4HTzGXch+IVuHAQJoh7UOJIpj3kF21uF1hX7IOhDQ5Z1gBWRXMAc+LMYwZFsdnHsXVF3X6a1wMrpg7SPibf4TEaQ6OPdDqNqizwDABnzF3+5Y/q0Gsg4H59wOVS8Rp8MA0ho0I0ollq8/huy7+HUpLcBbqNqj+zXB9UiAD2kYhKprNn8ut0BVk9sui2+GXfXYhCysRSX6oaofIbcNUAUnjcOuQRS68YORRsjqMA6ntSPPjZ8MzUMfrE0iE8XodfBdP4dUt340lgdZFwKWV/pyPEI3etCGBpRiids/GyyD7KbNpbWE2fbp8G3IDnjl/oAAOlVXi7wyQAZGYO01/F4ZIAzZaS/dIpMPaz+Q7aUBCmDthtduklonrhRnem2AHPxGlI568Ta5dEyhGX4vDpCARiz38o2SAXOnqBnADGAGMAOYAcwAZgAzgBnADKClP92qs9JOF+dcAAAAAElFTkSuQmCC); 
-            &:hover {background-color: #cb2027}}
-         &.instagram {background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACfklEQVR42u3aS2sTYRSH8bfJtDZx1TahSqWC4E7ECyoo1E8gaBX0c2hrGpV+D7WWZOFWEZWmpvGCtLQKxeAV68plbatBI2gi8VlkMRzSkguTeSc9f/itziLwLIYhialUKtuaBtAAGkADaAANoAE0gAbQAM3pQh8GfNKHkB8BepDAG6xizSeryCOJHe0K0ItHsG0ZRNoR4Cps3XWvAzj4AFv3Gd1eBujHBtq5PNJICYuQKyDmZYCBNgf4hJ0wkMJYgHs/EO+kAA9gtnCz0wM8hNnClAbQAPoM6OgAX9APAymC10EM8A9ZXMOlqiRmqze5FdzHPeEtWLACPMcJmE0cQw5NzP4A6TpfUx3c6bQAL+HA1CmMZ0EJUMRXl7K4l3EEpkEHUZLPD/FZRRsC3EW0ah9+insOpkkZyNj7Ea1K2RAg5bofh9xECwGuQO6k637bhgBp1/0M5C62EGAUcufEm+C2CzBqc4BTkEu0EOAy5E7bHGAIv8U920KAGbj3B8M2B+jCkriXcAimQQfwF+4tI2RvAGAMci8QbvAHlxzkkjC2BxjEd8hN1/k2GMItyBWw2/YA8uElN4ejMJs4jFnUWgImKAEcPEGtlTGDcVzAeYzhMUqotafotj2AFMcyWl0egzBBCSAjZNDsstgFE6QAUhjj+IZ6t4YJODBBDSANIYFF/IJcEa+QxB4YIdABpGGM4GzVCPbCCIEIMA3jHfu/Fl9CGKbNQpivFcCPn8cXMNVm85AreB3AwUfYuhX0eBcASMLWTcJ4HSCCDGzbHKJeBZB6cQPvsI4Nn6zjPSYR8eOPkmHEEPdJDI7+VVYDaAANoAE0gAbQABpAA2iAhv0H4IYNl6ZZ29YAAAAASUVORK5CYII=); 
-            &:hover {background-color: #3f729b}}
-         &.googleplus {
-            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAADEklEQVR42u3aS0hUURzHcV9RM5lZWApJi6Cg1KK016JUigrajItA6LlxV5JKUYYm9qCFQpCLMKI20qKwF2FtBMEcN2ESKSgRWU6WmpWFpaZ9L9zFn4tX74wi98ycH3xW95xzuT/0zvGMUZOTkxFNF6AL0AXoAnQBugBdgC5AF6AL0AXoAnQBc2wBvA4sRWKQa8a4tYD1qIQfAfShBx+EXgyYBvEK2Q7XL0QPtrmtgGTUwkg/6vEAPbDmKxrhx2NkBHGfChAKc1EBmXgHI7eQIK55UYS/ooBBFIR4rzIY2eWWAtbhC4w0TzPOh3HI5KleQCyagnigSsh0w6NyAQfEw4wgdYbx8fgEmT1B3vO8OW+7Gwq4aXmxJTiYUw2ZC1OM8SDDRo0574TN9Q2Im68CXogH+Y4kB3MOQqZmijFZCDXjWDlfBTyFzGYHczIgUzXFmFRct+E35923uX4V8fNVQBVkShxulGTyg7znGXPeFje8A3Ih89bB71+OGN+HRNU/Bl9C5vQMcy6LscfDYSO0ET/FQ/3BPpuxKeg3x11TfSco5aLXsic4hXjLjrHFvF6EKNULsErFDXwWRfTjEZ5jGEYOz/I+l2Akx00FSMuRjWMoxpgopGEO1k9DPlaocCCSjglRwL1IOxHKg8wv7IikAtZgFDIBZEbSoWg5rBlCfrgVEIudKMVDtMCPVtjlSjgUEIsCtMPIGJ6gGD7shw8VNueDF1UuYK3lRKgaq6YZn4I6WLNVxQLSxOnOKA4FMfck/okC7qpWwBJ0iAc4F8IahWJ+F+JUKuCsZbubEMIaMegSnwpJqhQQg9eigNZZ3LweRoaRokoBy/BNFNCJ6FkeqX2ER5UCvAhYDiE3hfjF6XsYqVPtJXgHMs9CWOOoOXcCmaoVsBq9kKkN4sd4L36ITxAlN0LpaINMG44g2ebdkY3bYnyp6lthL0rQCZkRvEETmtGB3+J6I3aH0x9Di5CDctSjHQEMYQDdaEAZsiLlPGAhFsODaP1PUroAXYAuQBegC9AF6AJ0AboAXYAuQBegC3CX/5p0BWI/RowIAAAAAElFTkSuQmCC); 
-            &:hover {background-color: #d14836}}
-      }
-   }
-
-}
-
-
-// 
-// MailChimp
-// 
-
-#row-mailchimp {padding-bottom: 0; }
-#mailchimp {
-   background: rgba($color1-2-1, 0.8); 
-   @include ease(0.15s);
-   &:hover { 
-      background: $color1-2-1; 
-      #mc_embed_signup {border-color: $color1-3;}
-   }
-   padding: $base $base*2;
-   color: $silvercloud; 
-   @include outer-container;
-
-   #cta {
-      font-size: $size-footer; 
-      @include span-all(6, 3, 3, 3); 
-      line-height: 34px;
-   }
-
-   #mc_embed_signup {
-      input {
-         @include span-all(6, 2, 2, 2); 
-         &[type="email"], &[type="text"] {
-         }
-         &[type="email"] {
-            @include span-all(6, 3, 3, 3); 
-         }
-         &[type="submit"] {
-            background: $color1-5-1;
-            color: $silvercloud;
-         }
-         &[type="submit"]:hover {
-            color: $silvercloud;  
-            @include ease(0.15s);
-
-            background: rgba($color1-3, 1);
-            @extend %shadow-inset;
-         }
-         &.mce_inline_error {
-            border-color: $dark-red; color: $dark-red; font-weight: bold; 
-         } 
-      }
-      div.mce_inline_error {
-         position: relative; display: none !important; top: $base*2;
-         font-weight: bold; z-index: 1; color:#fff;
-      }
-      .response {
-         padding: $base 0; font-size: $size-form; text-align: right;
-      }
-      input.mce_inline_error::-webkit-input-placeholder {color: $dark-red;}
-      input.mce_inline_error::-moz-placeholder {color: $dark-red;}
-      input.mce_inline_error:-moz-placeholder {color: $dark-red;}
-      input.mce_inline_error::-ms-input-placeholder {color: $dark-red;}
-   }
-
-}
-
-
-
-
-// 
-// Legal Docs
-// 
-
-.legal {
-   $size-p-legal: $base*0.8;
-   $height-p-legal: $base*1.3;
-   ol, ul{ padding-left: $base*2; }
-   li strong:first-child {@extend h5;}
-   li {text-indent: -$base*2; }
-   .alpha strong:first-child {@extend h5}
-   .alpha {list-style-type: upper-alpha}
-   ol ol, ol ul {padding-left: $base*2;}
-   ol ul li{padding-bottom: 0}
-
-   p, li, .alpha {
-      @extend %serif;
-      font-size: $size-p-legal; font-weight: normal; 
-      line-height: $height-p-legal;
-      color: $dark-gray; padding: $base/2 0;
-   }
-}
-
-// 
-// Modal
-//    z-index: 500,000
-// 
-
-#modal {
-   z-index: 500050;
-   display: block; width: 100%; height: 100%;
-   position: fixed; top: 0; left: 0;
-
-   .blanket {
-      display: block; width: 100%; height: 100%;
-      z-index: 500000;
-      background-color: rgba(black, 0.7);
-      position: fixed; top: 0; left: 0;
-   }
-
-   // for vertical centering dynamic content
-   .modal-container {display: table; position: absolute; height: 100%; width: 100%}
-   .modal-pad {display: table-cell; vertical-align: middle}
-
-   .modal-item {
-      margin-left: auto; margin-right: auto;
-      width: 300px;
-      
-      z-index: 500100; 
-      background-color: $silvercloud;
-      @include border-radius(6px, 6px); position: relative;
-
-      @extend %shadow-drop;
-      .modal-btn {
-         background: $color1-5-1;
-         color: $silvercloud;
-         margin-top: 0;
-      }
-      #modal-header {
-         color: $slate; padding: $base/2 0; font-weight: 700;
-         @include shift(1); @include span-columns(10); 
-      }
-
-      .modal-input-error {border-color: $color2-4;}
-      .modal-error, .modal-error-general {
-         font-size: $base*0.75; padding: $base/4 $base $base/2 $base;
-         @include shift(1); @include span-columns(10); 
-         color: $slate; background-color: rgba($color2-3,0.7);
-      }
-      .modal-error-general {margin-top: $base;}
-
-      .modal-footer {
-         font-size: $base*0.75; padding: $base 0;
-         @include shift(1); @include span-columns(10); 
-         color: $slate;
-         div {padding: $base/4 0;}
-      } .modal-legal {padding-bottom: $base/2}
-      input, button {
-         @include shift(1); @include span-columns(10); 
-         margin-top: $base/2; @include border-radius(0px, 0px);
-         border-color: $light-gray;
-         &:focus {border-color: $color2-4;} 
-         @include ease-out(0.25s);
-      } 
-
-      .modal-check {
-         @include shift(1); @include span-columns(10); 
-
-         .inlineCheck { display: block; text-indent: 0em; margin-left: $base * 2; font-size: $size-form ;}
-
-          input[type=radio], input[type=checkbox] {
-            display:none;
-            *overflow: hidden;
-
-            &+.inline {
-              color: #333; display: block; cursor: pointer; outline: 0; border: 0; position: relative;
-              margin: $base 0; 
-
-              .check {
-                display:inline-block; position: absolute; border: 1px solid $light-gray;
-                background: #fff; width: 20px; height: 20px;
-              }
-            }
-
-            &:checked + .inline {
-               .box {
-                  @extend .glow:focus;
-                  .check:after {
-                     content: ' '; position: absolute; background: transparent;
-                     width: 14px; height: 8px; top: -2px; left: 3px;
-                     border: 4px solid $gray; border-top: none; border-right: none;
-                     -webkit-transform: rotate(-52deg);-moz-transform: rotate(-52deg);-o-transform: rotate(-52deg);-ms-transform: rotate(-52deg);transform: rotate(-52deg);
-                  }
-               }
-            }
-         }
-      }
-
-
-      button {@include border-radius(6px, 6px); border: 0; padding: $base 0;}
-      button:hover {
-         background: rgba($color1-3, 1);
-         text-decoration: none;
-         @include ease-out(0.15s);
-         @extend %shadow-inset;
-      }
-
-      .modal-logo {
-         margin-top: $base*2;
-         display: inline-block;
-         height: 50px; width: 100%;
-         background: url(images/logo.png) no-repeat; &:hover {};
-         background-position: center; background-size: contain;
-      }
-
-   }
-
-}

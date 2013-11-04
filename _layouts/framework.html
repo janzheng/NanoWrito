@@ -12,32 +12,34 @@ layout: none
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
   <link rel="stylesheet" href="assets/main.css">
 
-  <link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css">
-  <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
 </head> 
 
-<body>
+<body ng-app="nanoApp" >
 
-  <!-- <a class="goto" id="top"></a> -->
-  <section id="header">
-    {% include header.html %}
-  </section>
+  <div ng-controller="mainCtrl" ng-class="{zen: nano.zen}" >
+  <!-- <div class="zen"> -->
+    <!-- <a class="goto" id="top"></a> -->
+    <section id="header">
+      {% include header.html %}
+    </section>
 
-  {{ content }}
+    {{ content }}
 
-  <!-- <a class="goto" id="contact"></a> -->
-  <section id="footer">
-    {% include footer.html %}
-  </section>
+    <!-- <a class="goto" id="contact"></a> -->
+    <section id="footer">
+      {% include footer.html %}
+    </section>
+  </div>
 
  
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script type="text/javascript" src="assets/angular.min.js"></script>
   <script type="text/javascript" src="assets/angular-ui-utils.min.js"></script>
+  <script type="text/javascript" src="assets/angular-animate.min.js"></script>
   <script type="text/javascript" src="assets/ZeroClipboard.min.js"></script>
 
 
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="//ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.0.6-development-only.js"></script>
   <script src="assets/main.js"></script>
 

@@ -1,21 +1,26 @@
 ---
 layout: framework
-title: Nanowrito. Something to help you reach your nano goal.
+title: NanoWrito. Something to help you reach your nano goal.
 comments: false
 ---
 <!-- for jekyll to escape angular -->
 {% raw %}
 
-<article ng-app="nanoApp">
-   <div ng-controller="mainCtrl">
+<!-- ng-app declared in framework file -->
 
+
+
+<article >
+   <div class="main-app" >
+
+   <div class="blanket" ng-class="{zen: nano.zen}" data-ng-animate="'fade'"></div>
+
+      <div class="copy" >
+         <button id="copy-btn">{{ nano.copytext }}</button>
+      </div>
       <section id="entries">
          <div class="container">
-            <div class="row entry-list">
-               <p ng-repeat="entry in nano.entries">
-                  {{entry}}
-               </p>
-            </div>
+            <div class="row entry-list"><p ng-repeat="entry in nano.entries">{{entry}}</p></div>
          </div>
       </section>
       <!-- <input type="text" ng-model="nano.entries"> -->
@@ -23,7 +28,7 @@ comments: false
       <section class="wordcount">
          <div class="container">
             <div class="row" >
-               <h1>{{nano.totalCount }}</h1>
+               <h6>{{nano.totalCount }}</h6>
                <!-- <h3>{{nano.typeCount }}</h3> -->
             </div>
          </div>
@@ -34,7 +39,7 @@ comments: false
             <div class="row" >
                <!-- <input id="input-area" type="text" autofocus placeholder="Type something" ng-model="nano.typed" ng-enter="onEnter()" ng-change="onUpdate()"> -->
 
-               <input id="input-area" type="text" autofocus placeholder="Start typing..." ng-model="nano.typed" ui-keydown="{'enter':'onEnter($event)','esc':'stopZen($event)','ctrl-space':'startZen($event)'}" ng-change="onUpdate()">
+               <input id="input-area" type="text" autofocus placeholder="Start typing..." ng-model="nano.typed" ui-keydown="{'enter':'onEnter($event)'}" ng-change="onUpdate()">
 
             </div>
          </div>

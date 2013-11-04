@@ -2,6 +2,11 @@
 Nanowrito Notes
 
 
+
+todo:
+
+- hover over novel for a click to copy prompt
+- erasing words in bar doesn't decrease word count!
 -------
 
 
@@ -16,7 +21,8 @@ Main tutorial:
 http://www.thinkster.io/pick/GtaQ0oMGIl/
 
 
-
+Cool colors:
+http://tympanus.net/Tutorials/SwatchBook/index2.html
 
 
 Good references:

@@ -3,19 +3,15 @@
 
 
 // copy functionality
-var clip = new ZeroClipboard( document.getElementById("entries"), {
+var clip = new ZeroClipboard( document.getElementById("copy-btn"), {
   moviePath: "assets/ZeroClipboard.swf"
 } );
 
 //this event happens upon initiating the copy 
 clip.on( 'dataRequested', function ( client, args ) {
-    clip.setText( $('#entries').text());
+    clip.setText( $('.entry-list').text());
 } );
 
-//this event happens upon the copy finishing
-clip.on( 'complete', function(client, args) {
-	console.log('text copied: ' + args.text)
-} );
 
 
 var nanoApp = angular.module('nanoApp', ['ui.utils']);
@@ -41,13 +37,15 @@ function mainCtrl($scope) {
 	$scope.nano.typed = '';
 	$scope.nano.typeCount = 0;
 	$scope.nano.totalCount = 0;
+	$scope.nano.copytext = 'Click to Copy';
 
    //console.log ('typed: ' +  (!$scope.nano.typed || 0 === $scope.nano.typed.length) ? 66 : $scope.nano.typed.split(' '))
 
 	$scope.onEnter = function(e) {
 		$scope.nano.tmp = $scope.nano.typed;
-		$scope.nano.entries.push($scope.nano.typed);
+		$scope.nano.entries.push($scope.nano.typed + '\r\n' + '\r\n');
 		$scope.nano.typed = "";
+		$scope.nano.zen = false;
 
 		// $scope.nano.totalCount += $scope.nano.typeCount; //update total on enter;
 		$scope.nano.typeCount = 0;
@@ -56,28 +54,57 @@ function mainCtrl($scope) {
 
 	$scope.onUpdate = function() {
 		var ctr = $scope.nano.typeCount;
-		$scope.nano.typeCount = $scope.nano.typed.split(' ').length;
+		$scope.nano.typeCount = ($scope.nano.typed.match(/\S+/g)||[]).length;
 		if ($scope.nano.typeCount > ctr) {
 			$scope.nano.totalCount++;
+		}else if ($scope.nano.typeCount < ctr) {
+			$scope.nano.totalCount -= ctr - $scope.nano.typeCount; // user erases words
 		}
 	}
 
 	$scope.startZen = function(e) {
 		console.log('start zen');
+		$scope.nano.zen = true;
+		console.log('zen state: ' + $scope.nano.zen)
 	}
 
 	$scope.stopZen = function(e) {
 		console.log('stop zen');
+		$scope.nano.zen = false;
+		console.log('zen state: ' + $scope.nano.zen)
 	}
 
-$scope.keypressCallback = function($event) {
-alert('Voila!');
-$event.preventDefault();
-};
+
+	//this event happens upon the copy finishing
+	clip.on( 'complete', function(client, args) {
+		$scope.nano.copy = "Text copied.";
+		clip = new ZeroClipboard( document.getElementById("copy-btn"), { moviePath: "assets/ZeroClipboard.swf"} );
+	} );
+
+
+
+    var ctrlDown = false;
+    var ctrlKey = 17;
+	$(window).keydown(function(e){
+        if (e.keyCode == ctrlKey) ctrlDown = true;
+    }).keyup(function(e){
+        if (e.keyCode == ctrlKey) ctrlDown = false;
+    });
+
+	$(document).keyup(function(e) {
+		var scope = angular.element('body div').scope();
+
+		if ((ctrlDown==true) && (e.keyCode == 32)) {
+			scope.startZen();
+			scope.$apply();
+		}
+		if(e.keyCode == 27) {
+			$scope.stopZen();
+			scope.$apply();
+		}
+    });
 
 }
-
-function hello(e) { console.log('eeeeee')}
 
 // directives
 
@@ -109,15 +136,25 @@ nanoApp.directive('ngEnter', function () {
 
 // jQuery smooth scrolling
 var scrollElement = 'html, body';
-function scrollTo(hash) {
-    // var item = $(item),
-    $target = $(hash);
-    
-    $(scrollElement).stop().animate({
-      'scrollTop': $target.offset().top
-    }, 500, 'swing', function() {
-      window.location.hash = hash
-    });
+	function scrollTo(hash) {
+		// var item = $(item),
+		$target = $(hash);
 
+		$(scrollElement).stop().animate({
+		  'scrollTop': $target.offset().top
+		}, 500, 'swing', function() {
+		  window.location.hash = hash
+		});
+
+}
+
+window.onbeforeunload = function (event) {
+  var message = "Oh hey. Don't forget to save your work.";
+  if (typeof event == 'undefined') {
+    event = window.event;
   }
-
+  if (event) {
+    event.returnValue = message;
+  }
+  return message;
+}
