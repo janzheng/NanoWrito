@@ -2,15 +2,15 @@
 
 
 
-// copy functionality
-var clip = new ZeroClipboard( document.getElementById("copy-btn"), {
-  moviePath: "assets/ZeroClipboard.swf"
-} );
+// copy functionality. Check for swf availability first
+// var clip = new ZeroClipboard( document.getElementById("copy-btn"), {
+//   moviePath: "assets/ZeroClipboard.swf"
+// } );
 
-//this event happens upon initiating the copy 
-clip.on( 'dataRequested', function ( client, args ) {
-    clip.setText( $('.entry-list').text());
-} );
+// //this event happens upon initiating the copy 
+// clip.on( 'dataRequested', function ( client, args ) {
+//     clip.setText( $('.entry-list').text());
+// } );
 
 
 
