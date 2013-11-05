@@ -61,23 +61,22 @@ $margin: $base;
 
 // color
 
-// blue colors, light to dark
-$color1-0: #cdebf2;
-$color1-1: #5badc2;
-$color1-2: #6699cc;
-$color1-2-1: #74a2d0; 
-$color1-3: #3366cc;
-$color1-4: #304378;
-$color1-5: #093275; // original liztic dark blue
-$color1-5-1: #275d84; // original liztic tinted
+// flat stamps https://kuler.adobe.com/Flat-Stamps-color-theme-3070211/
+// hipster heaven https://kuler.adobe.com/Copy-of-vintage-card-color-theme-3065107/
+$color1-1: #EFC164; //matte orange
+$color1-2: #F3835D; //matte red
+$color1-3: #F35955; //matte redder
+$color1-4: #286275; //blue
+$color1-5: #00434C; //deeper blue
 
-// orange colors, light to dark
-$color2-1: #ffcc00;
-$color2-2: #ff9d36;
-$color2-3: #f5ae25;
-$color2-4: #f2941b;
-$color2-4-1: #f29d30;
-$color2-5: #ee810f;
+$color2-1: #5C4B51; //dark red
+$color2-2: #8CBEB2; //matte turqouise
+$color2-3: #F2EBBF; //tan
+$color2-4: #F3B562; //matte orange
+$color2-5: #F06060; //matte red
+ 
+$color3-1: #7db9e8;
+
 
 
 $white: #fff;
@@ -135,29 +134,16 @@ $color-menu-selected: $silver;
 // *********************************************************
 
 // FONT STACKS
-@import url(http://fonts.googleapis.com/css?family=Raleway:200,400,500,600,700,800,900);
-%raleway {font-family: 'Raleway', sans-serif;}
+@import url(http://fonts.googleapis.com/css?family=Oleo+Script);
+%oleo {font-family: 'Oleo Script', sans-serif;}
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,600,700);
 %open-sans {font-family: 'Open Sans', sans-serif;}
 
-@import url(http://fonts.googleapis.com/css?family=Cabin:400,500,600,700);
-%cabin {font-family: 'Cabin', sans-serif;}
-
-@import url(http://fonts.googleapis.com/css?family=Baumans);
-%baumans {font-family: 'Baumans', sans-serif;}
-
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
-%quicksand {font-family: 'Quicksand', serif;}
-
-@import url(http://fonts.googleapis.com/css?family=Quicksand:300,400,700);
-%sourcesans {font-family: 'Source Sans Pro', sans-serif;}
-
-
 %sans-serif {@extend %open-sans}
 %serif {font-family: Georgia, serif;}
-%cursive {@extend %baumans;}
-%display {@extend %raleway}
+%cursive {@extend %oleo;}
+%display {@extend %oleo;}
 
 
 // *********************************************************
@@ -214,4 +200,23 @@ $color-menu-selected: $silver;
       width: 90px;
       box-shadow: 0 52px 3px 0 #888;
   } 
+}
+
+
+
+//fixed to window, will float in center, with dynamic width
+@mixin centerfix {
+  position: fixed;
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; } 
 }

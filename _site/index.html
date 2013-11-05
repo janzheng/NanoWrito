@@ -2,51 +2,65 @@
 
 <html>
 <head>
-  <meta name="description" content="Liztic is a universally accessible music player that allows anyone to access their own, personal music library from any device.">
-  <title>Nanowrito. Something to help you reach your nano goal.</title>
+  <meta name="description" content="Nanowrito is a tool that helps writers achieve their NanoWrimo goals.">
+  <title>NanoWrito. Something to help you reach your nano goal.</title>
   <meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1" />
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
   <link rel="stylesheet" href="assets/main.css">
 
-  <link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css">
-  <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-45451610-1', 'nanowrito.com');
+    ga('send', 'pageview');
+
+  </script>
 </head> 
 
-<body>
+<body >
 
-  <!-- <a class="goto" id="top"></a> -->
-  <section id="header">
-    
+  <article ng-app="nanoApp" class="ng-cloak">
+    <div ng-controller="mainCtrl" ng-class="{zen: nano.zen}" >
+
+      <section id="header">
+        
 <article>
    <section>
       <div class="container">
          <div class="row" >
-            Nanowrito, an experimental tool to help you reach your <a href="http://nanowrimo.org">NanoWrimo</a> word count.
+            <h1 class="title">NanoWrito</h1> 
+            <h2>A delicious experiment to help you reach your <a href="http://nanowrimo.org">NanoWrimo</a> goal.</h2>
          </div>
-         <div class="row" >
-            You may start typing.
-         </div>
-         <div class="row" >
-            Hit Ctrl + Space to enter Zen mode. Hit ESC to exit. Don't forget to copy your work to your word processor when you're done.
+         <div class="row desc" >
+            <h2>Type your novel. Hit <span class="keyb">Enter</span> to commit your sentence, and <a href="#" ng-click="startZen()">ESC to toggle Zen mode</a>. 
+            <br />Don't forget to save your work when done.</h2>
          </div>
       </div>
    </section>
 </article>
-  </section>
+      </section>
 
-  <!-- for jekyll to escape angular -->
+      <!-- for jekyll to escape angular -->
 
 
-<article ng-app="nanoApp">
-   <div ng-controller="mainCtrl">
+<!-- ng-app declared in framework file -->
 
-      <section id="entries">
+
+
+<article >
+   <div class="main-app" >
+
+   <div class="blanket" ng-click="stopZen()"></div>
+
+      <div class="copy" ng-class="{copied: nano.copied}">
+         <button id="copy-btn">{{ nano.copytext }}</button>
+      </div>
+      <section id="entries" ng-class="{hide: (nano.entries.length == 0)}">
          <div class="container">
-            <div class="row entry-list">
-               <p ng-repeat="entry in nano.entries">
-                  {{entry}}
-               </p>
-            </div>
+            <div class="row entry-list" ><p ng-repeat="entry in nano.entries track by $index">{{entry}}</p></div>
          </div>
       </section>
       <!-- <input type="text" ng-model="nano.entries"> -->
@@ -54,18 +68,17 @@
       <section class="wordcount">
          <div class="container">
             <div class="row" >
-               <h1>{{nano.totalCount }}</h1>
+               <div class="ctr"><h6>{{nano.totalCount}}</h6></div>
                <!-- <h3>{{nano.typeCount }}</h3> -->
             </div>
          </div>
       </section>
 
+      <div id="bottom"></div>
       <section class="input">
          <div class="container">
-            <div class="row" >
-               <!-- <input id="input-area" type="text" autofocus placeholder="Type something" ng-model="nano.typed" ng-enter="onEnter()" ng-change="onUpdate()"> -->
-
-               <input id="input-area" type="text" autofocus placeholder="Start typing..." ng-model="nano.typed" ui-keydown="{'enter':'onEnter($event)','esc':'stopZen($event)','ctrl-space':'startZen($event)'}" ng-change="onUpdate()">
+            <div class="row input-row" >
+               <input id="input-area"  type="text" autofocus placeholder="Start typing..." ng-model="nano.typed" ui-keydown="{'enter':'onEnter($event)'}" ng-change="onUpdate()">
 
             </div>
          </div>
@@ -73,7 +86,6 @@
    </div>
 </article>
 
-<div id="bottom"></div>
 
 <div class="clear"></div>
 
@@ -81,32 +93,32 @@
 
 
 
-  <!-- <a class="goto" id="contact"></a> -->
-  <section id="footer">
-    
-  </section>
+      <section id="footer">
+        
+<article>
+	<section>
+		<div class="container">
+			<div class="row">
+				<h2>This app is built on Angular. For, bugs, requests, or questions, <a href="mailto: contact@janzheng.com">send me an email</a>, or <a href="https://github.com/janzheng/NanoWrito">check it out on github</a>.</h2>
+			</div>
+		</div>
+	</section>
+</article>
+      </section>
 
- 
-  <script type="text/javascript" src="assets/angular.min.js"></script>
-  <script type="text/javascript" src="assets/angular-ui-utils.min.js"></script>
+    </div>
+  </article>
+
+
   <script type="text/javascript" src="assets/ZeroClipboard.min.js"></script>
-
-
-
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="//ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.0.6-development-only.js"></script>
-  <script src="assets/main.js"></script>
-
-
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-   
-    ga('create', 'UA-45287704-1', 'liztic.com');
-    ga('send', 'pageview');
-  </script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+  <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.0.6-development-only.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/angular.min.js"></script>
+  <script type="text/javascript" src="assets/angular-route.min.js"></script>
+  <script type="text/javascript" src="assets/angular-animate.min.js"></script>
+  <script type="text/javascript" src="assets/angular-ui-utils.min.js"></script>
+  <script type="text/javascript" src="assets/main.js"></script>
 
 </body>
 </html>
