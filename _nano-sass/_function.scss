@@ -28,7 +28,6 @@
 }
 // '>' sign
 .reveal-btn:before, .reveal-btn-container:before {
-   @extend %raleway;
    font-size: $base*1.9; font-weight: 100;
    content:'>';
    position: absolute; 

@@ -481,84 +481,90 @@ body, select, input, textarea {
   }
 }
 
-/* line 118, ../_nano-sass/_design.scss */
+/* line 119, ../_nano-sass/_design.scss */
 .white {
   color: black;
   background-color: rgba(255, 255, 255, 0.95);
 }
 
-/* line 119, ../_nano-sass/_design.scss */
+/* line 120, ../_nano-sass/_design.scss */
 .orange {
   background-color: rgba(255, 195, 40, 0.7);
 }
 
-/* line 120, ../_nano-sass/_design.scss */
+/* line 121, ../_nano-sass/_design.scss */
 .green {
   color: white;
   background-color: rgba(109, 152, 71, 0.84);
 }
 
-/* line 121, ../_nano-sass/_design.scss */
+/* line 122, ../_nano-sass/_design.scss */
 .dark {
   color: #cccccc;
   background-color: rgba(70, 70, 70, 0.8);
 }
 
-/* line 122, ../_nano-sass/_design.scss */
+/* line 123, ../_nano-sass/_design.scss */
 .lighter {
   color: #333333;
   background-color: rgba(255, 255, 255, 0.88);
 }
 
-/* line 123, ../_nano-sass/_design.scss */
+/* line 124, ../_nano-sass/_design.scss */
 .light {
   color: #333333;
   background-color: rgba(250, 250, 250, 0.86);
 }
 
-/* line 124, ../_nano-sass/_design.scss */
+/* line 125, ../_nano-sass/_design.scss */
 .soft {
   color: #333333;
   background-color: rgba(255, 255, 255, 0.56);
 }
 
-/* line 125, ../_nano-sass/_design.scss */
+/* line 126, ../_nano-sass/_design.scss */
 .cloud {
   background-color: rgba(100, 100, 100, 0.06);
 }
 
-/* line 126, ../_nano-sass/_design.scss */
+/* line 127, ../_nano-sass/_design.scss */
 .glass {
   background-color: rgba(80, 80, 80, 0.46);
 }
 
-/* line 127, ../_nano-sass/_design.scss */
+/* line 128, ../_nano-sass/_design.scss */
 .glassdark {
   background-color: rgba(20, 20, 20, 0.59);
 }
 
-/* line 128, ../_nano-sass/_design.scss */
+/* line 129, ../_nano-sass/_design.scss */
 .txtsilver {
   color: #f2f2f2;
 }
 
-/* line 137, ../_nano-sass/_design.scss */
+/* line 138, ../_nano-sass/_design.scss */
 body h1 {
   font-family: 'Oleo Script', sans-serif;
 }
 
-/* line 140, ../_nano-sass/_design.scss */
+/* line 141, ../_nano-sass/_design.scss */
 .wordcount h6 {
   font-family: 'Open Sans', sans-serif;
 }
 
-/* line 143, ../_nano-sass/_design.scss */
+/* line 144, ../_nano-sass/_design.scss */
 body h2, body p, button {
   font-family: Georgia, serif;
 }
 
-/* line 178, ../_nano-sass/_design.scss */
-input, button {
+/* line 170, ../_nano-sass/_design.scss */
+.wordcount h6 {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 255, 255, 0.1);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* line 179, ../_nano-sass/_design.scss */
+button, #input-area {
   -moz-box-shadow: rgba(0, 0, 0, 0.05) 0 1px 3px inset;
   -webkit-box-shadow: rgba(0, 0, 0, 0.05) 0 1px 3px inset;
   box-shadow: rgba(0, 0, 0, 0.05) 0 1px 3px inset;
@@ -662,7 +668,7 @@ input, button {
 }
 
 @media screen and (max-width: 480px) {
-  /* line 44, ../_nano-sass/_function.scss */
+  /* line 43, ../_nano-sass/_function.scss */
   .reveal-content {
     display: none;
   }
@@ -682,16 +688,41 @@ input, button {
       #footer
 
 *********************************************************/
-/* line 67, ../_nano-sass/main.scss */
+/* line 53, ../_nano-sass/main.scss */
 body {
+  background-image: url("cover.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-image: url(cover.png);
+  /* fallback */
+  background-image: url(cover.png), -webkit-gradient(#00434c 30%, rgba(0, 67, 76, 0.9) 100%);
+  /* Saf4+, Chrome */
+  background-image: url(cover.png), -webkit-linear-gradient(#00434c 30%, rgba(0, 67, 76, 0.9) 100%);
+  /* Chrome 10+, Saf5.1+ */
+  background-image: url(cover.png), -moz-linear-gradient(0deg, #00434c 30%, rgba(0, 67, 76, 0.9) 100%);
+  /* FF3.6+ */
+  background-image: url(cover.png), -ms-linear-gradient(0deg, #00434c 30%, rgba(0, 67, 76, 0.9) 100%);
+  /* IE10 */
+  background-image: url(cover.png), -o-linear-gradient(0deg, #00434c 30%, rgba(0, 67, 76, 0.9) 100%);
+  /* Opera 11.10+ */
+  background-image: url(cover.png), linear, 0deg, #00434c 30%, rgba(0, 67, 76, 0.9) 100%;
+}
+
+/* line 88, ../_nano-sass/main.scss */
+html {
+  height: 100%;
+}
+
+/* line 91, ../_nano-sass/main.scss */
+body {
+  min-height: 100%;
   -webkit-transition: all 0.15s ease;
   -moz-transition: all 0.15s ease;
   -ms-transition: all 0.15s ease;
   -o-transition: all 0.15s ease;
   transition: all 0.15s ease;
-  background-image: url("cover.jpg");
 }
-/* line 71, ../_nano-sass/main.scss */
+/* line 98, ../_nano-sass/main.scss */
 body h1 {
   color: black;
   text-align: center;
@@ -700,41 +731,38 @@ body h1 {
   -moz-background-clip: text;
   background-clip: text;
   color: transparent;
-  text-shadow: rgba(240, 96, 96, 0.5) 0px 3px 3px;
+  text-shadow: rgba(255, 255, 255, 0.3) -1px -1px 1px, rgba(240, 96, 96, 0.5) 0px 3px 3px, rgba(255, 255, 255, 0.7) 0.2px 0.2px 0px;
 }
-/* line 76, ../_nano-sass/main.scss */
+/* line 103, ../_nano-sass/main.scss */
 body h2 {
   text-align: center;
-  color: rgba(242, 235, 191, 0.4);
+  color: rgba(242, 235, 191, 0.3);
 }
-/* line 81, ../_nano-sass/main.scss */
+/* line 108, ../_nano-sass/main.scss */
 body h1 {
   font-size: 5rem;
 }
-/* line 82, ../_nano-sass/main.scss */
+/* line 109, ../_nano-sass/main.scss */
 body h2 {
   font-size: 1rem;
 }
-/* line 83, ../_nano-sass/main.scss */
+/* line 110, ../_nano-sass/main.scss */
 body h3 {
   font-size: 1rem;
   padding: 0.75rem 0;
 }
-/* line 84, ../_nano-sass/main.scss */
+/* line 111, ../_nano-sass/main.scss */
 body h5 {
   font-size: 1rem;
   font-weight: 500;
   padding: 0.75rem 0;
 }
-/* line 85, ../_nano-sass/main.scss */
+/* line 112, ../_nano-sass/main.scss */
 body p {
-  font-size: 0.9rem;
   font-weight: normal;
-  line-height: 1.3rem;
-  color: #333333;
   padding: 0.5rem 0;
 }
-/* line 87, ../_nano-sass/main.scss */
+/* line 114, ../_nano-sass/main.scss */
 body a, body a:active, body a:visited {
   color: #f3835d;
   text-decoration: none;
@@ -744,7 +772,7 @@ body a, body a:active, body a:visited {
   -o-transition: all 0.15s ease;
   transition: all 0.15s ease;
 }
-/* line 88, ../_nano-sass/main.scss */
+/* line 115, ../_nano-sass/main.scss */
 body a:hover {
   color: #f2ebbf;
   text-decoration: underline;
@@ -754,44 +782,13 @@ body a:hover {
   -o-transition: all 0.15s ease;
   transition: all 0.15s ease;
 }
-/* line 91, ../_nano-sass/main.scss */
-body article {
-  background-color: white;
-}
 
-/* line 94, ../_nano-sass/main.scss */
+/* line 119, ../_nano-sass/main.scss */
 .row {
   padding: 1rem;
 }
 
-/* line 96, ../_nano-sass/main.scss */
-input {
-  padding: 0.5rem 1rem;
-  -webkit-transition: all 0.15s ease-out 0;
-  -moz-transition: all 0.15s ease-out 0;
-  -ms-transition: all 0.15s ease-out 0;
-  -o-transition: all 0.15s ease-out 0;
-  transition: all 0.15s ease-out 0;
-  font-size: 0.9rem;
-  background: rgba(255, 255, 255, 0.8);
-  border: #f3835d 1px solid;
-  outline: 0;
-  -webkit-border-radius: 4px 4px;
-  -moz-border-radius: 4px / 4px;
-  border-radius: 4px / 4px;
-  color: #3e3e3e;
-}
-/* line 106, ../_nano-sass/main.scss */
-input:focus {
-  border: 1px solid #f35955;
-  -webkit-transition: all 0.25s ease-out 0;
-  -moz-transition: all 0.25s ease-out 0;
-  -ms-transition: all 0.25s ease-out 0;
-  -o-transition: all 0.25s ease-out 0;
-  transition: all 0.25s ease-out 0;
-}
-
-/* line 114, ../_nano-sass/main.scss */
+/* line 125, ../_nano-sass/main.scss */
 button {
   padding: 0.33333rem 0.5rem;
   -webkit-transition: all 0.15s ease-out 0;
@@ -807,106 +804,191 @@ button {
   -webkit-border-radius: 4px 4px;
   -moz-border-radius: 4px / 4px;
   border-radius: 4px / 4px;
-  color: #f2f2f2;
+  color: rgba(242, 235, 191, 0.6);
 }
-/* line 125, ../_nano-sass/main.scss */
+/* line 136, ../_nano-sass/main.scss */
 button:hover {
   border: 1px solid #f35955;
-  -webkit-transition: all 0.25s ease-out 0;
-  -moz-transition: all 0.25s ease-out 0;
-  -ms-transition: all 0.25s ease-out 0;
-  -o-transition: all 0.25s ease-out 0;
-  transition: all 0.25s ease-out 0;
+  background: rgba(92, 75, 81, 0.3);
+  -webkit-transition: all 0.15s ease-out 0;
+  -moz-transition: all 0.15s ease-out 0;
+  -ms-transition: all 0.15s ease-out 0;
+  -o-transition: all 0.15s ease-out 0;
+  transition: all 0.15s ease-out 0;
+  color: #f2ebbf;
 }
 
-/* line 136, ../_nano-sass/main.scss */
-#header section {
-  background-image: url("cover.jpg");
+/* line 144, ../_nano-sass/main.scss */
+button.zeroclipboard-is-hover {
+  border: 1px solid #f35955;
+  background: rgba(92, 75, 81, 0.3);
+  -webkit-transition: all 0.15s ease-out 0;
+  -moz-transition: all 0.15s ease-out 0;
+  -ms-transition: all 0.15s ease-out 0;
+  -o-transition: all 0.15s ease-out 0;
+  transition: all 0.15s ease-out 0;
+  color: #f2ebbf;
 }
 
-/* line 139, ../_nano-sass/main.scss */
+/* line 149, ../_nano-sass/main.scss */
+button.zeroclipboard-is-active {
+  background-color: #777;
+}
+
+/* line 152, ../_nano-sass/main.scss */
+.ng-cloak {
+  opacity: 0;
+}
+
+/* line 158, ../_nano-sass/main.scss */
+.zen .entry-list, .zen h1, .zen h2, .zen .copy, .zen a {
+  color: transparent;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* line 164, ../_nano-sass/main.scss */
+.zen .blanket {
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* line 177, ../_nano-sass/main.scss */
 .desc {
   padding: 0 0 2rem 0;
 }
 
-/* line 147, ../_nano-sass/main.scss */
+/* line 185, ../_nano-sass/main.scss */
 .main-app {
   position: relative;
 }
 
-/* line 151, ../_nano-sass/main.scss */
+/* line 189, ../_nano-sass/main.scss */
 .copy {
   position: fixed;
   right: 1rem;
   top: 1rem;
 }
 
-/* line 157, ../_nano-sass/main.scss */
-#entries {
-  cursor: text;
+/* line 194, ../_nano-sass/main.scss */
+.hide {
+  display: none;
 }
 
-/* line 161, ../_nano-sass/main.scss */
+/* line 198, ../_nano-sass/main.scss */
+.entry-list {
+  cursor: text;
+  color: #f2f2f2;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* line 209, ../_nano-sass/main.scss */
+.ctr {
+  text-align: center;
+  position: relative;
+  z-index: 11000;
+}
+@media screen and (min-width: 0px) {
+  /* line 209, ../_nano-sass/main.scss */
+  .ctr {
+    display: block;
+    float: left;
+    margin-right: 4.82916%;
+    width: 100%;
+  }
+  /* line 54, ../_nano-sass/neat/grid/_span-columns.scss */
+  .ctr:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 481px) {
+  /* line 209, ../_nano-sass/main.scss */
+  .ctr {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 100%;
+  }
+  /* line 54, ../_nano-sass/neat/grid/_span-columns.scss */
+  .ctr:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 209, ../_nano-sass/main.scss */
+  .ctr {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 100%;
+  }
+  /* line 54, ../_nano-sass/neat/grid/_span-columns.scss */
+  .ctr:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 980px) {
+  /* line 209, ../_nano-sass/main.scss */
+  .ctr {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 100%;
+  }
+  /* line 54, ../_nano-sass/neat/grid/_span-columns.scss */
+  .ctr:last-child {
+    margin-right: 0;
+  }
+}
+
+/* line 216, ../_nano-sass/main.scss */
 .wordcount h6 {
-  display: inline-block;
+  display: inline;
+  padding: 0.5rem 2rem;
+  color: #f2f2f2;
   text-align: center;
   font-size: 4rem;
-}
-@media screen and (min-width: 0px) {
-  /* line 161, ../_nano-sass/main.scss */
-  .wordcount h6 {
-    display: block;
-    float: left;
-    margin-right: 4.82916%;
-    width: 100%;
-  }
-  /* line 54, ../_nano-sass/neat/grid/_span-columns.scss */
-  .wordcount h6:last-child {
-    margin-right: 0;
-  }
-}
-@media screen and (min-width: 481px) {
-  /* line 161, ../_nano-sass/main.scss */
-  .wordcount h6 {
-    display: block;
-    float: left;
-    margin-right: 2.35765%;
-    width: 100%;
-  }
-  /* line 54, ../_nano-sass/neat/grid/_span-columns.scss */
-  .wordcount h6:last-child {
-    margin-right: 0;
-  }
-}
-@media screen and (min-width: 768px) {
-  /* line 161, ../_nano-sass/main.scss */
-  .wordcount h6 {
-    display: block;
-    float: left;
-    margin-right: 2.35765%;
-    width: 100%;
-  }
-  /* line 54, ../_nano-sass/neat/grid/_span-columns.scss */
-  .wordcount h6:last-child {
-    margin-right: 0;
-  }
-}
-@media screen and (min-width: 980px) {
-  /* line 161, ../_nano-sass/main.scss */
-  .wordcount h6 {
-    display: block;
-    float: left;
-    margin-right: 2.35765%;
-    width: 100%;
-  }
-  /* line 54, ../_nano-sass/neat/grid/_span-columns.scss */
-  .wordcount h6:last-child {
-    margin-right: 0;
-  }
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
 }
 
+/* line 226, ../_nano-sass/main.scss */
+.input-row {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* line 229, ../_nano-sass/main.scss */
+#input-area {
+  position: relative;
+  z-index: 11000;
+  padding: 1rem 1rem;
+  -webkit-transition: all 0.15s ease-out 0;
+  -moz-transition: all 0.15s ease-out 0;
+  -ms-transition: all 0.15s ease-out 0;
+  -o-transition: all 0.15s ease-out 0;
+  transition: all 0.15s ease-out 0;
+  font-size: 0.9rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: #00434c 1px solid;
+  outline: 0;
+  -webkit-border-radius: 4px 4px;
+  -moz-border-radius: 4px / 4px;
+  border-radius: 4px / 4px;
+  color: white;
+}
 @media screen and (min-width: 0px) {
-  /* line 168, ../_nano-sass/main.scss */
+  /* line 229, ../_nano-sass/main.scss */
   #input-area {
     display: block;
     float: left;
@@ -919,7 +1001,7 @@ button:hover {
   }
 }
 @media screen and (min-width: 481px) {
-  /* line 168, ../_nano-sass/main.scss */
+  /* line 229, ../_nano-sass/main.scss */
   #input-area {
     display: block;
     float: left;
@@ -932,7 +1014,7 @@ button:hover {
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 168, ../_nano-sass/main.scss */
+  /* line 229, ../_nano-sass/main.scss */
   #input-area {
     display: block;
     float: left;
@@ -945,7 +1027,7 @@ button:hover {
   }
 }
 @media screen and (min-width: 980px) {
-  /* line 168, ../_nano-sass/main.scss */
+  /* line 229, ../_nano-sass/main.scss */
   #input-area {
     display: block;
     float: left;
@@ -957,36 +1039,15 @@ button:hover {
     margin-right: 0;
   }
 }
-
-/* line 178, ../_nano-sass/main.scss */
-.zen.blanket {
-  display: block;
-  width: 100%;
-  height: 100%;
-  z-index: 500000;
-  background-color: rgba(0, 0, 0, 0.9);
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-/* line 188, ../_nano-sass/main.scss */
-.zen.blanket-add, .zen.blanket-remove {
-  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
-  -moz-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
-  -o-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
-  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
-}
-
-/* line 196, ../_nano-sass/main.scss */
-.zen.blanket,
-.zen.blanket-add.zen.blanket-add-active {
-  color: red;
-  font-size: 3em;
-}
-
-/* line 201, ../_nano-sass/main.scss */
-.zen.blanket-remove.zen.blanket-remove-active {
-  font-size: 1.0em;
-  color: black;
+/* line 243, ../_nano-sass/main.scss */
+#input-area:focus {
+  padding: 1.8rem 1rem;
+  border: 1px solid #8cbeb2;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0.25s ease-out 0;
+  -moz-transition: all 0.25s ease-out 0;
+  -ms-transition: all 0.25s ease-out 0;
+  -o-transition: all 0.25s ease-out 0;
+  transition: all 0.25s ease-out 0;
 }

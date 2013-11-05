@@ -23,6 +23,7 @@
 
 
 // Compass frameworks
+@import "compass";
 @import "compass/utilities";
 @import "compass/css3";
 @import "compass/css3/images";
@@ -49,6 +50,27 @@
 // UNIVERSAL
 // *********************************************************
 
+%jeans {
+   background-image: url('cover.png');
+   background-attachment:fixed;
+   background-position:center; 
+   // background-color: rgba($color2-1, 1);
+
+   $nc: mix($color3-1, $color1-5, 0.6);
+   $nc2: rgba($nc, 0.9);
+   $colora: $nc;
+   $colorb: $nc2;
+
+   background-image: url(cover.png); /* fallback */
+   background-image: url(cover.png), -webkit-gradient($colora 30%, $colorb 100%); /* Saf4+, Chrome */
+   background-image: url(cover.png), -webkit-linear-gradient($colora 30%, $colorb 100%); /* Chrome 10+, Saf5.1+ */
+   background-image: url(cover.png),    -moz-linear-gradient(0deg, $colora 30%, $colorb 100%); /* FF3.6+ */
+   background-image: url(cover.png),     -ms-linear-gradient(0deg, $colora 30%, $colorb 100%); /* IE10 */
+   background-image: url(cover.png),      -o-linear-gradient(0deg, $colora 30%, $colorb 100%); /* Opera 11.10+ */
+   background-image: url(cover.png),         linear-gradient(0deg, $colora 30%, $colorb 100%);
+}
+
+
 // FONT SIZES
 $size-menu: $base*0.9;
 $size-footer: $base * 0.9;
@@ -63,54 +85,43 @@ $size-h5: $base*1;
 $size-h6: $base*4;
 $size-p: $base*0.9; $height-p: $base*1.3;
 
-
+html {
+   height: 100%;
+}
 body {
+
+   @extend %jeans;
+   min-height: 100%;
 
    @include ease(0.15s);
 
    h1 { @extend %display; color: black;
       text-align: center; background-color: rgba($color1-3,1);
       -webkit-background-clip: text; -moz-background-clip: text;
-      background-clip: text; color: transparent; text-shadow: rgba($color2-5,0.5) 0px 3px 3px;
+      background-clip: text; color: transparent; text-shadow: rgba(white, 0.3) -1px -1px 1px, rgba($color2-5,0.5) 0px 3px 3px, rgba(white, 0.7) 0.2px 0.2px 0px;
    }
    h2 { 
       text-align: center;
       @extend %serif;
-      color: rgba($color2-3,0.4);
+      color: rgba($color2-3,0.3);
    }
    h1 {font-size: $size-h1;}
    h2 {font-size: $size-h2;}
    h3 {font-size: $size-h3; padding: $base*0.75 0;}
    h5 {font-size: $size-h5; font-weight: 500; padding: $base*0.75 0;}
-   p {@extend %serif; font-size: $size-p; font-weight: normal; line-height: $height-p; color: $dark-gray; padding: $base/2 0;}
+   p {@extend %serif; font-weight: normal; padding: $base/2 0;}
 
    a, a:active, a:visited {color: $color1-2; text-decoration: none; @include ease(0.15s);}
    a:hover {color: $color2-3; text-decoration: underline; @include ease(0.15s);}
 
-   background-image: url('cover.jpg');
-   article { background-color: white; }
 }
 
 .row { padding: $base}
 
-input {
-   padding: $base/2 $base; 
-   @include ease-out(0.15s);
-   font-size: $size-form; @extend %box-shade-light;
-
-   background: rgba(#fff, 0.8); 
-   border: $color1-2 1px solid; outline: 0;
-   @include border-radius(4px, 4px);
-   color: $slate;
-   
-   &:focus {
-      border: 1px solid $color1-3;
-      @include ease-out(0.25s);
-   }
-   
-}
 
 
+
+// zeroclipboard flash button
 button {
    padding: $base/3 $base/2; 
    @extend %serif;
@@ -120,22 +131,49 @@ button {
    background: rgba($color2-1, 0.7); 
    border: $color1-2 1px dashed; outline: 0; border-radius: 3px;
    @include border-radius(4px, 4px);
-   color: $silver;
+   color: rgba($color2-3,0.6);
    
    &:hover {
       border: 1px solid $color1-3;
-      @include ease-out(0.25s);
+      background: rgba($color2-1, 0.3); 
+      @include ease-out(0.15s); color: rgba($color2-3,1);
    }
    
 }
+
+button.zeroclipboard-is-hover { 
+      border: 1px solid $color1-3;
+      background: rgba($color2-1, 0.3); 
+      @include ease-out(0.15s); color: rgba($color2-3,1);
+   }
+button.zeroclipboard-is-active { background-color:#777; }
+
+//hide flash of ng template content
+.ng-cloak {
+    opacity: 0;
+}
+
+
+// blur certain things on zen
+.zen .entry-list, .zen h1, .zen h2, .zen .copy, .zen a{
+   color: transparent;
+   text-shadow: 0 0 5px rgba(white,0.5);
+}
+
+
+.zen .blanket {
+   display: block; width: 100%; height: 100%;
+   z-index: 10000;
+   background-color: rgba(black, 0.7);
+   position: fixed; top: 0; left: 0;
+}
+
+
 // *********************************************************
 // HEADER
 // *********************************************************
 
 
-#header section {
-   background-image: url('cover.jpg');
-}
 .desc {padding: 0 0 $base*2 0}
 
 
@@ -153,57 +191,73 @@ button {
     right: $base; top: $base;
 }
 
-
-#entries {
-   cursor: text; 
+.hide {
+   display: none;
 }
+
+.entry-list {
+   cursor: text; color: $silver;
+   background-color: rgba(black, 0.3);
+   border-radius: 8px; 
+   font-size: $base*0.9;
+   line-height: $base*1.4;
+   padding-left: $base*2;
+   padding-right: $base*2;
+}
+
+
+.ctr {
+   @include span-all(6, 12, 12, 12); text-align: center;
+   position: relative;
+   z-index: 11000;
+}
+
 
 .wordcount h6 {
-   display: inline-block;
-   @include span-all(6, 12, 12, 12); text-align: center;
+   display: inline; padding: $base/2 $base*2; color: $silver;
+   @extend %shadow-inset;
+   text-align: center;
    font-size: $size-h6;
    @extend %sans-serif;
+   background: rgba(black, 0.2);
+   border-radius: 12px;
 }
 
+.input-row {
+   padding-left: 0; padding-right: 0;
+}
 #input-area {
    @include span-all(6, 12, 12, 12);
-}
+   position: relative;
+   z-index: 11000;
 
-.zen *{
+   padding: $base $base; 
+   @include ease-out(0.15s);
+   font-size: $size-form; @extend %box-shade-light;
 
-}
-
-
-.zen {
-   &.blanket {
-      display: block; width: 100%; height: 100%;
-      z-index: 500000;
-      background-color: rgba(black, 0.9);
-      position: fixed; top: 0; left: 0;
+   background-color: rgba(black, 0.3);
+   border: $color1-5 1px solid; outline: 0;
+   @include border-radius(4px, 4px);
+   color: white;
+   
+   &:focus {
+      padding: $base*1.8 $base; 
+      border: 1px solid $color2-2;
+      color: white;
+      background-color: rgba(black, 0.3);
+      @include ease-out(0.25s);
    }
-
-
 }
 
-.zen.blanket-add, .zen.blanket-remove {
-  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-}
- 
-.zen.blanket,
-.zen.blanket-add.zen.blanket-add-active {
-  color: red;
-  font-size:3em;
-}
- 
-.zen.blanket-remove.zen.blanket-remove-active {
-  font-size:1.0em;
-  color:black;
-}
+
+
 
 // *********************************************************
 // FOOTER
 // *********************************************************
+
+
+// #footer section {
+//    @extend %jeans;
+// }
 

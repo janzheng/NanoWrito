@@ -9,37 +9,39 @@ layout: none
   <meta name="description" content="Nanowrito is a tool that helps writers achieve their NanoWrimo goals.">
   <title>{{ page.title }}</title>
   <meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1" />
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
   <link rel="stylesheet" href="assets/main.css">
 
 </head> 
 
-<body ng-app="nanoApp" >
+<body >
 
-  <div ng-controller="mainCtrl" ng-class="{zen: nano.zen}" >
-  <!-- <div class="zen"> -->
-    <!-- <a class="goto" id="top"></a> -->
-    <section id="header">
-      {% include header.html %}
-    </section>
+  <article ng-app="nanoApp" class="ng-cloak">
+    <div ng-controller="mainCtrl" ng-class="{zen: nano.zen}" >
+    
+      <section id="header">
+        {% include header.html %}
+      </section>
 
-    {{ content }}
+      {{ content }}
 
-    <!-- <a class="goto" id="contact"></a> -->
-    <section id="footer">
-      {% include footer.html %}
-    </section>
-  </div>
+      <section id="footer">
+        {% include footer.html %}
+      </section>
+
+    </div>
+  </article>
 
 
-  <script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
-  <script src="//ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.0.6-development-only.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script type="text/javascript" src="assets/angular.min.js"></script>
-  <script type="text/javascript" src="assets/angular-ui-utils.min.js"></script>
-  <script type="text/javascript" src="assets/angular-animate.min.js"></script>
   <script type="text/javascript" src="assets/ZeroClipboard.min.js"></script>
-  <script src="assets/main.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+  <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.0.6-development-only.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/angular.min.js"></script>
+  <script type="text/javascript" src="assets/angular-route.min.js"></script>
+  <script type="text/javascript" src="assets/angular-animate.min.js"></script>
+  <script type="text/javascript" src="assets/angular-ui-utils.min.js"></script>
+  <script type="text/javascript" src="assets/main.js"></script>
 
 
   <script>
