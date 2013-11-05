@@ -841,46 +841,52 @@ button.zeroclipboard-is-active {
 }
 
 /* line 158, ../_nano-sass/main.scss */
-.zen .entry-list, .zen h1, .zen h2, .zen .copy, .zen a {
+.zen h1, .zen h2, .zen .copy, .zen a {
   color: transparent;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
 }
 
-/* line 164, ../_nano-sass/main.scss */
+/* line 163, ../_nano-sass/main.scss */
+.zen .entry-list {
+  color: transparent;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+/* line 168, ../_nano-sass/main.scss */
 .zen .blanket {
   display: block;
   width: 100%;
   height: 100%;
   z-index: 10000;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   position: fixed;
   top: 0;
   left: 0;
 }
 
-/* line 177, ../_nano-sass/main.scss */
+/* line 181, ../_nano-sass/main.scss */
 .desc {
   padding: 0 0 2rem 0;
 }
 
-/* line 185, ../_nano-sass/main.scss */
+/* line 189, ../_nano-sass/main.scss */
 .main-app {
   position: relative;
 }
 
-/* line 189, ../_nano-sass/main.scss */
+/* line 193, ../_nano-sass/main.scss */
 .copy {
   position: fixed;
   right: 1rem;
   top: 1rem;
 }
 
-/* line 194, ../_nano-sass/main.scss */
+/* line 198, ../_nano-sass/main.scss */
 .hide {
   display: none;
 }
 
-/* line 198, ../_nano-sass/main.scss */
+/* line 202, ../_nano-sass/main.scss */
 .entry-list {
   cursor: text;
   color: #f2f2f2;
@@ -892,66 +898,25 @@ button.zeroclipboard-is-active {
   padding-right: 2rem;
 }
 
-/* line 209, ../_nano-sass/main.scss */
+/* line 213, ../_nano-sass/main.scss */
 .ctr {
   text-align: center;
   position: relative;
   z-index: 11000;
 }
-@media screen and (min-width: 0px) {
-  /* line 209, ../_nano-sass/main.scss */
-  .ctr {
-    display: block;
-    float: left;
-    margin-right: 4.82916%;
-    width: 100%;
-  }
-  /* line 54, ../_nano-sass/neat/grid/_span-columns.scss */
-  .ctr:last-child {
-    margin-right: 0;
-  }
-}
-@media screen and (min-width: 481px) {
-  /* line 209, ../_nano-sass/main.scss */
-  .ctr {
-    display: block;
-    float: left;
-    margin-right: 2.35765%;
-    width: 100%;
-  }
-  /* line 54, ../_nano-sass/neat/grid/_span-columns.scss */
-  .ctr:last-child {
-    margin-right: 0;
-  }
-}
-@media screen and (min-width: 768px) {
-  /* line 209, ../_nano-sass/main.scss */
-  .ctr {
-    display: block;
-    float: left;
-    margin-right: 2.35765%;
-    width: 100%;
-  }
-  /* line 54, ../_nano-sass/neat/grid/_span-columns.scss */
-  .ctr:last-child {
-    margin-right: 0;
-  }
-}
-@media screen and (min-width: 980px) {
-  /* line 209, ../_nano-sass/main.scss */
-  .ctr {
-    display: block;
-    float: left;
-    margin-right: 2.35765%;
-    width: 100%;
-  }
-  /* line 54, ../_nano-sass/neat/grid/_span-columns.scss */
-  .ctr:last-child {
-    margin-right: 0;
-  }
+
+/* line 219, ../_nano-sass/main.scss */
+.zen .ctr {
+  position: fixed;
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  width: 40%;
+  bottom: 220px;
 }
 
-/* line 216, ../_nano-sass/main.scss */
+/* line 226, ../_nano-sass/main.scss */
 .wordcount h6 {
   display: inline;
   padding: 0.5rem 2rem;
@@ -962,13 +927,13 @@ button.zeroclipboard-is-active {
   border-radius: 12px;
 }
 
-/* line 226, ../_nano-sass/main.scss */
+/* line 236, ../_nano-sass/main.scss */
 .input-row {
   padding-left: 0;
   padding-right: 0;
 }
 
-/* line 229, ../_nano-sass/main.scss */
+/* line 239, ../_nano-sass/main.scss */
 #input-area {
   position: relative;
   z-index: 11000;
@@ -988,7 +953,7 @@ button.zeroclipboard-is-active {
   color: white;
 }
 @media screen and (min-width: 0px) {
-  /* line 229, ../_nano-sass/main.scss */
+  /* line 239, ../_nano-sass/main.scss */
   #input-area {
     display: block;
     float: left;
@@ -1001,7 +966,7 @@ button.zeroclipboard-is-active {
   }
 }
 @media screen and (min-width: 481px) {
-  /* line 229, ../_nano-sass/main.scss */
+  /* line 239, ../_nano-sass/main.scss */
   #input-area {
     display: block;
     float: left;
@@ -1014,7 +979,7 @@ button.zeroclipboard-is-active {
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 229, ../_nano-sass/main.scss */
+  /* line 239, ../_nano-sass/main.scss */
   #input-area {
     display: block;
     float: left;
@@ -1027,7 +992,7 @@ button.zeroclipboard-is-active {
   }
 }
 @media screen and (min-width: 980px) {
-  /* line 229, ../_nano-sass/main.scss */
+  /* line 239, ../_nano-sass/main.scss */
   #input-area {
     display: block;
     float: left;
@@ -1039,7 +1004,7 @@ button.zeroclipboard-is-active {
     margin-right: 0;
   }
 }
-/* line 243, ../_nano-sass/main.scss */
+/* line 253, ../_nano-sass/main.scss */
 #input-area:focus {
   padding: 1.8rem 1rem;
   border: 1px solid #8cbeb2;
@@ -1050,4 +1015,46 @@ button.zeroclipboard-is-active {
   -ms-transition: all 0.25s ease-out 0;
   -o-transition: all 0.25s ease-out 0;
   transition: all 0.25s ease-out 0;
+}
+
+/* line 263, ../_nano-sass/main.scss */
+.zen #input-area {
+  position: fixed;
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+  bottom: 100px;
+  color: #3e3e3e;
+  -webkit-transition: all 0.25s ease-out 0;
+  -moz-transition: all 0.25s ease-out 0;
+  -ms-transition: all 0.25s ease-out 0;
+  -o-transition: all 0.25s ease-out 0;
+  transition: all 0.25s ease-out 0;
+}
+/* line 217, ../_nano-sass/_design.scss */
+.zen #input-area.placeholder {
+  color: #3e3e3e;
+}
+/* line 218, ../_nano-sass/_design.scss */
+.zen #input-area:-moz-placeholder {
+  color: #3e3e3e;
+}
+/* line 219, ../_nano-sass/_design.scss */
+.zen #input-area::-moz-placeholder {
+  color: #3e3e3e;
+}
+/* line 220, ../_nano-sass/_design.scss */
+.zen #input-area:-ms-input-placeholder {
+  color: #3e3e3e;
+}
+/* line 221, ../_nano-sass/_design.scss */
+.zen #input-area::-webkit-input-placeholder {
+  color: #3e3e3e;
+}
+
+/* line 277, ../_nano-sass/main.scss */
+.zen #input-area:focus {
+  border: 1px solid black;
 }

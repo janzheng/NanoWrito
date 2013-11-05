@@ -201,3 +201,22 @@ $color-menu-selected: $silver;
       box-shadow: 0 52px 3px 0 #888;
   } 
 }
+
+
+
+//fixed to window, will float in center, with dynamic width
+@mixin centerfix {
+  position: fixed;
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; } 
+}
