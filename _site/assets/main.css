@@ -752,17 +752,27 @@ body h3 {
   padding: 0.75rem 0;
 }
 /* line 111, ../_nano-sass/main.scss */
-body h5 {
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 0.75rem 0;
+body .title:after {
+  content: 'beta!';
+  font-size: 2rem;
+  display: inline-block;
+  position: relative;
+  top: -40px;
+  left: 0px;
+  color: #f2ebbf;
+  text-shadow: 3px 3px 3px rgba(125, 185, 232, 0.9);
+  -webkit-transform: rotate(-15deg);
+  -moz-transform: rotate(-15deg);
+  -ms-transform: rotate(-15deg);
+  -o-transform: rotate(-15deg);
+  transform: rotate(-15deg);
 }
-/* line 112, ../_nano-sass/main.scss */
+/* line 119, ../_nano-sass/main.scss */
 body p {
   font-weight: normal;
   padding: 0.5rem 0;
 }
-/* line 114, ../_nano-sass/main.scss */
+/* line 121, ../_nano-sass/main.scss */
 body a, body a:active, body a:visited {
   color: #f3835d;
   text-decoration: none;
@@ -772,7 +782,7 @@ body a, body a:active, body a:visited {
   -o-transition: all 0.15s ease;
   transition: all 0.15s ease;
 }
-/* line 115, ../_nano-sass/main.scss */
+/* line 122, ../_nano-sass/main.scss */
 body a:hover {
   color: #f2ebbf;
   text-decoration: underline;
@@ -783,12 +793,12 @@ body a:hover {
   transition: all 0.15s ease;
 }
 
-/* line 119, ../_nano-sass/main.scss */
+/* line 126, ../_nano-sass/main.scss */
 .row {
   padding: 1rem;
 }
 
-/* line 125, ../_nano-sass/main.scss */
+/* line 132, ../_nano-sass/main.scss */
 button {
   padding: 0.33333rem 0.5rem;
   -webkit-transition: all 0.15s ease-out 0;
@@ -806,7 +816,7 @@ button {
   border-radius: 4px / 4px;
   color: rgba(242, 235, 191, 0.6);
 }
-/* line 136, ../_nano-sass/main.scss */
+/* line 143, ../_nano-sass/main.scss */
 button:hover {
   border: 1px solid #f35955;
   background: rgba(92, 75, 81, 0.3);
@@ -818,7 +828,7 @@ button:hover {
   color: #f2ebbf;
 }
 
-/* line 144, ../_nano-sass/main.scss */
+/* line 151, ../_nano-sass/main.scss */
 button.zeroclipboard-is-hover {
   border: 1px solid #f35955;
   background: rgba(92, 75, 81, 0.3);
@@ -830,29 +840,23 @@ button.zeroclipboard-is-hover {
   color: #f2ebbf;
 }
 
-/* line 149, ../_nano-sass/main.scss */
+/* line 156, ../_nano-sass/main.scss */
 button.zeroclipboard-is-active {
   background-color: #777;
 }
 
-/* line 152, ../_nano-sass/main.scss */
+/* line 159, ../_nano-sass/main.scss */
 .ng-cloak {
   opacity: 0;
 }
 
-/* line 158, ../_nano-sass/main.scss */
+/* line 165, ../_nano-sass/main.scss */
 .zen h1, .zen h2, .zen .copy, .zen a {
   color: transparent;
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
 }
 
-/* line 163, ../_nano-sass/main.scss */
-.zen .entry-list {
-  color: transparent;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
-}
-
-/* line 168, ../_nano-sass/main.scss */
+/* line 170, ../_nano-sass/main.scss */
 .zen .blanket {
   display: block;
   width: 100%;
@@ -864,29 +868,35 @@ button.zeroclipboard-is-active {
   left: 0;
 }
 
-/* line 181, ../_nano-sass/main.scss */
+/* line 183, ../_nano-sass/main.scss */
 .desc {
   padding: 0 0 2rem 0;
 }
 
-/* line 189, ../_nano-sass/main.scss */
+/* line 191, ../_nano-sass/main.scss */
 .main-app {
   position: relative;
 }
 
-/* line 193, ../_nano-sass/main.scss */
+/* line 195, ../_nano-sass/main.scss */
 .copy {
   position: fixed;
   right: 1rem;
   top: 1rem;
 }
 
-/* line 198, ../_nano-sass/main.scss */
+/* line 200, ../_nano-sass/main.scss */
 .hide {
   display: none;
 }
 
-/* line 202, ../_nano-sass/main.scss */
+/* line 204, ../_nano-sass/main.scss */
+#entries {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* line 207, ../_nano-sass/main.scss */
 .entry-list {
   cursor: text;
   color: #f2f2f2;
@@ -898,14 +908,20 @@ button.zeroclipboard-is-active {
   padding-right: 2rem;
 }
 
-/* line 213, ../_nano-sass/main.scss */
+/* line 216, ../_nano-sass/main.scss */
+.zen .entry-list {
+  color: transparent;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+/* line 222, ../_nano-sass/main.scss */
 .ctr {
   text-align: center;
   position: relative;
   z-index: 11000;
 }
 
-/* line 219, ../_nano-sass/main.scss */
+/* line 228, ../_nano-sass/main.scss */
 .zen .ctr {
   position: fixed;
   right: 0;
@@ -916,7 +932,7 @@ button.zeroclipboard-is-active {
   bottom: 220px;
 }
 
-/* line 226, ../_nano-sass/main.scss */
+/* line 235, ../_nano-sass/main.scss */
 .wordcount h6 {
   display: inline;
   padding: 0.5rem 2rem;
@@ -927,13 +943,13 @@ button.zeroclipboard-is-active {
   border-radius: 12px;
 }
 
-/* line 236, ../_nano-sass/main.scss */
+/* line 245, ../_nano-sass/main.scss */
 .input-row {
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
-/* line 239, ../_nano-sass/main.scss */
+/* line 248, ../_nano-sass/main.scss */
 #input-area {
   position: relative;
   z-index: 11000;
@@ -953,7 +969,7 @@ button.zeroclipboard-is-active {
   color: white;
 }
 @media screen and (min-width: 0px) {
-  /* line 239, ../_nano-sass/main.scss */
+  /* line 248, ../_nano-sass/main.scss */
   #input-area {
     display: block;
     float: left;
@@ -966,7 +982,7 @@ button.zeroclipboard-is-active {
   }
 }
 @media screen and (min-width: 481px) {
-  /* line 239, ../_nano-sass/main.scss */
+  /* line 248, ../_nano-sass/main.scss */
   #input-area {
     display: block;
     float: left;
@@ -979,7 +995,7 @@ button.zeroclipboard-is-active {
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 239, ../_nano-sass/main.scss */
+  /* line 248, ../_nano-sass/main.scss */
   #input-area {
     display: block;
     float: left;
@@ -992,7 +1008,7 @@ button.zeroclipboard-is-active {
   }
 }
 @media screen and (min-width: 980px) {
-  /* line 239, ../_nano-sass/main.scss */
+  /* line 248, ../_nano-sass/main.scss */
   #input-area {
     display: block;
     float: left;
@@ -1004,7 +1020,7 @@ button.zeroclipboard-is-active {
     margin-right: 0;
   }
 }
-/* line 253, ../_nano-sass/main.scss */
+/* line 262, ../_nano-sass/main.scss */
 #input-area:focus {
   padding: 1.8rem 1rem;
   border: 1px solid #8cbeb2;
@@ -1017,7 +1033,7 @@ button.zeroclipboard-is-active {
   transition: all 0.25s ease-out 0;
 }
 
-/* line 263, ../_nano-sass/main.scss */
+/* line 272, ../_nano-sass/main.scss */
 .zen #input-area {
   position: fixed;
   right: 0;
@@ -1054,7 +1070,7 @@ button.zeroclipboard-is-active {
   color: #3e3e3e;
 }
 
-/* line 277, ../_nano-sass/main.scss */
+/* line 286, ../_nano-sass/main.scss */
 .zen #input-area:focus {
   border: 1px solid black;
 }

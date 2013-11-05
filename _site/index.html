@@ -31,7 +31,7 @@
    <section>
       <div class="container">
          <div class="row" >
-            <h1>NanoWrito</h1>            
+            <h1 class="title">NanoWrito</h1> 
             <h2>A delicious experiment to help you reach your <a href="http://nanowrimo.org">NanoWrimo</a> goal.</h2>
          </div>
          <div class="row desc" >
@@ -78,8 +78,6 @@
       <section class="input">
          <div class="container">
             <div class="row input-row" >
-               <!-- <input id="input-area" type="text" autofocus placeholder="Type something" ng-model="nano.typed" ng-enter="onEnter()" ng-change="onUpdate()"> -->
-
                <input id="input-area"  type="text" autofocus placeholder="Start typing..." ng-model="nano.typed" ui-keydown="{'enter':'onEnter($event)'}" ng-change="onUpdate()">
 
             </div>
