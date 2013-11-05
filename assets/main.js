@@ -37,12 +37,12 @@ function mainCtrl($scope) {
 
 	$scope.startZen = function(e) {
 		$scope.nano.zen = true;
-		console.log('zen state: ' + $scope.nano.zen)
+		// console.log('zen state: ' + $scope.nano.zen)
 	}
 
 	$scope.stopZen = function(e) {
 		$scope.nano.zen = false;
-		console.log('zen state: ' + $scope.nano.zen)
+		// console.log('zen state: ' + $scope.nano.zen)
 	}
 
 	$scope.swapZen = function(e) {
@@ -107,7 +107,7 @@ nanoApp.directive('ngEnter', function () {
 // 
 
 $(document).ready(function() {
-	console.log( $( window ).height()  );
+	
 });
 
 
