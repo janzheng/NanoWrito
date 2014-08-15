@@ -1,0 +1,80 @@
+<template name="postWrite">
+
+  <div class="postWrite">
+
+      <div class="header">
+        <div class="container-fluid">
+
+          <nav class="navbar" role="banner">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                  <li>
+                      <a class="nav-create" href="{{pathFor 'dashboard'}}"><span class="glyphicon glyphicon-hand-left"></span> Return.</a>
+                  </li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </nav>
+
+        </div>
+      </div>
+
+
+      <div class="newPost">
+        <div class="container-fluid">
+          {{#if newPostSelect}}
+
+            <h2 class="row">What will you write?</h2>
+            <ul class="app--postwrite--new-post">
+              {{#each newPostTypes }}
+
+
+                {{#if $eq this 'nanowrimo'}}
+                  <li class="app--postwrite--new-post--item row ">
+                    <a href="#" data-type="{{this}}" >NaNoWriMo.</a>
+                    <div class="desc col-md-7">Thw National Novel Writing Month challenge. You have 30 days, from November 1 to November 30 to write 50,000 words. 
+                    <br> Write swiftly, thirstily, with no looking back. 
+                    <br> What this site was designed for.
+                    <br> No editing until the deadline. 
+                    <br> Submit your novel on <a href="http://nanowrimo.org" target="_blank">nanowrimo.org</a> to win.</div>
+                  </li>
+                {{/if}}
+
+                {{#if $eq this 'monthly'}}
+                  <li class="app--postwrite--new-post--item row">
+                    <a href="#" data-type="{{this}}" >30&ndash;Day Challenge</a>
+                    <div class="desc col-md-7">A lighter version of the Nano challenge, this mode allows for editing, and ends 30 days from the day you start writing.</div>
+                  </li>
+                {{/if}}
+
+                {{#if $eq this 'weekly'}}
+                  <li class="app--postwrite--new-post--item row">
+                    <a href="#" data-type="{{this}}" >7&ndash;Day Challenge</a>
+                    <div class="desc col-md-7">A shorter, more intense NaNoWriMo, this 7-day sprint asks you to write 15,000 words in 7 days. No editing until the deadline. Useful for creating quick ideas and character sketches.</div>
+                  </li>
+                {{/if}}
+
+                {{#if $eq this 'free'}}
+                  <li class="app--postwrite--new-post--item row">
+                    <a href="#" data-type="{{this}}" >Free Writing.</a>
+                    <div class="desc col-md-7">What it sounds like. No time or word count constraints, and all the editing you need. For jotting down ideas, dreams, and thoughts.</div>
+                  </li>
+                {{/if}}
+
+              {{/each}}
+            </ul>
+          {{else}}
+            {{> writeApp }}
+          {{/if}}
+        </div>
+      </div>
+  </div>
+
+</template>

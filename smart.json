@@ -1,0 +1,16 @@
+{
+  "packages": {
+    "iron-router": {},
+    "spin": {},
+    "scss": {},
+    "twitter-api": {},
+    "wait-on-lib": {},
+    "accounts-ui-bootstrap-3": {},
+    "bootstrap3-sass": {},
+    "jquery-ui": {},
+    "bourbon": {},
+    "neat": {},
+    "errors": {},
+    "handlebar-helpers": {}
+  }
+}

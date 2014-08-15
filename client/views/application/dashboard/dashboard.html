@@ -1,0 +1,62 @@
+
+
+<template name="dashboard">
+
+  <div class="app--dashboard">
+
+    {{> header}}
+
+    <div class="container-fluid">
+      <div class="app--dashboard--errors">
+        {{> meteorErrors}}
+      </div>
+    </div>
+
+    <!-- main application here -->
+    <div class="container-fluid ">
+      <div class="app--dashboard">
+
+        {{#if noPostsFound}}
+          <!--
+                  First-Time User
+           -->
+          <div class="app--dashboard--new-user">
+            <a href="{{pathFor 'postNew'}}" >Write something delicious.</a>
+          </div>
+
+        {{else}}
+          <!--
+                  Returning User
+           -->
+          <div class="app--dashboard--panel col-xs-3 col-sm-3">
+            {{> postsList}}
+          </div>
+
+          <div class="app--dashboard--content col-xs-9 col-sm-9">
+            {{> postSelected }}
+          </div>
+
+          <div class="app--dashboard--profile">
+            <!-- {{> postsList}} -->
+          </div>
+
+
+        {{/if}}
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- {{> postContent}} -->
+  <!-- <ul class="comments">
+    {{#each comments}}
+      {{> comment}}
+    {{/each}}
+  </ul> -->
+  <!-- {{#if currentUser}}
+    {{> commentSubmit}}
+  {{else}}
+    <p>Please log in to leave a comment.</p>
+  {{/if}} -->
+</template>

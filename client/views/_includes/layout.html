@@ -1,0 +1,17 @@
+
+<!-- pageTitle is set as a session var, and can be set using: Session.set('pageTitle', 'A brand new title'); -->
+
+<template name="layout">
+
+  <div class="template {{zenClass}} ">
+    {{#if userLoggedIn}}
+      {{> application}}
+    {{else}}
+      {{> splash}}
+    {{/if}}
+
+
+  </div>
+
+</template>
+

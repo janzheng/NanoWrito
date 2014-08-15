@@ -1,0 +1,28 @@
+<!-- 
+old before individual posts and comments
+<template name="postItem">
+  <div class="post">
+    <div class="post-content">
+      <h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
+    </div>
+  </div>
+</template> 
+
+-->
+
+<template name="postListItem">
+  <div class="post {{activeClass}}">
+    <!-- <a href="#" class="upvote btn {{upvotedClass}}">⬆</a> -->
+    <!-- posts won't have these but watchlists and stocks will -->
+    <div class="post-content">
+      <div class="post-novel-name"><a href="{{pathFor 'postSelected' }}">{{title}}</a></div>
+      <div class="post-novel-date">
+        {{date}}
+      </div>
+    </div>
+    <!-- {{#if ownPost}}
+      <a class="btn btn-default" href="{{pathFor 'postEdit'}}">Edit</a> 
+      <a class="post__delete btn btn-danger" >Delete</a>
+    {{/if}} -->
+  </div>
+</template>

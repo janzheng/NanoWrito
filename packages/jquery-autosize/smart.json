@@ -1,0 +1,7 @@
+{
+  "name": "jquery-autosize",
+  "description": "JQuery Autoresize adapted for Meteor",
+  "packages": {
+    "blaze-layout": "0.2.4"
+  }
+}

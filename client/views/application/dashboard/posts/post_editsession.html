@@ -1,0 +1,74 @@
+<template name="postEditSession">
+
+  <div class="postEditSession">
+
+    <div class="header">
+      <div class="container-fluid">
+
+        <nav class="navbar" role="banner">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse">
+            {{#if contentChanged}}
+              <ul class="nav navbar-nav">
+                <li><a class="post-edit-save" href="#"><span class="glyphicon glyphicon-floppy-disk"></span> Save.</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a class="post-edit-save-return"><span class="glyphicon glyphicon-hand-left"></span> Save &amp; Return</a></li>
+                <li><a class="post-nav-cancel"><span class="glyphicon glyphicon-ban-circle"></span> Cancel.</a></li>
+              </ul>
+            {{else}}
+              <ul class="nav navbar-nav">
+                <li><a class="post-edit-save-disabled" href="#"><span class="glyphicon glyphicon-floppy-disk"></span> Save.</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a class="post-nav-cancel" href="{{pathFor 'dashboard'}}"><span class="glyphicon glyphicon-ban-circle"></span> Cancel.</a></li>
+              </ul>
+            {{/if}}
+
+          </div><!-- /.navbar-collapse -->
+        </nav>
+
+      </div>
+    </div>
+
+    <div class="postEditSession--container">
+    </div>
+
+
+
+    <div class="container" >
+
+       <div class="row word-count {{userWordcount}}" >
+          <div class="ctr"><h6>{{wordCount}}</h6></div>
+          <!-- <h3>{{nano.typeCount }}</h3> -->
+       </div>
+
+       <div class="row col-xs-12 col-md-12 description">
+          <div class="row col-xs-12" >
+            {{#if title}}
+              <h2 class="subtitle noveltitle">"{{title}}" </h2>
+            {{/if}}
+            <h3 class="subtitle-desc">Work on this page is not saved automatically. Click the 'Save' button to update your work.</h3>
+          </div>
+       </div>
+
+       <div class="row col-xs-10">
+          <div class="postEditSession--editable col-xs-12" contenteditable>{{getParagraphs}}</div>
+       </div>
+
+
+    </div>
+
+
+  </div>
+
+</template>
+
+

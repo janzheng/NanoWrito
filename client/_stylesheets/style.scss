@@ -1,0 +1,985 @@
+@import "../../packages/bootstrap3-sass/bootstrap";
+@import "../../packages/bourbon/bourbon";
+@import "../../packages/neat/neat";
+@import "../../packages/compass-sass/compass";
+@import "../../packages/custom-code/custom.scss";
+
+
+// Compass frameworks
+// @import "compass.scss";
+// @import "compass/utilities.scss";
+// @import "compass/css3.scss";
+// @import "compass/css3/images.scss";
+
+/* given from the book */
+
+
+// *********************************************************
+// Variables and Consts
+// *********************************************************
+
+$bootstrap-mobile: 416px;
+
+%ease {
+   @include ease(0.15s);
+}
+
+// Sizes
+$base: 1rem;
+
+// .grid-block, .main, .post, .comments li, .comment-form {
+//     background: #fff;
+//     border-radius: 3px;
+//     padding: 10px;
+//     margin-bottom: 10px;
+//     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+// }
+
+%jeans {
+   background-image: url('/images/cover.png');
+   background-attachment:fixed;
+   background-position:center; 
+   // background-color: rgba($color2-1, 1);
+
+   $nc: mix($color3-1, $color1-5, 0.6);
+   $nc2: rgba($nc, 0.9);
+   $colora: $nc;
+   $colorb: $nc2;
+
+   background-image: url('/images/cover.png'); /* fallback */
+   background-image: url('/images/cover.png'), -webkit-gradient($colora 30%, $colorb 100%); /* Saf4+, Chrome */
+   background-image: url('/images/cover.png'), -webkit-linear-gradient($colora 30%, $colorb 100%); /* Chrome 10+, Saf5.1+ */
+   background-image: url('/images/cover.png'),    -moz-linear-gradient(0deg, $colora 30%, $colorb 100%); /* FF3.6+ */
+   background-image: url('/images/cover.png'),     -ms-linear-gradient(0deg, $colora 30%, $colorb 100%); /* IE10 */
+   background-image: url('/images/cover.png'),      -o-linear-gradient(0deg, $colora 30%, $colorb 100%); /* Opera 11.10+ */
+   background-image: url('/images/cover.png'),         linear-gradient(0deg, $colora 30%, $colorb 100%);
+}
+
+
+// FONT SIZES
+$size-menu: $base*0.9;
+$size-footer: $base * 0.9;
+$size-form: $base*1.2; $height-form: $base*2;
+$size-copy: $base*0.9;
+$size-subtitle: $base*0.8;
+
+
+$size-h1: $base*5;
+$size-h2: $base*1.3;
+$size-h3: $base*1;
+$size-h4: $base*1.3;
+$size-h5: $base*2.5;
+$size-h6: $base*4;
+$size-p: $base*0.9; $height-p: $base*1.3;
+
+
+// USER SETTING STYLES
+
+// textsize
+$user-textsize-small: $base*0.88;
+$user-textsize-medium: $base*1.1;
+$user-textsize-large: $base*1.4;
+
+// extend this wherever custom sizing is needed
+%user-textsize {
+  &.user-textsize {
+    &--small {font-size: $user-textsize-small}
+    &--medium {font-size: $user-textsize-medium; line-height: $user-textsize-medium*1.7}
+    &--large {font-size: $user-textsize-large; line-height: $user-textsize-large*1.7}
+  }
+}
+
+%user-wordcounter {
+  &.user-wordcount {
+    &--on {display: block}
+    &--off {visibility: hidden}
+    .zen &--write {visibility: hidden}
+  }
+}
+
+// Other styles
+
+%purple-storm {
+  background-color: rgba($dark-purple, 0.4);
+  @extend %shadow-internal-dark;
+}
+
+html {
+   height: 100%;
+}
+
+
+// *********************************************************
+// FONTS
+// *********************************************************
+
+// FONT STACKS
+@import url(http://fonts.googleapis.com/css?family=Oleo+Script);
+%oleo {font-family: 'Oleo Script', sans-serif;}
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,600,700);
+%open-sans {font-family: 'Open Sans', sans-serif;}
+
+%sans-serif {@extend %open-sans}
+%serif {font-family: Georgia, serif;}
+%cursive {@extend %oleo;}
+%display {@extend %oleo;}
+
+
+
+
+// *********************************************************
+// Page Elements
+// *********************************************************
+
+
+body {
+
+   @extend %jeans;
+   @extend %ease;
+
+   min-height: 100%;
+
+   h1 { 
+      @extend %display; color: black; font-size: $size-h1;
+      text-align: center; 
+      // background-color: rgba($color1-3,1);
+      -webkit-background-clip: text; -moz-background-clip: text;
+      background-clip: text; color: transparent; text-shadow: rgba(white, 0.3) -1px -1px 1px, rgba($color2-5,0.5) 0px 3px 3px, rgba(white, 0.7) 0.2px 0.2px 0px;
+   }
+
+   h2 { 
+      // text-align: center;
+      // @extend %serif;
+      // color: rgba($color2-3,0.3);
+      font-size: $size-h2;
+      @extend %serif;
+   }
+
+   h3 {
+      font-size: $size-h3; line-height: $size-h3*1.3;
+      padding: $base*0.75 0;
+      @extend %serif;
+   }
+
+   .title:after{
+      content: 'beta!!'; font-size: $base*2;
+      display: inline-block; position: relative; top: -40px; left: 0px;
+      color: $color2-3;
+      text-shadow: 3px 3px 3px rgba($color3-1, 0.9);
+      @include transform( rotate(-15deg));
+
+      @media only screen and (max-width: $bootstrap-mobile) {
+        top: -70px;
+      }
+   }
+
+   p {@extend %serif; font-weight: normal; padding: $base/2 0;}
+
+   a, a:active, a:visited {color: $color1-2; text-decoration: none; @extend %ease; }
+   a:hover {color: $color2-3; text-decoration: underline; @extend %ease;}
+
+}
+
+
+// *********************************************************
+// Splash Page
+// *********************************************************
+
+.splash .hero {
+  @extend %purple-storm;
+  padding-top: $base*4;
+  padding-bottom: $base*2;
+
+  .title {
+    padding-bottom: $base/2;
+
+    // bootstrap mobile
+    @media only screen and (min-width: $bootstrap-mobile) {
+      position: relative; 
+      // left: 21px;
+    }
+  }
+  .subtitle, .subtitle-desc  {
+    color: $light-gray;
+    text-align: center;
+  }
+  .disclaimer-content {
+    color: $light-gray;
+    font-size: $base;
+    line-height: $base*1.6
+  }
+  .sign-in {
+    margin: 0 auto;
+    float: none;
+    padding-top: $base;
+  }
+}
+
+
+
+
+// *********************************************************
+// Login State
+// *********************************************************
+
+  
+  // *********************************************************
+  // Header Styles
+  // *********************************************************
+
+  .header {
+    @extend %purple-storm;
+    background-color: rgba(#192130, 0.9); //mimics purple storm color but w/ less transparency
+    @extend %serif;
+
+    .navbar {
+      margin: 0;
+      a {
+        color: $light-gray;
+        @extend %ease;
+        &:hover, &:focus {
+          @extend %ease;
+          color: $color1-3;
+          background-color: transparent;
+        }
+        .glyphicon {
+          padding-right: 4px;
+        }
+      }
+      .navbar-toggle {
+        .icon-bar {
+          background-color: $gray-light;
+        }
+        &:hover {
+          .icon-bar {
+            background-color: $light-gray-blue;
+          }
+        }
+      }
+      .dropdown-toggle {
+        background-color: transparent;
+      }
+      .dropdown-menu {
+        background-color: rgba(mix($color1-5, $color2-2, 0.9),0.9);
+        padding: $base;
+      }
+    }
+
+    // radio button and option labels
+    label {
+      font-size: $base*0.9;
+      color: mix($dark-gray,$color1-5, 0.5);
+    }
+
+    // author input area
+    #form-tweak-author {
+      margin-top: 10px;
+
+      background-color: transparent;
+      border: 0;
+      color: white;
+      @extend %serif;
+      padding: $base/2; 
+      background-color: rgba(black, 0.3);
+      border: $color1-5 1px solid; outline: 0;
+      @include border-radius(4px, 4px);
+    }
+
+    // highlight checked labels
+    input[type="radio"]:checked+label { 
+      color: white; 
+    } 
+
+    // undo some bootstrap style
+    .radio input[type="radio"] {
+      margin-top: 0;
+    }
+
+    // category labels
+    .form-group > label {
+      font-size: $base;
+      color: $color1-5;
+    }
+
+    .settings-save {
+      border-color: $color1-5;
+      @extend %serif;
+      width: 100%;
+    }
+  }
+
+
+  // *********************************************************
+  // Main Application
+  // *********************************************************
+
+  .app {
+
+    .app--dashboard {
+      margin-top: $base*2;
+
+      .app--dashboard--new-user {
+
+        font-size: $size-h5;
+        text-align: center;
+        @extend %serif;
+        margin-top:$base*3;
+        margin-bottom:$base*3;
+
+        a {
+          color: $light-gray;
+          &:hover {
+            text-decoration: none;
+            @extend %ease;
+            color: $color1-2; 
+          }
+        }
+
+      }
+
+      // mobile needs to hide long novel names or they'll overflow
+      .app--dashboard--panel {
+        // copy button is hidden, so need a little more margin at top
+        @media only screen and (max-width: $bootstrap-mobile) {
+          overflow-x: scroll;
+        }
+      }
+      // 
+      // Posts (left side)
+      // 
+
+      .posts-list {
+        margin-top: $base*2; 
+      }
+      .post {
+        // margin-left: 15px; //to align with the top "[ ] write" button
+        margin-top: $base;
+        margin-bottom: $base;
+
+        a {
+          font-size: $base*1.3;
+          color: $light-gray;
+          @extend %serif;
+          line-height: $base*2;
+          @extend %ease;
+          &:hover, &:focus {
+            @extend %ease;
+            color: $color1-3;
+            background-color: transparent;
+            text-decoration: none;
+          }
+        }
+        .post-novel-date {
+          font-size: $base*0.7;
+          color: darken($light-gray, 40%);
+          @extend %serif;
+        }
+      }
+      .active {
+        a {
+          color: $color1-3;
+        }
+      }
+
+    }
+
+    .app--dashboard--content {
+      .post-container {
+        margin-top: $base*2 - 0.3rem; //height diff is from btn sizing
+      }
+    }
+
+    .post-btns {
+      border-bottom: 1px rgba($light-gray, 0.2) solid;
+    }
+
+    .post-nav {
+      margin: 0;
+      @extend %serif;
+      a {
+        color: $gray-light;
+        @extend %ease;
+        &:hover, &:focus {
+          @extend %ease;
+          color: $color1-3;
+          background-color: transparent;
+        }
+        .glyphicon {
+          padding-right: 4px;
+        }
+      }
+      a.post-nav-continue {
+        color: lighten($gray-light, 30%);
+        &:hover, &:focus {
+          color: $color1-3;
+        }
+      }
+      // zeroclipboard flash button
+      // dashboard copy
+      a.post-nav-copy {
+        &:hover, &.hover {
+          color: $color1-3;
+          background-color: transparent;
+        }
+      }
+    }
+
+    .post-title {
+      padding-top: $base; 
+      font-size: $base*2.8;
+
+      input, textarea {
+        background-color: transparent;
+        border: 0;
+        color: $light-gray;
+        @extend %serif;
+        padding: $base $base; 
+        background-color: rgba(black, 0.3);
+        border: $color1-5 1px solid; outline: 0;
+        @include border-radius(4px, 4px);
+
+        &:focus {
+          padding: $base*1.8 $base; 
+          border: 1px solid $color2-2;
+          color: white;
+          background-color: rgba(black, 0.3);
+          @extend %ease;
+        }
+      }
+
+    }
+    .post-author {
+      padding-left: 15px;
+      padding-top: $base;
+      color: $gray-light;
+      font-size: $base*1.3;
+      @extend %serif;
+      .username {
+        color: $light-gray;
+      }
+    }
+    .post-novel-content {
+      margin-bottom: $base*4;
+
+      .post-paragraph {
+
+        white-space: pre;
+        // white-space: pre-wrap;
+        word-wrap: break-word;
+
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-top:$base/2;
+        margin-bottom:$base/2;
+
+        // styles if we use a textarea
+        width: 100%;
+        background-color: transparent;
+        border-color: transparent;
+        resize: none;
+
+        @extend %user-textsize;
+
+        &:focus {
+          outline: $salmon 0px solid;
+          @extend %ease;
+        }
+      }
+      .post-paragraph-edit-active {
+        border-radius: 4px;
+        padding: 10px 25px;
+        background-color: rgba(black, 0.3);
+        outline: $color2-2 1px solid;
+        // outline: $salmon 1px solid;
+        &:focus {
+          outline: $salmon 1px solid;
+          @extend %ease;
+        }
+      }
+    }
+    .post-subtitle {
+      padding-left: 15px; padding-top: $base/2; padding-bottom: $base/2;
+      color: $gray-light;
+      @extend %sans-serif;
+      font-size: $size-subtitle;
+    }
+    .post-date {
+      padding-top: $base;
+      padding-bottom: $base/2;
+      margin-bottom: $base;
+      color: $gray-light;
+      @extend %serif;
+      font-size: $size-subtitle;
+      border-bottom: 1px rgba($light-gray, 0.3) dashed;
+
+      .post-edit-container {
+        float: right;
+        position: relative;
+      }
+      .post-edit, .post-edit-save, .post-edit-delete, .post-edit-cancel {
+        display: inline-block;
+        padding-right: 6px;
+      }
+      .post-edit-save {
+        a {color: $salmon;}
+      }
+      .post-edit-delete {
+        a {color: $gray-light;}
+      }
+      .post-edit-cancel {
+        a {color: $light-gray;}
+      }
+    }
+    .post-paragraph {
+      color: $light-gray;
+      font-size: $base*1;
+      line-height: $base*1.7;
+      @extend %serif;
+    }
+    .btn {
+      border-radius: 4px;
+      border: 1px solid $gray-light;
+
+      &:hover {
+        color: $salmon;
+        border: 1px solid $salmon;
+      }
+    }
+    .post-settings-buttons {
+      margin-top: $base;
+      margin-bottom: $base;
+      padding-left: 15px;
+      color: $gray-light;
+      @extend %serif;
+      font-size: $size-subtitle;
+      line-height: $base*1.9;
+    }
+    .post-settings-container {
+      padding-left: 15px;
+      color: $gray-light;
+      @extend %serif;
+      font-size: $size-subtitle;
+      line-height: $base*1.9;
+    }
+    .post-settings-closed {
+      display: none;
+    }
+    .post-settings-btn-active {
+      color: $light-gray;
+      border-color: $light-gray;
+    }
+
+    .post-info {
+      margin-top: $base;
+      margin-bottom: $base;
+      .post-info-title {
+        padding-left: 15px;
+        color: $gray-light;
+        @extend %serif;
+        font-size: $base*1.2;
+        line-height: $base*1.9;
+      }
+      .post-info-desc {
+        color: $light-gray;
+        @extend %sans-serif;
+        font-size: $base*1.2;
+        line-height: $base*1.9;
+      }
+    }
+    .post-session {
+      margin-top: $base*3;
+    }
+
+    // user editable settings
+    .post-edit-disabled{
+      color: $light-gray;
+      a, a:hover, a:active, a:visited, a:focus { color: $light-gray; cursor: default; text-decoration: none}
+    }
+  }
+
+// *********************************************************
+// Post Write (logged-in extras for the write app)
+// *********************************************************
+
+.postWrite .newPost{
+  padding-left: 45px;
+  margin-top: $base*2;
+  margin-bottom: $base*4;
+
+  h2 {
+    color: $gray-light;
+  }
+
+  li > a{
+    color: $light-gray;
+    font-size: $base*2;
+    @extend %serif;
+    &:hover {color: $color1-2; text-decoration: none; @extend %ease;}
+    padding-top: $base;
+    display: block;
+  }
+
+  .desc {
+    color: $gray-light;
+    font-size: $base;
+    @extend %serif;
+    padding-top: $base/2;
+    line-height: $base*1.6;
+  }
+}
+
+
+// *********************************************************
+// Write App (and Session Edit)
+// *********************************************************
+
+.write-app, .postEditSession {
+
+   .hide {
+      display: none;
+   }
+
+   #entries {
+      padding-left: $base; padding-right: $base;
+   }
+   .entry-list {
+      cursor: text; color: $silver;
+      background-color: rgba(black, 0.3);
+      border-radius: 8px; 
+      line-height: $base*1.4;
+      padding-left: $base*2;
+      padding-right: $base*2;
+
+      // font-size: $base*1;
+      @extend %user-textsize;
+   }
+
+   .ctr {
+      text-align: center;
+      position: relative;
+      z-index: 11000;
+   }
+
+   .description {
+      padding-left: $base; padding-right: $base;
+      padding-bottom: $base*2;
+      float: none;
+      margin: 0 auto;
+      color: rgba($light-gray, 0.7);
+
+       .subtitle {
+           color: $light-gray;
+       }
+       .subtitle-desc {
+           color: rgba($light-gray, 0.7);
+           line-height: $size-h3*1.8;
+       }
+
+      // copy button is hidden, so need a little more margin at top
+      @media only screen and (max-width: $bootstrap-mobile) {
+        margin-top: 30px;
+      }
+   }
+
+   .text-output {
+      padding-left: $base; padding-right: $base;
+      padding-bottom: $base*2;
+      float: none;
+      margin: 0 auto;
+      .entry-list {
+         padding-top: $base;
+         padding-bottom: $base;
+      }
+   }
+
+   .word-count {
+      padding-bottom: $base*2;
+      h6 {
+         display: inline; padding: $base/2 $base*2; color: $silver;
+         @extend %shadow-inset;
+         text-align: center;
+         font-size: $size-h6;
+         @extend %sans-serif;
+         background: rgba(black, 0.2);
+         border-radius: 12px;
+      }
+      @extend %user-wordcounter;
+   }
+
+   .text-input {
+      padding-left: $base; padding-right: $base;
+      padding-bottom: $base*2;
+      float: none;
+      margin: 0 auto;
+
+      .text-input-area {
+         position: relative;
+         z-index: 11000;
+         @extend %serif;
+
+         padding: $base $base; 
+         // @include ease-out(0);
+         font-size: $size-form; @extend %box-shade-light;
+
+         background-color: rgba(black, 0.3);
+         border: $color1-5 1px solid; outline: 0;
+         @include border-radius(4px, 4px);
+         color: white;
+         
+         &:focus {
+            padding: $base*1.8 $base; 
+            border: 1px solid $color2-2;
+            color: white;
+            background-color: rgba(black, 0.3);
+            // @include ease-out(0.25s);
+            @extend %ease;
+         }
+      }
+    }
+
+
+    // session edit
+    .postEditSession--editable {
+      white-space: pre-line;
+      color: $gray-light;
+
+      padding-left: $base; padding-right: $base;
+      padding-bottom: $base*2;
+      float: none;
+      margin: 0 auto;
+      .entry-list {
+         padding-top: $base;
+         padding-bottom: $base;
+      }
+    }
+
+
+}
+
+
+
+// zeroclipboard flash button
+
+// writeApp
+.copy {
+   text-align: right;
+
+   .btn-copy {
+
+      position: relative;
+      right: $base;
+      top: $base;
+
+      padding: $base/3 $base/2; 
+      @extend %serif;
+      // @include ease-out(0.15s);
+      @extend %ease;
+      font-size: $size-copy; @extend %box-shade-light;
+
+      background: rgba($color2-1, 0.7); 
+      border: $color1-2 1px dashed; outline: 0; border-radius: 3px;
+      @include border-radius(4px, 4px);
+      color: rgba($color2-3,0.6);
+      
+      &:hover, &.hover {
+         border: 1px solid $color1-3;
+         background: rgba($color2-1, 0.3); 
+         // @include ease-out(0.15s); 
+         @extend %ease;
+         color: rgba($color2-3,1);
+      }
+
+      &:active, &.active {
+         background-color:#777;
+      }
+
+      // hide this btn for mobile view (they can't use it anyway)
+      @media only screen and (max-width: $bootstrap-mobile) {
+        display: none;
+        margin-bottom: 40px;
+      }
+      
+   }
+}
+
+
+
+// Zen mode covers the entire app, including the menu
+
+.zen .text-input-area {
+   @include centerfix;
+   width: 60%;
+   position: fixed !important;
+   bottom: 100px;
+   color: $dark-gray !important;
+
+   // @include ease-out(0.25s);
+   @extend %ease;
+   @include placeholder {
+      color: $dark-gray;
+   }
+}
+
+.zen .text-input-area:focus {
+   border: 1px solid black !important;
+}
+
+.zen .entry-list{
+   color: transparent;
+   text-shadow: 0 0 5px rgba(white,0.8);
+}
+
+.zen .ctr{
+   @include centerfix;
+   width: 40%;
+   bottom: 220px;
+   h6 { color: $slate; }
+}
+
+// blur certain things on zen. overrule everything in this mode, so !important makes sense
+.zen {
+  h1, h2, .copy, a, .splash .hero *, .write-app .description *, .header .nav a {
+    color: transparent !important;
+    text-shadow: 0 0 5px rgba(white,0.4) !important;
+  }
+}
+.zen .btn-Twitter {
+   background-color: darken(#4099ff, 80%);
+}
+
+.zen .blanket {
+   display: block; width: 100%; height: 100%;
+   z-index: 10000;
+   background-color: rgba(black, 0.8);
+   position: fixed; top: 0; left: 0;
+}
+
+
+
+// *********************************************************
+// FOOTER
+// *********************************************************
+
+.footer {
+
+   a, a:active, a:visited {color: rgba($color2-3,0.3); text-decoration: none; @extend %ease; }
+   a:hover {color: $color1-2; text-decoration: underline; @extend %ease;}
+}
+.footer__message {
+   padding-top: $base*3;
+   padding-bottom: $base;
+   font-size: $base;
+   text-align: center;
+   @extend %serif;
+   color: rgba($color2-3,0.3);
+}
+
+// *********************************************************
+// Other Items
+// *********************************************************
+
+.btn-Twitter {
+    padding: 10px 15px;
+    margin-top: 5px;
+    &:hover {
+      background-color: darken(#4099ff, 20%);
+      color: white;
+    }
+}
+
+%editor {
+    border-collapse: separate;
+    border: 1px solid rgb(204, 204, 204);
+    clear: none;
+    display: block;
+    float: none;
+    margin: 0px;
+    outline: rgb(85, 85, 85) none 0px;
+    outline-offset: 0px;
+    padding: 6px 12px;
+    vertical-align: middle;
+    text-align: start;
+    box-sizing: border-box;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset;
+    box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset;
+    border-radius: 4px;
+    width: 100%;
+    height: 30px;
+    background-color: rgb(255, 255, 255);
+}
+.title-editor {
+    @extend %editor;
+    margin-bottom: 1rem;
+}
+
+.content-editor {
+    @extend %editor;
+    height: 500px;
+}
+
+.btn {
+    @extend %ease;
+}
+
+// adding this to the input bar, since some people said it's not clear you hit enter
+// http://helplogger.blogspot.com/2013/10/css-keyboard-keys-on-blogger.html
+.keyboard-key {
+  border:1px solid gray;
+  font-size:1.2em;
+  box-shadow:1px 0 1px 0 #eee, 0 2px 0 2px #ccc, 0 2px 0 3px #444;
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;
+  border-radius:3px;
+  margin:2px 3px;
+  padding:1px 5px;
+}
+
+
+#login-buttons-logout:after {
+  // content: ' End.'
+}
+
+
+
+// *********************************************************
+// Template helpers
+// *********************************************************
+
+.nw-no-gutter {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+.nw-no-margin {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+
+// loading helper / include
+.loading {
+  padding-top:$base*8;
+  padding-bottom:$base*8;
+}
+
+.app--dashboard--errors {
+  // error classes
+  .errors {
+    margin-top: $base*2;
+    @extend %serif;
+    .alert {
+      border-radius: 0;
+      border: 0;
+    }
+    .alert-danger {
+      background-color: rgba($color2-1, 1);
+      color: white;
+    }
+    .close {
+      text-shadow: none;
+    }
+  }
+
+}
+
+

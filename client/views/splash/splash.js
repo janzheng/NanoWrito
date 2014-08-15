@@ -1,0 +1,6 @@
+
+Template.splash.events({
+   'click .disclaimer-link': function(e) {
+      $(".disclaimer-content").text("Thanks for checking out NanoWrito! NanoWrito is a personal experiment I launched to help more people finish their NaNoWriMo novels. It is completely free, and is hosted on a free server. As thus, there might be bugs and problems, big or small. I can't vouch for 100% server availability, and there's a small chance something might happen to your novel(s), so back up often to your own computer, just in case. Furthermore, all your novels will be stored on the server until you click to Delete the novel. They will only be visible to you, unless you share your novel. Your Twitter handles are only used for login and authentication (which is safer than storing your password). I don't have access to your twitter account information, and won't message you with advertising, spam, or other messaging. For announcements and questions, please follow or message @nanowrito or email me at hello@janzheng.com. Also, NanoWrito is in no way affiliated with NaNoWriMo. Thanks!")
+   }
+});

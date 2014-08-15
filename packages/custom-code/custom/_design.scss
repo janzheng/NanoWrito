@@ -1,0 +1,231 @@
+
+
+// *********************************************************
+// DESIGN FILE
+// - this file specifies variables and design components
+// - don't directly affect IDs and classes from this file
+// *********************************************************
+
+
+
+// *********************************************************
+// DESIGN MIXINS
+// *********************************************************
+
+@mixin background-opacity($color, $opacity: 0.3) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}
+
+@mixin ease($speed){
+    -webkit-transition: all $speed ease;
+    -moz-transition: all $speed ease;
+    -ms-transition: all $speed ease;
+    -o-transition: all $speed ease;
+    transition: all $speed ease;
+}
+
+@mixin ease-out($speed){
+    -webkit-transition: all $speed ease-out 0;
+    -moz-transition: all $speed ease-out 0;
+    -ms-transition: all $speed ease-out 0;
+    -o-transition: all $speed ease-out 0;
+    transition: all $speed ease-out 0;
+}
+
+// @mixin placeholder-style($selector){
+//     $selector::-webkit-input-placeholder { /* WebKit browsers */
+//         @content;
+//     }
+//     $selector::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+//         @content;
+//     }
+//     $selector::-moz-placeholder { /* Mozilla Firefox 19+ */
+//         @content;
+//     }
+//     $selector::-ms-input-placeholder { /* Internet Explorer 10+ */
+//         @content;
+//     }
+// }
+
+
+
+// *********************************************************
+// VARIABLES
+// *********************************************************
+
+// basic sizes
+$base: 1rem;
+$margin: $base;
+
+
+// color
+
+// flat stamps https://kuler.adobe.com/Flat-Stamps-color-theme-3070211/
+// hipster heaven https://kuler.adobe.com/Copy-of-vintage-card-color-theme-3065107/
+$color1-1: #EFC164; //matte orange
+$color1-2: #F3835D; //matte red
+$color1-3: #F35955; //matte redder
+  $salmon: $color1-2;
+$color1-4: #286275; //blue
+$color1-5: #00434C; //deeper blue
+
+$color2-1: #5C4B51; //dark red
+$color2-2: #8CBEB2; //matte turqouise
+$color2-3: #F2EBBF; //tan
+$color2-4: #F3B562; //matte orange
+$color2-5: #F06060; //matte red
+ 
+$color3-1: #7db9e8;
+
+
+
+$white: #fff;
+$black: #000;
+$red: #972020;
+$light-red: #a00;
+$dark-red: #c71414;
+$light-gray: #ccc;
+  $lighter-gray: rgba($light-gray, 0.7);
+  $light-gray-blue: #a0a0ff;
+    $subtle-gray-blue: rgba($light-gray-blue, 0.6);
+  $gray-light: #999999;
+$gray: #777;
+$deep-gray: #0f0f0f;
+$dark-gray: #333;
+$slate: #3e3e3e;
+$medium-gray: #555;
+$silver: #f0f0f0;
+  $silver-blue: #a0a0d0;
+$silvercloud: #f9f9f9;
+$silverline: #f8f8f8;
+$pink: #f44a56;
+$matte-blue: #3e4b5d;
+$green: #97b537;
+$blue: #275d84;
+  $blue-bright: #2a6596;
+$purple: #3e0245;
+$dark-purple: #210124;
+
+$color-bg: #222;
+$color-highlight: #ccc;
+$highlight: #D95F43;
+$highlight-text: #FFFBDB;
+
+$color-text: #ddd;
+$color-text-para: #333;
+$color-text-link: #eee;
+$color-text-link-hover: #aaa;
+$color-btn: #333;
+$color-btn-dark: #333;
+$color-btn-hvr: #777;
+
+$color-menu: rgb(40, 40, 40);
+$color-menu-hover: $gray;
+$color-menu-selected: $silver;
+
+
+.white {color: black; background-color: rgba(255,255,255, 0.95);}
+.orange{background-color: rgba(255,195,40,0.7);}
+.green {color: white; background-color: rgba(109, 152, 71, 0.84)}
+.dark {color: $light-gray; background-color: rgba(70,70,70, 0.8);}
+.lighter {color: $dark-gray; background-color: rgba(255,255,255, 0.88);}
+.light {color: $dark-gray; background-color: rgba(250,250,250, 0.86);}
+.soft {color: $dark-gray; background-color: rgba(255,255,255, 0.56);}
+.cloud{background-color: rgba(100,100,100,0.06);}
+.glass{background-color: rgba(80,80,80,0.46);}
+.glassdark{background-color: rgba(20,20,20,0.59);}
+.txtsilver{color: $silver;}
+
+
+// *********************************************************
+// FONTS
+// *********************************************************
+
+// FONT STACKS
+@import url(http://fonts.googleapis.com/css?family=Oleo+Script);
+%oleo {font-family: 'Oleo Script', sans-serif;}
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,600,700);
+%open-sans {font-family: 'Open Sans', sans-serif;}
+
+%sans-serif {@extend %open-sans}
+%serif {font-family: Georgia, serif;}
+%cursive {@extend %oleo;}
+%display {@extend %oleo;}
+
+
+// *********************************************************
+// DESIGN CLASSES
+// *********************************************************
+
+%shadow-internal-light {box-shadow: 0 0px 50px rgba(20, 20, 20, 0.07), 0 0 70px rgba(0, 0, 0, 0.08) inset;}
+%shadow-internal-dark {box-shadow: 0 0px 50px rgba(20, 20, 20, 0.22), 0 0 80px rgba(0, 0, 0, 0.42) inset;}
+%shadow-gray {box-shadow:1px 1px 4px rgba(120,120,120,0.4),inset 1px 0 1px rgba(255,255,255,0.6);}
+
+
+
+
+%gradient-logo {
+   // background: -moz-linear-gradient(top,  rgba(163,163,163,1) 0%, rgba(98,98,98,1) 100%);
+   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(98,98,98,0.92)));
+   // background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(98,98,98,1) 100%);
+   // background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(98,98,98,1) 100%);
+   // background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(98,98,98,1) 100%);
+   // background: linear-gradient(to bottom,  rgba(163,163,163,0.8) 0%,rgba(98,98,98,0.9) 100%);
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#b3e5e5e5',GradientType=0 );
+}
+
+%shadow-inset {
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.5), 0 1px 0 rgba(255,255,255,.1);
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+%shadow-drop {
+  box-shadow: 0 5px 23px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,1);
+}
+
+%box-shade-light {
+  -moz-box-shadow: rgba(0,0,0,0.05) 0 1px 3px inset;
+  -webkit-box-shadow: rgba(0,0,0,0.05) 0 1px 3px inset;
+  box-shadow: rgba(0,0,0,0.05) 0 1px 3px inset;
+}
+
+%box-shadow-under {
+  -moz-box-shadow: 0 0 5px 5px #888;
+  -webkit-box-shadow: 0 0 5px 5px#888;
+  box-shadow: 0 0 3px 0px #888;
+}
+
+%box-shadow-logo {
+  &:before
+  {
+    content:"";
+      position:absolute; 
+      z-index:-10;
+      top:0;
+      bottom:0;
+      height: 30px;
+      width: 90px;
+      box-shadow: 0 52px 3px 0 #888;
+  } 
+}
+
+
+
+//fixed to window, will float in center, with dynamic width
+@mixin centerfix {
+  position: fixed;
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; } 
+}

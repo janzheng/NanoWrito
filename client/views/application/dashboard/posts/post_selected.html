@@ -1,0 +1,101 @@
+<template name="postSelected">
+  {{#with postItem}}
+    
+    <div class="post-container" {{attributes}}>
+        <div class="post-btns row nw-no-margin" >
+          <!-- <button type="button" class="post-btns-continue">Continue</button>
+          <button type="button" class="post-btns-save">Save</button>
+          <button type="button" class="post-btns-delete">Delete</button> -->
+
+          <ul class="nav navbar-nav post-nav">
+            <li><a class="post-nav-continue" href="/edit/{{_id}}"><span class="glyphicon glyphicon-play"></span> Continue.</a></li>
+            <li><a class="post-nav-copy"><span class="glyphicon glyphicon-floppy-save"></span>{{#if hasFlash}}Copy to Clipboard. {{else}} Needs Flash to Copy. {{/if}}</a></li>
+            <!-- <li><a href="#"><span class="glyphicon glyphicon-download"></span> Download.</a></li> -->
+            <!-- ! not implementing Download until Meteor CollectionFS is more stable -->
+          </ul>
+          <ul class="nav navbar-nav post-nav navbar-right">
+            <li>
+              <a class="post-nav-delete" href="#"><span class="glyphicon glyphicon-trash"></span> Delete.</a>
+            </li>
+          </ul>
+        </div>
+
+
+        <div class="post-settings-buttons row nw-no-margin" >
+          <div class="btn post-settings-configure {{postSettingsButton}}"><span class="glyphicon glyphicon-cog"></span> Share.</div>
+          <div class="btn post-settings-display-mode"><span class="glyphicon glyphicon-eye-open"></span> {{displayMode}} View</div>
+        </div>
+<!-- 
+        {{#if sessionDisplayMode==''}}
+          SESSION!!!!!
+        {{else}}
+          NO SESSION :( :(
+        {{/if}} -->
+        <div class="post-info row nw-no-margin" >
+          <div class="post-subtitle">Stats </div>
+          <div class="post-info-block"><span class="post-info-title">Word Count: </span><span class="post-info-desc">{{getWordCount}}</span></div>
+          <div class="post-info-block"><span class="post-info-title">Sessions: </span><span class="post-info-desc">{{getSessionCount}}</span></div>
+          <!-- <div class="post-info-block"><span class="post-info-title">Words per Day: </span><span class="post-info-desc">{{getWordsPerDay}}</span></div> -->
+        </div>
+
+        <div class="post-info row nw-no-margin" >
+          <div class="post-subtitle">NaNoWriMo Forecast </div>
+          <div class="post-info-block"><span class="post-info-title">Days Left: </span><span class="post-info-desc">999</span></div>
+          <div class="post-info-block"><span class="post-info-title">Words per Day: </span><span class="post-info-desc">999</span></div>
+        </div>
+
+
+        <div class="post-title row nw-no-margin" >
+          <div class="post-subtitle">Novel Title </div>
+          <input class="text-title col-xs-12" type="text" spellcheck="false" >
+        </div>
+        <!-- don't need to show this on the logged-in dashboard side, only when sharing? -->
+        <!-- <div class="post-author">by <span class="username">{{username}}</span></div> -->
+
+        <div class="post-novel-content row nw-no-margin">
+
+
+          <!-- displaying session Mode -->
+          {{#if displayModeIsSession}} 
+            <!-- 
+              if you absolutely need to edit a paragraph, you can set the post-paragraph div to contenteditable.
+              you can then choose to save the changes.
+            -->
+            <!-- have to reset session counter, since they're not set as reactive -->
+            {{resetSessionCounter}}
+            {{#each this.sessions}}
+              <div class="post-session">
+                <div class="post-date">
+                  {{getSessionCounter}} &mdash; Words: {{getSessionWords}} &mdash; {{getPostSessionDate}} 
+                  <!-- <div class="post-edit"><a href="/edit/{{getPostId}}/{{getSessionId}}">edit</a></div> -->
+                  {{#if isEditing}}
+                    <div class="post-edit-container">
+                      <div class="post-edit-save" data-sessionid="{{getSessionId}}"><a href="#"><span class="glyphicon glyphicon-floppy-disk"></span> Save.</a></div>
+                      <div class="post-edit-delete" data-sessionid="{{getSessionId}}"><a href="#"><span class="glyphicon glyphicon-trash"></span> Delete.</a></div>
+                      <div class="post-edit-cancel" data-sessionid="{{getSessionId}}"><a href="#"><span class="glyphicon glyphicon-ban-circle"></span> Cancel.</a></div>
+                    </div>
+                  {{else}}
+                    <div class="post-edit-container">
+                      <div class="post-edit {{editDisabled}}" data-sessionid="{{getSessionId}}"><a href="#">Edit.</a></div>
+                    </div>
+                  {{/if}}
+                </div>
+
+                <!-- JS will add a class 'post-paragraph-edit-active' to post-paragraph when active -->
+                <textarea class="post-paragraph {{userTextSize}}" data-sessionid="{{getSessionId}}" readonly>{{getParagraphs}}</textarea>
+              </div>
+            {{/each}}
+
+          {{else}}
+            <div class="post-session">
+              <!-- using pre- in css to display these, so they need to be on one line -->
+              <div class="post-paragraph {{userTextSize}}">{{#each this.sessions}}{{getParagraphs}}{{/each}}</div>
+            </div>
+          {{/if}}
+
+          {{setAutosize}}
+        </div>
+      </div>
+
+  {{/with}}
+</template>

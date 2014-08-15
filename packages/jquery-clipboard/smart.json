@@ -1,0 +1,7 @@
+{
+  "name": "jquery-clipboard",
+  "description": "JQuery Clipboard adapted to Meteor",
+  "packages": {
+    "blaze-layout": "0.2.4"
+  }
+}

@@ -1,0 +1,8 @@
+{
+    "name": "copy-to-clipboard",
+    "description": "Uses swfobject and ZeroClipboard to allow users to copy text to the clipboard",
+    "homepage": "none",
+    "author": "none",
+    "version": "0",
+    "git": "none"
+}

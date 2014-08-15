@@ -1,0 +1,50 @@
+<template name="writeApp">
+  
+
+   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+   <div class="write-app" >
+
+      <div class="blanket"></div>
+
+
+      <div class="copy">
+         <button class="btn-copy">{{#if hasFlash}}Copy to Clipboard {{else}} Needs Flash to Copy {{/if}}</button>
+      </div>
+
+      <div class="container" >
+
+         <div class="row col-xs-12 col-md-8 description">
+            <div class="row col-xs-12" >
+               {{#if title}}
+                  <h2 class="subtitle noveltitle">"{{title}}" </h2>
+               {{else}}
+                  <h2 class="subtitle">{{#if currentUser}}Type{{else}}Create{{/if}} your novel below. </h2>
+               {{/if}}
+               <h3 class="subtitle-desc">{{novelTypeDesc}}Hit <span class="keyb">Enter</span> for a new paragraph. <a href="#" class="btn-zen">ESC</a> for Zen mode. {{#if currentUser}}Work saved automatically.{{else}} When done, copy your novel to a safe place, or log in to save.{{/if}}</h3>
+            </div>
+         </div>
+
+         <div class="row col-xs-10 text-output {{inputClass}}">
+            <div class="row col-xs-12" >
+               <div class="entry-list {{userTextSize}}">
+                  {{{textOutput}}}
+               </div>
+            </div>
+         </div>
+
+         <div class="row word-count {{optionWordcount}}" >
+            <div class="ctr"><h6>{{wordCount}}</h6></div>
+            <!-- <h3>{{nano.typeCount }}</h3> -->
+         </div>
+
+         <!-- this is used w/ scrollTo to scroll down every time users hit Enter -->
+         <div id="bottom"></div>
+         <div class="row col-xs-12 text-input" >
+            <input class="text-input-area col-xs-12" type="text" placeholder="Type here..." autofocus="autofocus" spellcheck="false">
+         </div>
+      </div>
+
+
+   </div>
+
+</template>

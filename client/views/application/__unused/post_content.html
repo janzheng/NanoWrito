@@ -1,0 +1,23 @@
+
+<template name="postContent">
+<!-- 
+  <script type="text/javascript" src="/ckeditor.js"></script>
+ -->
+  <div class="post" {{attributes}}>
+    <div class="postContent">
+      <h3 class="postContent__title">{{title}}</h3>
+      <!-- <div class="postContent__content" contenteditable="true">{{{content}}}</div> -->
+      <div class="postContent__content">{{{content}}}</div>
+    </div>
+
+
+    <div class="postContent">
+      <h3 class="postContent__title">JSON</h3>
+      <!-- <div class="postContent__content" contenteditable="true">{{{content}}}</div> -->
+      <div class="postContent__content">{{json}}</div>
+    </div>
+
+
+  </div>
+</template>
+

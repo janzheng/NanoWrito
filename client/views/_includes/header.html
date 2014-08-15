@@ -1,0 +1,97 @@
+<template name="header">
+
+
+  <div class="header navbar-fixed-top">
+    <div class="container-fluid">
+
+      <nav class="navbar" role="banner">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav ">
+
+            {{#if currentUser}}
+              <li>
+                <a class="nav-create" href="{{pathFor 'postNew'}}"><span class="glyphicon glyphicon-edit"></span> Create.</a>
+              </li>
+            {{/if}}
+
+          </ul>
+          <ul class="nav navbar-nav navbar-right nw-twitter nw-no-margin">
+            <!-- <li><a href="#">Link</a></li> -->
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle settings-open" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> Edit.</a>
+              <ul class="dropdown-menu keep_open" role="menu">
+                <li>
+                  <div class="form-group form-tweak-group ">
+                    <label for="form-tweak-author">Author Name</label>
+                    <input type="text" class="form-control " id="form-tweak-author" placeholder="Nickname">
+                  </div>
+                </li>
+                <li>
+                  <div class="form-group form-tweak-group">
+                    <label>Novel Text Size</label>
+                    <div class="radio">
+                      <input type="radio" name="form-tweak-size" id="form-tweak-size-1" value="small" checked>
+                      <label for="form-tweak-size-1">Small text</label>
+                    </div>
+                    <div class="radio">
+                      <input type="radio" name="form-tweak-size" id="form-tweak-size-2" value="medium">
+                      <label for="form-tweak-size-2">Medium text</label>
+                    </div>
+                    <div class="radio">
+                      <input type="radio" name="form-tweak-size" id="form-tweak-size-3" value="large">
+                      <label for="form-tweak-size-3">Large text</label>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="form-group form-tweak-wordcounter-group">
+                    <label>Word Counter</label>
+                    <div class="radio">
+                      <input type="radio" name="form-tweak-wordcounter" id="form-tweak-wordcounter-1" value="on" checked>
+                      <label for="form-tweak-wordcounter-1">On</label>
+                    </div>
+                    <div class="radio">
+                      <input type="radio" name="form-tweak-wordcounter" id="form-tweak-wordcounter-2" value="off">
+                      <label for="form-tweak-wordcounter-2">Off</label>
+                    </div>
+                    <div class="radio">
+                      <input type="radio" name="form-tweak-wordcounter" id="form-tweak-wordcounter-3" value="write">
+                      <label for="form-tweak-wordcounter-3">Full Zen</label>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-default settings-save">Save</button>
+                  </div>
+                </li>
+
+              </ul>
+            </li>
+            {{> _loginButtons}}
+          </ul>
+        </div><!-- /.navbar-collapse -->
+
+      </nav>
+
+
+    </div>
+  </div>
+
+</template>
+
+

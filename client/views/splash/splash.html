@@ -1,0 +1,45 @@
+<template name="splash">
+
+  <div class="splash">
+
+    <div class="hero">
+      <div class="container-fluid">
+        <div class="row">
+          <h1 class="title">NanoWrito</h1> 
+          <h2 class="subtitle">Write your <a href="http://nanowrimo.org">NaNoWriMo</a> <span class="delicious">deliciously.</span> </h2>
+          <h3 class="subtitle-desc">Sign in for more features or start writing below. </h3>
+        </div>
+
+        <div class="row col-xs-6 col-sm-4 col-lg-2 sign-in">
+          {{> _loginButtons}}
+        </div>
+
+        <div class="container-fluid">
+          <div class="row">
+            <h3 class="subtitle-desc">You agree to the <a class="disclaimer-link" href="#">disclaimer</a> when you sign up.</h3>
+          </div>
+          <div class="row">
+            <h3 class="disclaimer-content"></h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="splash-wrapper">
+      {{> writeApp }}
+    </div>
+  </div>
+  <!-- end splash -->
+
+
+  <!-- footer only appears in logged-out state -->
+  <footer class="footer">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="footer__message">A MeteorJS project. <a href="mailto: hello@janzheng.com">Email</a> | <a href="https://twitter.com/NanoWrito">@nanowrito</a> | <a href="https://github.com/janzheng/NanoWrito">Github</a> .</div>
+      </div>
+    </div>
+  </footer>
+
+</template>
