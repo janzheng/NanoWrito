@@ -1,0 +1,22 @@
+{
+  "format": "unipackage-slice-pre1",
+  "packageVariables": [],
+  "uses": [
+    {
+      "package": "meteor"
+    },
+    {
+      "package": "jquery"
+    }
+  ],
+  "resources": [
+    {
+      "type": "prelink",
+      "file": "browser/packages/jquery-autosize.js",
+      "length": 4055,
+      "offset": 0,
+      "servePath": "/packages/jquery-autosize.js",
+      "sourceMap": "browser/packages/jquery-autosize.js.map"
+    }
+  ]
+}

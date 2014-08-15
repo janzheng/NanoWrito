@@ -1,0 +1,44 @@
+{
+  "builtBy": "meteor/10",
+  "sliceDependencies": {
+    "browser.json": {
+      "files": {
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/jquery-clipboard/package.js": "98d38714796c6ceb28af6a9793e10e814e389e07",
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/jquery-clipboard/jquery.clipboard.js": "bd0f2f4760c3fb77e0a5c17d4505bfcb94740489",
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/jquery-clipboard/jquery.clipboard.swf": "09e4edba5223de0d297ae2bcd59a1152d4f422a9"
+      },
+      "directories": []
+    },
+    "os.json": {
+      "files": {
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/jquery-clipboard/package.js": "98d38714796c6ceb28af6a9793e10e814e389e07"
+      },
+      "directories": []
+    },
+    "tests.browser.json": {
+      "files": {
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/jquery-clipboard/package.js": "98d38714796c6ceb28af6a9793e10e814e389e07"
+      },
+      "directories": []
+    },
+    "tests.os.json": {
+      "files": {
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/jquery-clipboard/package.js": "98d38714796c6ceb28af6a9793e10e814e389e07"
+      },
+      "directories": []
+    }
+  },
+  "pluginDependencies": {
+    "files": {
+      "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/jquery-clipboard/package.js": "98d38714796c6ceb28af6a9793e10e814e389e07"
+    },
+    "directories": []
+  },
+  "pluginProviderPackages": {
+    "jquery-clipboard": "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/jquery-clipboard",
+    "meteor": "/Users/janzheng/.meteor/packages/meteor/d06ae22393",
+    "deps": "/Users/janzheng/.meteor/packages/deps/ecfbe1ef3c",
+    "jquery": "/Users/janzheng/.meteor/packages/jquery/2ff5a27117"
+  },
+  "source": "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/jquery-clipboard"
+}

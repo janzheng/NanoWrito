@@ -1,0 +1,22 @@
+{
+  "format": "unipackage-slice-pre1",
+  "packageVariables": [],
+  "uses": [
+    {
+      "package": "meteor"
+    },
+    {
+      "package": "scss"
+    }
+  ],
+  "resources": [
+    {
+      "type": "prelink",
+      "file": "os/packages/custom-scss.js",
+      "length": 0,
+      "offset": 0,
+      "servePath": "/packages/custom-scss.js",
+      "sourceMap": "os/packages/custom-scss.js.map"
+    }
+  ]
+}

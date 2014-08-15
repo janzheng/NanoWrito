@@ -1,0 +1,47 @@
+{
+  "builtBy": "meteor/10",
+  "sliceDependencies": {
+    "browser.json": {
+      "files": {
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/compass-sass/package.js": "db1603d0036b75976b16e4c6378ba5178fdde86b",
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/scss/package.js": "e4813b6c0c2dbc1691a46d11559243f2ac44d1f5",
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/scss/.npm/plugin/meteor-scss/npm-shrinkwrap.json": "0fb316958d03e5214727ea65e359f790c879ebec",
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/scss/plugin/compile-scss.js": "c1ce93a03acb3d9e703271a40f86d805d3ad01ff"
+      },
+      "directories": []
+    },
+    "os.json": {
+      "files": {
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/compass-sass/package.js": "db1603d0036b75976b16e4c6378ba5178fdde86b",
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/scss/package.js": "e4813b6c0c2dbc1691a46d11559243f2ac44d1f5",
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/scss/.npm/plugin/meteor-scss/npm-shrinkwrap.json": "0fb316958d03e5214727ea65e359f790c879ebec",
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/scss/plugin/compile-scss.js": "c1ce93a03acb3d9e703271a40f86d805d3ad01ff"
+      },
+      "directories": []
+    },
+    "tests.browser.json": {
+      "files": {
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/compass-sass/package.js": "db1603d0036b75976b16e4c6378ba5178fdde86b"
+      },
+      "directories": []
+    },
+    "tests.os.json": {
+      "files": {
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/compass-sass/package.js": "db1603d0036b75976b16e4c6378ba5178fdde86b"
+      },
+      "directories": []
+    }
+  },
+  "pluginDependencies": {
+    "files": {
+      "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/compass-sass/package.js": "db1603d0036b75976b16e4c6378ba5178fdde86b"
+    },
+    "directories": []
+  },
+  "pluginProviderPackages": {
+    "compass-sass": "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/compass-sass",
+    "meteor": "/Users/janzheng/.meteor/packages/meteor/d06ae22393",
+    "scss": "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/scss"
+  },
+  "source": "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/compass-sass"
+}

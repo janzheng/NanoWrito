@@ -1,0 +1,33 @@
+{
+  "format": "unipackage-slice-pre1",
+  "packageVariables": [],
+  "uses": [
+    {
+      "package": "meteor"
+    },
+    {
+      "package": "deps"
+    },
+    {
+      "package": "jquery"
+    }
+  ],
+  "resources": [
+    {
+      "type": "asset",
+      "file": "browser/packages/jquery-clipboard/jquery.clipboard.swf",
+      "length": 1966,
+      "offset": 0,
+      "servePath": "/packages/jquery-clipboard/jquery.clipboard.swf",
+      "path": "jquery.clipboard.swf"
+    },
+    {
+      "type": "prelink",
+      "file": "browser/packages/jquery-clipboard.js",
+      "length": 73518,
+      "offset": 0,
+      "servePath": "/packages/jquery-clipboard.js",
+      "sourceMap": "browser/packages/jquery-clipboard.js.map"
+    }
+  ]
+}

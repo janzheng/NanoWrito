@@ -1,0 +1,42 @@
+{
+  "builtBy": "meteor/10",
+  "sliceDependencies": {
+    "browser.json": {
+      "files": {
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/jquery-autosize/package.js": "eb06354788cdb850d4a9aa447c4467e426913630",
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/jquery-autosize/jquery.autosize.min.js": "4f633b7c1dd7f5b5edb2e75a70b6cb39f5a2d26c"
+      },
+      "directories": []
+    },
+    "os.json": {
+      "files": {
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/jquery-autosize/package.js": "eb06354788cdb850d4a9aa447c4467e426913630"
+      },
+      "directories": []
+    },
+    "tests.browser.json": {
+      "files": {
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/jquery-autosize/package.js": "eb06354788cdb850d4a9aa447c4467e426913630"
+      },
+      "directories": []
+    },
+    "tests.os.json": {
+      "files": {
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/jquery-autosize/package.js": "eb06354788cdb850d4a9aa447c4467e426913630"
+      },
+      "directories": []
+    }
+  },
+  "pluginDependencies": {
+    "files": {
+      "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/jquery-autosize/package.js": "eb06354788cdb850d4a9aa447c4467e426913630"
+    },
+    "directories": []
+  },
+  "pluginProviderPackages": {
+    "jquery-autosize": "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/jquery-autosize",
+    "meteor": "/Users/janzheng/.meteor/packages/meteor/d06ae22393",
+    "jquery": "/Users/janzheng/.meteor/packages/jquery/2ff5a27117"
+  },
+  "source": "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/jquery-autosize"
+}

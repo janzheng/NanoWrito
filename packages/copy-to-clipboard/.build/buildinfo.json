@@ -1,0 +1,41 @@
+{
+  "builtBy": "meteor/10",
+  "sliceDependencies": {
+    "browser.json": {
+      "files": {
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/copy-to-clipboard/package.js": "bf3e8dba54a44ce347b369f51b91066087588bd0"
+      },
+      "directories": []
+    },
+    "os.json": {
+      "files": {
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/copy-to-clipboard/package.js": "bf3e8dba54a44ce347b369f51b91066087588bd0"
+      },
+      "directories": []
+    },
+    "tests.browser.json": {
+      "files": {
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/copy-to-clipboard/package.js": "bf3e8dba54a44ce347b369f51b91066087588bd0"
+      },
+      "directories": []
+    },
+    "tests.os.json": {
+      "files": {
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/copy-to-clipboard/package.js": "bf3e8dba54a44ce347b369f51b91066087588bd0"
+      },
+      "directories": []
+    }
+  },
+  "pluginDependencies": {
+    "files": {
+      "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/copy-to-clipboard/package.js": "bf3e8dba54a44ce347b369f51b91066087588bd0"
+    },
+    "directories": []
+  },
+  "pluginProviderPackages": {
+    "copy-to-clipboard": "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/copy-to-clipboard",
+    "meteor": "/Users/janzheng/.meteor/packages/meteor/d06ae22393",
+    "jquery": "/Users/janzheng/.meteor/packages/jquery/2ff5a27117"
+  },
+  "source": "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/copy-to-clipboard"
+}

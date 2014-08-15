@@ -1,0 +1,47 @@
+{
+  "builtBy": "meteor/10",
+  "sliceDependencies": {
+    "browser.json": {
+      "files": {
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/custom-scss/package.js": "a06ed7716925b8c5a3b2ec2a04359bfd926df3f8",
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/scss/package.js": "e4813b6c0c2dbc1691a46d11559243f2ac44d1f5",
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/scss/.npm/plugin/meteor-scss/npm-shrinkwrap.json": "0fb316958d03e5214727ea65e359f790c879ebec",
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/scss/plugin/compile-scss.js": "c1ce93a03acb3d9e703271a40f86d805d3ad01ff"
+      },
+      "directories": []
+    },
+    "os.json": {
+      "files": {
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/custom-scss/package.js": "a06ed7716925b8c5a3b2ec2a04359bfd926df3f8",
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/scss/package.js": "e4813b6c0c2dbc1691a46d11559243f2ac44d1f5",
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/scss/.npm/plugin/meteor-scss/npm-shrinkwrap.json": "0fb316958d03e5214727ea65e359f790c879ebec",
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/scss/plugin/compile-scss.js": "c1ce93a03acb3d9e703271a40f86d805d3ad01ff"
+      },
+      "directories": []
+    },
+    "tests.browser.json": {
+      "files": {
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/custom-scss/package.js": "a06ed7716925b8c5a3b2ec2a04359bfd926df3f8"
+      },
+      "directories": []
+    },
+    "tests.os.json": {
+      "files": {
+        "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/custom-scss/package.js": "a06ed7716925b8c5a3b2ec2a04359bfd926df3f8"
+      },
+      "directories": []
+    }
+  },
+  "pluginDependencies": {
+    "files": {
+      "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/custom-scss/package.js": "a06ed7716925b8c5a3b2ec2a04359bfd926df3f8"
+    },
+    "directories": []
+  },
+  "pluginProviderPackages": {
+    "custom-scss": "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/custom-scss",
+    "meteor": "/Users/janzheng/.meteor/packages/meteor/d06ae22393",
+    "scss": "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/scss"
+  },
+  "source": "/Users/janzheng/Dropbox/_Create/_Code & Build/_Projects/_github/nanowrito-meteor/packages/custom-scss"
+}
